@@ -1,650 +1,1987 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuku Haven | Order Online</title>
 
-<title>Kuku Haven | Order Online</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Montserrat:wght@700;800;900&display=swap');
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff8ef;
-    color: #222;
-    line-height: 1.5;
-}
-
-header {
-    background: linear-gradient(135deg, #8b0000, #d97706);
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-}
-
-header h1 {
-    font-size: 38px;
-    margin-bottom: 8px;
-}
-
-header p {
-    font-size: 17px;
-}
-
-.status {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 18px;
-    border-radius: 25px;
-    background: rgba(255,255,255,0.2);
-    font-weight: bold;
-}
-
-.container {
-    width: 92%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    margin: 45px 0 25px;
-}
-
-.section-title h2 {
-    color: #8b0000;
-    font-size: 28px;
-}
-
-.section-title p {
-    color: #666;
-    margin-top: 5px;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    display: block;
-    background: #eee;
-}
-
-.card-content {
-    padding: 17px;
-}
-
-.card h3 {
-    color: #8b0000;
-    font-size: 19px;
-    margin-bottom: 6px;
-}
-
-.card p {
-    color: #555;
-    font-size: 15px;
-}
-
-.price {
-    color: #d97706 !important;
-    font-weight: bold;
-    font-size: 18px !important;
-    margin-top: 8px;
-}
-
-.order-btn {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    background: #25D366;
-    color: white;
-    font-weight: bold;
-    padding: 11px;
-    border-radius: 10px;
-    margin-top: 12px;
-}
-
-.order-btn:hover {
-    background: #1da851;
-}
-
-footer {
-    margin-top: 60px;
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-.attribution {
-    font-size: 11px;
-    color: #aaa;
-    margin-top: 15px;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 30px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8f0;
+      color: #222;
+      padding-bottom: 90px;
     }
 
-    .card img {
-        height: 145px;
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #b91c1c;
+      color: white;
+      padding: 18px 16px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
-    .card-content {
-        padding: 12px;
+    .logo {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: white;
+      padding: 4px;
     }
 
-    .card h3 {
-        font-size: 16px;
+    .brand-name {
+      font-family: "Baloo 2", Arial, sans-serif;
+      font-size: 42px;
+      line-height: 0.95;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 2px 3px 0 rgba(0,0,0,0.12);
     }
 
-    .price {
-        font-size: 16px !important;
+    .brand-kuku {
+      color: white;
     }
-}
-</style>
+
+    .brand-haven {
+      color: #f7c948;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 1px 2px 0 rgba(0,0,0,0.15);
+    }
+
+    .header-description {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #fff3df;
+    }
+
+    /* =========================
+       OPENING HOURS
+    ========================== */
+
+    .opening-hours {
+      background: #fff;
+      text-align: center;
+      padding: 18px 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-weight: 900;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .status.open {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .status.closed {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .hours-text {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 28px 18px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .hero h2 {
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================== */
+
+    .categories {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 15px;
+      background: white;
+      position: sticky;
+      top: 191px;
+      z-index: 10;
+      scrollbar-width: none;
+    }
+
+    .categories::-webkit-scrollbar {
+      display: none;
+    }
+
+    .categories button {
+      border: none;
+      background: #f3f3f3;
+      padding: 10px 15px;
+      border-radius: 25px;
+      white-space: nowrap;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .categories button.active {
+      background: #b91c1c;
+      color: white;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+
+    #products {
+      position: relative;
+      overflow: hidden;
+      background: #fff8f0;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 22px 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.97);
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .product h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      color: #b91c1c;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .product button {
+      width: 100%;
+      border: none;
+      background: #b91c1c;
+      color: white;
+      padding: 10px;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .product button:active {
+      transform: scale(.97);
+    }
+
+    /* =========================
+       CART BAR
+    ========================== */
+
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      color: white;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 50;
+    }
+
+    .cart-bar button {
+      background: #f59e0b;
+      color: #111;
+      border: none;
+      padding: 11px 17px;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 100;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-controls button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 6px;
+      background: #eee;
+      font-weight: bold;
+    }
+
+    .total {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 18px 0;
+      text-align: right;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0 12px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      font-size: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* =========================
+       DELIVERY NOTICE
+    ========================== */
+
+    .delivery-notice {
+      background: #fff8f0;
+      border: 1px solid #f3d7bd;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 18px 0;
+    }
+
+    .delivery-notice h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #b91c1c;
+    }
+
+    .delivery-notice p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       PAYMENT
+    ========================== */
+
+    .payment-section {
+      background: #fff8f0;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .payment-section h3 {
+      margin-bottom: 10px;
+    }
+
+    .payment-details {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 12px;
+      border: 1px solid #eee;
+    }
+
+    .payment-details h4 {
+      margin-bottom: 8px;
+    }
+
+    .till-number {
+      background: #b91c1c;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 12px 0;
+      letter-spacing: 2px;
+    }
+
+    .primary {
+      width: 100%;
+      border: none;
+      background: #16a34a;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close {
+      float: right;
+      border: none;
+      background: #eee;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+    }
+
+    /* =========================
+       THANK YOU
+    ========================== */
+
+    .thank-you {
+      background: #fff;
+      text-align: center;
+      padding: 35px 18px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .thank-you h2 {
+      color: #b91c1c;
+      font-family: "Montserrat", Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .thank-you p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .motto {
+      font-weight: 900;
+      color: #b91c1c !important;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       RATE & FEEDBACK
+    ========================== */
+
+    .feedback-section {
+      background: #fff8f0;
+      padding: 35px 18px;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .feedback-section h2 {
+      font-family: "Montserrat", Arial, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .feedback-section > p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 12px 0 20px;
+    }
+
+    .star {
+      border: none;
+      background: transparent;
+      font-size: 36px;
+      color: #ccc;
+      cursor: pointer;
+      padding: 0;
+      transition: transform .15s, color .15s;
+    }
+
+    .star.selected {
+      color: #f59e0b;
+    }
+
+    .star:hover {
+      transform: scale(1.1);
+    }
+
+    .rating-text {
+      font-size: 14px;
+      color: #777;
+      min-height: 20px;
+      margin-bottom: 12px;
+    }
+
+    .feedback-section textarea {
+      background: white;
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .feedback-button {
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      background: #b91c1c;
+      color: white;
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      font-size: 14px;
+      background: #fff8f0;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      .logo {
+        width: 95px;
+        height: 95px;
+      }
+
+      .brand-name {
+        font-size: 38px;
+      }
+
+      .tagline {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .categories {
+        top: 181px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🍗 KUKU HAVEN</h1>
-    <p>Fresh • Delicious • Affordable</p>
-    <div class="status" id="openingStatus">Checking status...</div>
-</header>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-<main class="container">
+  <header>
 
-<!-- QUICK BITES -->
+    <img
+      src="79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg"
+      alt="Kuku Haven Logo"
+      class="logo"
+    >
 
-<div class="section-title">
-    <h2>🍔 Quick Bites & Meals</h2>
-    <p>Freshly prepared favourites</p>
-</div>
+    <div class="brand-name">
+      <span class="brand-kuku">KUKU</span>
+      <span class="brand-haven">HAVEN</span>
+    </div>
 
-<div class="menu-grid">
+    <div class="tagline">
+      MUNCH IT • CRUNCH IT • LOVE IT
+    </div>
 
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Potato-Chips.jpg"
-             alt="Chips">
-        <div class="card-content">
-            <h3>Chips</h3>
-            <p>Golden crispy chips</p>
-            <p class="price">Kshs 100</p>
+    <p class="header-description">
+      Fresh Chicken • Cooked Food • Snacks • Drinks
+    </p>
+
+  </header>
+
+
+  <!-- =========================
+       OPENING HOURS
+  ========================== -->
+
+  <section class="opening-hours">
+
+    <div
+      id="openStatus"
+      class="status"
+    >
+      Checking status...
+    </div>
+
+    <div class="hours-text">
+
+      Monday – Saturday:
+      <strong>9:00 AM – 10:00 PM</strong>
+
+      <br>
+
+      Sunday:
+      <strong>10:00 AM – 9:00 PM</strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WELCOME
+  ========================== -->
+
+  <section class="hero">
+
+    <h2>
+      Welcome to Kuku Haven
+    </h2>
+
+    <p>
+      Choose your favourite food, add it to your cart and place your order.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORIES
+  ========================== -->
+
+  <div class="categories">
+
+    <button
+      class="active"
+      onclick="showCategory('all', this)"
+    >
+      All
+    </button>
+
+    <button
+      onclick="showCategory('cooked', this)"
+    >
+      Cooked Food
+    </button>
+
+    <button
+      onclick="showCategory('fresh', this)"
+    >
+      Fresh Chicken
+    </button>
+
+    <button
+      onclick="showCategory('snacks', this)"
+    >
+      Snacks
+    </button>
+
+    <button
+      onclick="showCategory('drinks', this)"
+    >
+      Drinks
+    </button>
+
+    <button
+      onclick="showCategory('eggs', this)"
+    >
+      Eggs
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       MENU
+  ========================== -->
+
+  <main id="products"></main>
+
+
+  <!-- =========================
+       THANK YOU
+  ========================== -->
+
+  <section class="thank-you">
+
+    <h2>
+      Thank You ❤️
+    </h2>
+
+    <p>
+      Thank you for choosing Kuku Haven.
+    </p>
+
+    <p>
+      Your support means the world to us, and we can't wait to serve you again.
+    </p>
+
+    <p class="motto">
+      Munch it. Crunch it. Love it.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       RATE & FEEDBACK
+  ========================== -->
+
+  <section class="feedback-section">
+
+    <h2>
+      ⭐ Rate Us
+    </h2>
+
+    <p>
+      How would you rate your Kuku Haven experience?
+    </p>
+
+    <div class="stars">
+
+      <button
+        class="star"
+        onclick="selectRating(1)"
+        aria-label="1 star"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(2)"
+        aria-label="2 stars"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(3)"
+        aria-label="3 stars"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(4)"
+        aria-label="4 stars"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(5)"
+        aria-label="5 stars"
+      >
+        ★
+      </button>
+
+    </div>
+
+    <div
+      id="ratingText"
+      class="rating-text"
+    >
+      Select a rating from 1 to 5 stars.
+    </div>
+
+    <textarea
+      id="feedbackText"
+      placeholder="Write your feedback here..."
+    ></textarea>
+
+    <button
+      class="feedback-button"
+      onclick="sendFeedback()"
+    >
+      Send Feedback on WhatsApp
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Kuku Haven
+    </p>
+
+    <p>
+      Fresh food. Great taste. Easy ordering.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       CART BAR
+  ========================== -->
+
+  <div class="cart-bar">
+
+    <div>
+
+      🛒 Cart:
+      <strong id="cartCount">0</strong> items
+
+      <br>
+
+      <strong>
+        KSh <span id="cartTotal">0</span>
+      </strong>
+
+    </div>
+
+    <button onclick="openCart()">
+      View Cart
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       CART MODAL
+  ========================== -->
+
+  <div
+    class="modal"
+    id="cartModal"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="close"
+        onclick="closeCart()"
+      >
+        Close
+      </button>
+
+      <h2>
+        Your Cart 🛒
+      </h2>
+
+      <div id="cartItems"></div>
+
+      <div class="total">
+
+        Food Order Total:
+        KSh
+        <span id="modalTotal">0</span>
+
+      </div>
+
+
+      <!-- DELIVERY DETAILS -->
+
+      <h2>
+        Delivery Details
+      </h2>
+
+      <label>
+        Your Name
+      </label>
+
+      <input
+        id="customerName"
+        type="text"
+        placeholder="Enter your name"
+      >
+
+      <label>
+        Phone Number
+      </label>
+
+      <input
+        id="customerPhone"
+        type="tel"
+        placeholder="07XXXXXXXX"
+      >
+
+      <label>
+        Delivery Location
+      </label>
+
+      <input
+        id="customerLocation"
+        type="text"
+        placeholder="e.g. Utawala, Nairobi"
+      >
+
+      <label>
+        Delivery Instructions
+      </label>
+
+      <textarea
+        id="customerNotes"
+        rows="3"
+        placeholder="Any instructions for your order?"
+      ></textarea>
+
+
+      <label>
+        Order Type
+      </label>
+
+      <select
+        id="orderType"
+        onchange="updateDeliveryNotice()"
+      >
+
+        <option value="Delivery">
+          Delivery
+        </option>
+
+        <option value="Pickup">
+          Pickup
+        </option>
+
+      </select>
+
+
+      <!-- =========================
+           DELIVERY NOTICE
+      ========================== -->
+
+      <div
+        id="deliveryNotice"
+        class="delivery-notice"
+      >
+
+        <h3>
+          🛵 Delivery Notice
+        </h3>
+
+        <p>
+          Please note that delivery charges are separate from your food order total.
+          The delivery fee varies depending on your location and will be communicated
+          to you before your order is delivered.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           PAYMENT
+      ========================== -->
+
+      <div class="payment-section">
+
+        <h3>
+          💳 Mode of Payment
+        </h3>
+
+        <select
+          id="paymentMethod"
+          onchange="showPaymentDetails()"
+        >
+
+          <option value="">
+            Select payment method
+          </option>
+
+          <option value="mpesa">
+            🟢 M-Pesa
+          </option>
+
+          <option value="cash">
+            💵 Cash on Delivery
+          </option>
+
+        </select>
+
+
+        <!-- M-PESA -->
+
+        <div
+          id="mpesaPayment"
+          class="payment-details"
+        >
+
+          <h4>
+            🟢 M-Pesa Payment
+          </h4>
+
+          <p>
+            Pay using M-Pesa Buy Goods & Services.
+          </p>
+
+          <div class="till-number">
+            6485965
+          </div>
+
+          <p style="text-align:center;">
+
+            <strong>
+              JOAN WANGECI
+            </strong>
+
+          </p>
+
+          <p style="margin-top:10px; line-height:1.5;">
+
+            Go to M-Pesa →
+            Lipa na M-Pesa →
+            Buy Goods and Services →
+            enter Till Number
+            <strong>6485965</strong>.
+
+          </p>
+
+          <p style="margin-top:10px; line-height:1.5;">
+
+            After payment, send your M-Pesa confirmation
+            message together with your order on WhatsApp.
+
+          </p>
+
         </div>
-    </div>
 
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Smokie">
-        <div class="card-content">
-            <h3>Smokie</h3>
-            <p>Hot and delicious smokie</p>
-            <p class="price">Kshs 40</p>
+
+        <!-- CASH -->
+
+        <div
+          id="cashPayment"
+          class="payment-details"
+        >
+
+          <h4>
+            💵 Cash on Delivery
+          </h4>
+
+          <p>
+            Pay in cash when your order is delivered.
+          </p>
+
         </div>
+
+      </div>
+
+
+      <!-- PLACE ORDER -->
+
+      <button
+        class="primary"
+        onclick="placeOrder()"
+      >
+        Place Order on WhatsApp
+      </button>
+
     </div>
 
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Sausage">
-        <div class="card-content">
-            <h3>Sausage</h3>
-            <p>Juicy cooked sausage</p>
-            <p class="price">Kshs 60</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Samosa.jpg"
-             alt="Samosa">
-        <div class="card-content">
-            <h3>Samosa</h3>
-            <p>Crispy golden samosa</p>
-            <p class="price">Kshs 40</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hot_dog.jpg"
-             alt="Hotdog">
-        <div class="card-content">
-            <h3>Hotdog</h3>
-            <p>Delicious hotdog</p>
-            <p class="price">Kshs 80 / 100</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_nugget.jpg"
-             alt="Chicken Nuggets">
-        <div class="card-content">
-            <h3>Nuggets</h3>
-            <p>Crispy chicken nuggets</p>
-            <p class="price">Kshs 25 per piece</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Burger.jpg"
-             alt="Burger">
-        <div class="card-content">
-            <h3>Burger</h3>
-            <p>Fresh delicious burger</p>
-            <p class="price">Kshs 150</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Potato-Chips.jpg"
-             alt="Quarter Kuku and Chips">
-        <div class="card-content">
-            <h3>Chips / ¼ Kuku</h3>
-            <p>Quarter chicken served with chips</p>
-            <p class="price">Kshs 280</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Legs.jpg"
-             alt="Half Kuku and Chips">
-        <div class="card-content">
-            <h3>Chips / ½ Kuku</h3>
-            <p>Half chicken served with chips</p>
-            <p class="price">Kshs 460</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Legs.jpg"
-             alt="Chicken and Chips">
-        <div class="card-content">
-            <h3>Chips / 1 Piece</h3>
-            <p>Chicken piece served with chips</p>
-            <p class="price">Kshs 220</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Legs.jpg"
-             alt="Chicken Strips and Chips">
-        <div class="card-content">
-            <h3>Chips / Chicken Strips</h3>
-            <p>Crispy chicken strips with chips</p>
-            <p class="price">Kshs 200</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/OrangeJuice.jpg"
-             alt="Fruit Juice">
-        <div class="card-content">
-            <h3>Fruit Juice</h3>
-            <p>Fresh refreshing fruit juice</p>
-            <p class="price">Kshs 100</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Soda.jpg"
-             alt="Soda">
-        <div class="card-content">
-            <h3>Soda</h3>
-            <p>Chilled soft drink</p>
-            <p class="price">Kshs 50 / 80</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yogurt.jpg"
-             alt="Yogurt">
-        <div class="card-content">
-            <h3>Yogurt</h3>
-            <p>Fresh creamy yogurt</p>
-            <p class="price">Kshs 100</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- BROILER CHICKEN -->
-
-<div class="section-title">
-    <h2>🍗 Capon / Broiler Kuku</h2>
-    <p>Fresh chicken cuts sold per kilogram</p>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken.jpg"
-             alt="Capon Broiler Chicken">
-        <div class="card-content">
-            <h3>Capon (Broiler Kuku)</h3>
-            <p class="price">Kshs 500 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CHICKEN_BREAST.jpg"
-             alt="Boneless Chicken Breast">
-        <div class="card-content">
-            <h3>Boneless Breast</h3>
-            <p class="price">Kshs 640 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Legs.jpg"
-             alt="Chicken Thighs">
-        <div class="card-content">
-            <h3>Thighs</h3>
-            <p class="price">Kshs 490 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Legs.jpg"
-             alt="Chicken Legs">
-        <div class="card-content">
-            <h3>Legs</h3>
-            <p class="price">Kshs 510 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Wings.jpg"
-             alt="Chicken Wings">
-        <div class="card-content">
-            <h3>Wings</h3>
-            <p class="price">Kshs 540 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fried_chicken_drumstick.jpg"
-             alt="Chicken Drumsticks">
-        <div class="card-content">
-            <h3>Drumsticks</h3>
-            <p class="price">Kshs 640 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Gizzard.jpg"
-             alt="Chicken Gizzards">
-        <div class="card-content">
-            <h3>Gizzards</h3>
-            <p class="price">Kshs 500 / kg</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chickenliver.jpg"
-             alt="Chicken Liver">
-        <div class="card-content">
-            <h3>Chicken Liver</h3>
-            <p class="price">Kshs 300 / kg</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- NUGGETS -->
-
-<div class="section-title">
-    <h2>🍗 Nuggets</h2>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Nuggets.jpg"
-             alt="1kg Nuggets">
-        <div class="card-content">
-            <h3>1 kg</h3>
-            <p class="price">Kshs 750</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Nuggets.jpg"
-             alt="500g Nuggets">
-        <div class="card-content">
-            <h3>500 g</h3>
-            <p class="price">Kshs 360</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Nuggets.jpg"
-             alt="250g Nuggets">
-        <div class="card-content">
-            <h3>250 g</h3>
-            <p class="price">Kshs 190</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- KIENYEJI -->
-
-<div class="section-title">
-    <h2>🐔 Kienyeji Kuku</h2>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kienyeji_chicken.jpg"
-             alt="Ex Layers Kienyeji Chicken">
-        <div class="card-content">
-            <h3>Ex Layers</h3>
-            <p class="price">Kshs 700</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kienyeji_chicken.jpg"
-             alt="Improved Kienyeji Chicken">
-        <div class="card-content">
-            <h3>Improved (Mwera)</h3>
-            <p class="price">Kshs 1,000</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kienyeji_chicken.jpg"
-             alt="Kienyeji Rooster">
-        <div class="card-content">
-            <h3>Jogoo</h3>
-            <p class="price">Kshs 1,500</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- EGGS -->
-
-<div class="section-title">
-    <h2>🥚 Eggs</h2>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Eggs_Chicken.jpg"
-             alt="Kienyeji Eggs">
-        <div class="card-content">
-            <h3>Kienyeji</h3>
-            <p class="price">Kshs 600 / tray</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Eggs_Chicken.jpg"
-             alt="Grade Eggs">
-        <div class="card-content">
-            <h3>Grade</h3>
-            <p class="price">Kshs 480 / tray</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- SMOKIES -->
-
-<div class="section-title">
-    <h2>🌭 Smokies</h2>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Beef Smokies">
-        <div class="card-content">
-            <h3>Beef</h3>
-            <p class="price">Kshs 440 / pack</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Chicken Smokies">
-        <div class="card-content">
-            <h3>Chicken</h3>
-            <p class="price">Kshs 440 / pack</p>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- SAUSAGES -->
-
-<div class="section-title">
-    <h2>🌭 Sausages</h2>
-</div>
-
-<div class="menu-grid">
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Beef Sausages">
-        <div class="card-content">
-            <h3>Beef</h3>
-            <p class="price">Kshs 600 / pack</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sausage.jpg"
-             alt="Chicken Sausages">
-        <div class="card-content">
-            <h3>Chicken</h3>
-            <p class="price">Kshs 580 / pack</p>
-        </div>
-    </div>
-
-</div>
-
-</main>
-
-
-<footer>
-    <h2>🍗 KUKU HAVEN</h2>
-    <p>Thank you for choosing Kuku Haven!</p>
-    <p>Fresh food. Great taste. Affordable prices.</p>
-
-    <div class="attribution">
-        Food images are sourced from Wikimedia Commons and are used according
-        to their individual licenses.
-    </div>
-</footer>
-
-
-<script>
-
-/* OPENING HOURS
-   Monday - Saturday: 9:00 AM - 10:00 PM
-   Sunday: 10:00 AM - 9:00 PM
-*/
-
-function updateOpeningStatus() {
-
-    const now = new Date();
-
-    const day = now.getDay();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-
-    const currentMinutes = hour * 60 + minute;
-
-    let opening;
-    let closing;
-
-    if (day === 0) {
+  </div>
+
+
+  <script>
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+
+    const products = [
+
+      { name:"Chips", price:100, category:"cooked" },
+
+      { name:"Chips + ¼ Kuku", price:280, category:"cooked" },
+
+      { name:"Chips + ½ Kuku", price:460, category:"cooked" },
+
+      { name:"Chips + 1 Piece Chicken", price:220, category:"cooked" },
+
+      { name:"Chips + Chicken Strips", price:200, category:"cooked" },
+
+      { name:"Burger", price:150, category:"cooked" },
+
+      { name:"Smokie", price:40, category:"snacks" },
+
+      { name:"Sausage", price:60, category:"snacks" },
+
+      { name:"Samosa", price:40, category:"snacks" },
+
+      { name:"Small Hotdog", price:80, category:"snacks" },
+
+      { name:"Large Hotdog", price:100, category:"snacks" },
+
+      { name:"Nuggets - 1 piece", price:25, category:"snacks" },
+
+      { name:"Capon (Broiler Kuku) - 1kg", price:500, category:"fresh" },
+
+      { name:"Boneless Breast - 1kg", price:640, category:"fresh" },
+
+      { name:"Thighs - 1kg", price:490, category:"fresh" },
+
+      { name:"Legs - 1kg", price:510, category:"fresh" },
+
+      { name:"Wings - 1kg", price:540, category:"fresh" },
+
+      { name:"Drumsticks - 1kg", price:640, category:"fresh" },
+
+      { name:"Gizzards - 1kg", price:500, category:"fresh" },
+
+      { name:"Chicken Liver - 1kg", price:300, category:"fresh" },
+
+      { name:"Nuggets - 1kg", price:750, category:"snacks" },
+
+      { name:"Nuggets - 500g", price:360, category:"snacks" },
+
+      { name:"Nuggets - 250g", price:190, category:"snacks" },
+
+      { name:"Kienyeji Kuku - Ex Layers", price:700, category:"fresh" },
+
+      { name:"Kienyeji Kuku - Improved (Mwera)", price:1000, category:"fresh" },
+
+      { name:"Kienyeji Kuku - Jogoo", price:1500, category:"fresh" },
+
+      { name:"Kienyeji Eggs - Tray", price:600, category:"eggs" },
+
+      { name:"Grade Eggs - Tray", price:480, category:"eggs" },
+
+      { name:"Beef Smokies - Pack", price:440, category:"snacks" },
+
+      { name:"Chicken Smokies - Pack", price:440, category:"snacks" },
+
+      { name:"Beef Sausages - Pack", price:600, category:"snacks" },
+
+      { name:"Chicken Sausages - Pack", price:580, category:"snacks" },
+
+      { name:"Fruit Juice", price:100, category:"drinks" },
+
+      { name:"Small Soda", price:50, category:"drinks" },
+
+      { name:"Large Soda", price:80, category:"drinks" },
+
+      { name:"Yogurt", price:100, category:"drinks" }
+
+    ];
+
+
+    let cart = [];
+    let selectedRating = 0;
+
+
+    /* =========================
+       OPENING HOURS
+    ========================== */
+
+    function updateOpeningStatus() {
+
+      const status =
+        document.getElementById("openStatus");
+
+      const now = new Date();
+
+      const day = now.getDay();
+
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      const currentMinutes =
+        hours * 60 + minutes;
+
+      let openingMinutes;
+      let closingMinutes;
+
+      if (day === 0) {
+
         // Sunday
-        opening = 10 * 60;
-        closing = 21 * 60;
-    } else {
+        openingMinutes = 10 * 60;
+        closingMinutes = 21 * 60;
+
+      } else {
+
         // Monday - Saturday
-        opening = 9 * 60;
-        closing = 22 * 60;
+        openingMinutes = 9 * 60;
+        closingMinutes = 22 * 60;
+
+      }
+
+      if (
+        currentMinutes >= openingMinutes &&
+        currentMinutes < closingMinutes
+      ) {
+
+        status.textContent =
+          "🟢 OPEN NOW";
+
+        status.className =
+          "status open";
+
+      } else {
+
+        status.textContent =
+          "🔴 CLOSED";
+
+        status.className =
+          "status closed";
+
+      }
+
     }
 
-    const status = document.getElementById("openingStatus");
+    updateOpeningStatus();
 
-    if (currentMinutes >= opening && currentMinutes < closing) {
-        status.textContent = "🟢 OPEN NOW";
-    } else {
-        status.textContent = "🔴 CLOSED NOW";
+    setInterval(
+      updateOpeningStatus,
+      60000
+    );
+
+
+    /* =========================
+       SHOW CATEGORY
+    ========================== */
+
+    function showCategory(
+      category,
+      button
+    ) {
+
+      document
+        .querySelectorAll(".categories button")
+        .forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+      button.classList.add("active");
+
+      const container =
+        document.getElementById("products");
+
+      const filtered =
+        category === "all"
+          ? products
+          : products.filter(
+              p => p.category === category
+            );
+
+      container.innerHTML = `
+
+        <section class="section">
+
+          <h2>
+            ${
+              category === "all"
+                ? "Our Menu"
+                : categoryTitle(category)
+            }
+          </h2>
+
+          <div class="products">
+
+            ${filtered.map(product => {
+
+              const originalIndex =
+                products.indexOf(product);
+
+              return `
+
+                <div class="product">
+
+                  <h3>
+                    ${product.name}
+                  </h3>
+
+                  <p>
+                    KSh ${product.price}
+                  </p>
+
+                  <button
+                    onclick="addToCart(${originalIndex})"
+                  >
+                    Add to Cart
+                  </button>
+
+                </div>
+
+              `;
+
+            }).join("")}
+
+          </div>
+
+        </section>
+
+      `;
+
     }
-}
 
-updateOpeningStatus();
 
-setInterval(updateOpeningStatus, 60000);
+    /* =========================
+       CATEGORY TITLES
+    ========================== */
 
-</script>
+    function categoryTitle(
+      category
+    ) {
+
+      const titles = {
+
+        cooked: "Cooked Food",
+
+        fresh: "Fresh Chicken",
+
+        snacks: "Snacks",
+
+        drinks: "Drinks",
+
+        eggs: "Eggs"
+
+      };
+
+      return (
+        titles[category] ||
+        "Menu"
+      );
+
+    }
+
+
+    /* =========================
+       ADD TO CART
+    ========================== */
+
+    function addToCart(index) {
+
+      const product =
+        products[index];
+
+      const existing =
+        cart.find(item =>
+          item.name === product.name &&
+          item.price === product.price
+        );
+
+      if (existing) {
+
+        existing.quantity++;
+
+      } else {
+
+        cart.push({
+
+          name: product.name,
+
+          price: product.price,
+
+          quantity: 1
+
+        });
+
+      }
+
+      updateCart();
+
+    }
+
+
+    /* =========================
+       UPDATE CART
+    ========================== */
+
+    function updateCart() {
+
+      const count =
+        cart.reduce(
+          (total, item) =>
+            total + item.quantity,
+          0
+        );
+
+      const total =
+        cart.reduce(
+          (sum, item) =>
+            sum +
+            item.price *
+            item.quantity,
+          0
+        );
+
+      document.getElementById(
+        "cartCount"
+      ).textContent = count;
+
+      document.getElementById(
+        "cartTotal"
+      ).textContent = total;
+
+      document.getElementById(
+        "modalTotal"
+      ).textContent = total;
+
+      renderCart();
+
+    }
+
+
+    /* =========================
+       RENDER CART
+    ========================== */
+
+    function renderCart() {
+
+      const container =
+        document.getElementById(
+          "cartItems"
+        );
+
+      if (cart.length === 0) {
+
+        container.innerHTML =
+          '<div class="empty">Your cart is empty.</div>';
+
+        return;
+
+      }
+
+      container.innerHTML =
+        cart.map(
+          (item, index) => `
+
+            <div class="cart-item">
+
+              <div>
+
+                <strong>
+                  ${item.name}
+                </strong>
+
+                <br>
+
+                KSh ${item.price}
+                × ${item.quantity}
+
+                <br>
+
+                <strong>
+                  KSh ${
+                    item.price *
+                    item.quantity
+                  }
+                </strong>
+
+              </div>
+
+              <div class="cart-controls">
+
+                <button
+                  onclick="changeQuantity(${index}, -1)"
+                >
+                  −
+                </button>
+
+                <span>
+                  ${item.quantity}
+                </span>
+
+                <button
+                  onclick="changeQuantity(${index}, 1)"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          `
+        ).join("");
+
+    }
+
+
+    /* =========================
+       CHANGE QUANTITY
+    ========================== */
+
+    function changeQuantity(
+      index,
+      amount
+    ) {
+
+      cart[index].quantity += amount;
+
+      if (
+        cart[index].quantity <= 0
+      ) {
+
+        cart.splice(index, 1);
+
+      }
+
+      updateCart();
+
+    }
+
+
+    /* =========================
+       OPEN CART
+    ========================== */
+
+    function openCart() {
+
+      document.getElementById(
+        "cartModal"
+      ).style.display = "block";
+
+      updateCart();
+
+    }
+
+
+    /* =========================
+       CLOSE CART
+    ========================== */
+
+    function closeCart() {
+
+      document.getElementById(
+        "cartModal"
+      ).style.display = "none";
+
+    }
+
+
+    /* =========================
+       DELIVERY NOTICE
+    ========================== */
+
+    function updateDeliveryNotice() {
+
+      const orderType =
+        document.getElementById(
+          "orderType"
+        ).value;
+
+      const notice =
+        document.getElementById(
+          "deliveryNotice"
+        );
+
+      if (orderType === "Delivery") {
+
+        notice.style.display =
+          "block";
+
+      } else {
+
+        notice.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* =========================
+       PAYMENT DETAILS
+    ========================== */
+
+    function showPaymentDetails() {
+
+      const method =
+        document.getElementById(
+          "paymentMethod"
+        ).value;
+
+      const mpesa =
+        document.getElementById(
+          "mpesaPayment"
+        );
+
+      const cash =
+        document.getElementById(
+          "cashPayment"
+        );
+
+      mpesa.style.display =
+        method === "mpesa"
+          ? "block"
+          : "none";
+
+      cash.style.display =
+        method === "cash"
+          ? "block"
+          : "none";
+
+    }
+
+
+    /* =========================
+       PLACE WHATSAPP ORDER
+    ========================== */
+
+    function placeOrder() {
+
+      if (cart.length === 0) {
+
+        alert(
+          "Please add something to your cart first."
+        );
+
+        return;
+
+      }
+
+      const name =
+        document
+          .getElementById(
+            "customerName"
+          )
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById(
+            "customerPhone"
+          )
+          .value
+          .trim();
+
+      const location =
+        document
+          .getElementById(
+            "customerLocation"
+          )
+          .value
+          .trim();
+
+      const notes =
+        document
+          .getElementById(
+            "customerNotes"
+          )
+          .value
+          .trim();
+
+      const orderType =
+        document.getElementById(
+          "orderType"
+        ).value;
+
+      const paymentMethod =
+        document.getElementById(
+          "paymentMethod"
+        ).value;
+
+      if (
+        !name ||
+        !phone ||
+        !location
+      ) {
+
+        alert(
+          "Please enter your name, phone number and location."
+        );
+
+        return;
+
+      }
+
+      if (!paymentMethod) {
+
+        alert(
+          "Please select a payment method."
+        );
+
+        return;
+
+      }
+
+      const total =
+        cart.reduce(
+          (sum, item) =>
+            sum +
+            item.price *
+            item.quantity,
+          0
+        );
+
+
+      let message =
+        "🐔 KUKU HAVEN ORDER\n\n";
+
+
+      message +=
+        "Customer: " +
+        name +
+        "\n";
+
+      message +=
+        "Phone: " +
+        phone +
+        "\n";
+
+      message +=
+        "Location: " +
+        location +
+        "\n";
+
+      message +=
+        "Order Type: " +
+        orderType +
+        "\n";
+
+      message +=
+        "Payment: " +
+        (
+          paymentMethod === "mpesa"
+            ? "M-Pesa"
+            : "Cash on Delivery"
+        ) +
+        "\n\n";
+
+
+      message +=
+        "ORDER ITEMS:\n";
+
+
+      cart.forEach(item => {
+
+        message +=
+          item.name +
+          " × " +
+          item.quantity +
+          " = KSh " +
+          (
+            item.price *
+            item.quantity
+          ) +
+          "\n";
+
+      });
+
+
+      message +=
+        "\nFOOD ORDER TOTAL: KSh " +
+        total +
+        "\n";
+
+
+      if (
+        orderType === "Delivery"
+      ) {
+
+        message +=
+          "DELIVERY FEE: Charged separately according to location.\n";
+
+        message +=
+          "The delivery fee will be communicated before delivery.\n";
+
+      } else {
+
+        message +=
+          "PICKUP: No delivery fee.\n";
+
+      }
+
+
+      if (
+        paymentMethod === "mpesa"
+      ) {
+
+        message +=
+          "\nM-Pesa Till Number: 6485965\n";
+
+        message +=
+          "Till Name: JOAN WANGECI\n";
+
+        message +=
+          "Customer will send M-Pesa confirmation message.\n";
+
+      }
+
+
+      if (
+        paymentMethod === "cash"
+      ) {
+
+        message +=
+          "\nPayment will be made in cash on delivery.\n";
+
+      }
+
+
+      if (notes) {
+
+        message +=
+          "\nDelivery Instructions: " +
+          notes;
+
+      }
+
+
+      const whatsappNumber =
+        "254728065517";
+
+
+      const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+          message
+        );
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+
+      // Show thank-you confirmation
+      alert(
+        "Thank you for choosing Kuku Haven. Your support means the world to us, and we can't wait to serve you again. Munch it. Crunch it. Love it."
+      );
+
+    }
+
+
+    /* =========================
+       STAR RATING
+    ========================== */
+
+    function selectRating(
+      rating
+    ) {
+
+      selectedRating =
+        rating;
+
+      const stars =
+        document.querySelectorAll(
+          ".star"
+        );
+
+      stars.forEach(
+        (star, index) => {
+
+          if (
+            index < rating
+          ) {
+
+            star.classList.add(
+              "selected"
+            );
+
+          } else {
+
+            star.classList.remove(
+              "selected"
+            );
+
+          }
+
+        }
+      );
+
+
+      document.getElementById(
+        "ratingText"
+      ).textContent =
+        rating +
+        " out of 5 stars selected.";
+
+    }
+
+
+    /* =========================
+       SEND FEEDBACK TO WHATSAPP
+    ========================== */
+
+    function sendFeedback() {
+
+      const feedback =
+        document.getElementById(
+          "feedbackText"
+        ).value.trim();
+
+
+      if (
+        selectedRating === 0
+      ) {
+
+        alert(
+          "Please select a star rating from 1 to 5."
+        );
+
+        return;
+
+      }
+
+
+      if (!feedback) {
+
+        alert(
+          "Please write your feedback before sending."
+        );
+
+        return;
+
+      }
+
+
+      const whatsappNumber =
+        "254728065517";
+
+
+      let message =
+        "⭐ KUKU HAVEN FEEDBACK\n\n";
+
+
+      message +=
+        "Rating: " +
+        selectedRating +
+        "/5 stars\n\n";
+
+
+      message +=
+        "Feedback:\n" +
+        feedback;
+
+
+      const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+          message
+        );
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+
+
+    /* =========================
+       START MENU
+    ========================== */
+
+    showCategory(
+      "all",
+      document.querySelector(
+        ".categories button"
+      )
+    );
+
+    updateDeliveryNotice();
+
+  </script>
 
 </body>
 </html>
