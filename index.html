@@ -14,12 +14,12 @@ html{
   scroll-behavior:smooth;
 }
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#fff8f0;
   color:#222;
   padding-bottom:90px;
 }
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   background:#b91c1c;
   color:white;
@@ -62,7 +62,7 @@ header{
   font-size:13px;
   color:#fff3df;
 }
-/* OPENING HOURS */
+/* ================= HOURS ================= */
 .hours-box{
   background:white;
   padding:17px 15px;
@@ -95,7 +95,7 @@ header{
   background:#fee2e2;
   color:#b91c1c;
 }
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   padding:27px 18px;
   text-align:center;
@@ -109,7 +109,7 @@ header{
   color:#666;
   line-height:1.5;
 }
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
 .categories{
   display:flex;
   gap:8px;
@@ -137,7 +137,7 @@ header{
   background:#b91c1c;
   color:white;
 }
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
 #products{
   background:#fff8f0;
   min-height:300px;
@@ -165,22 +165,16 @@ header{
 .product-image{
   width:100%;
   height:165px;
-  object-fit:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff3df;
+  overflow:hidden;
+}
+.product-image svg{
+  width:100%;
+  height:100%;
   display:block;
-  background:#eee;
-}
-/* HOTDOG SIZE DIFFERENCE */
-.product.small-hotdog .product-image{
-  object-fit:contain;
-  padding:38px 55px;
-}
-.product.large-hotdog .product-image{
-  object-fit:contain;
-  padding:8px 10px;
-}
-/* THREE-PIECE FOOD */
-.product.three-food .product-image{
-  object-fit:cover;
 }
 .product-info{
   padding:13px;
@@ -208,7 +202,17 @@ header{
 .product button:active{
   transform:scale(.98);
 }
-/* DELIVERY NOTICE */
+/* ================= SIZE DIFFERENCES ================= */
+.small-hotdog .product-image svg{
+  transform:scale(.65);
+}
+.large-hotdog .product-image svg{
+  transform:scale(1.12);
+}
+.nugget-piece .product-image svg{
+  transform:scale(.9);
+}
+/* ================= DELIVERY ================= */
 .delivery-notice{
   max-width:900px;
   margin:10px auto 25px;
@@ -222,7 +226,7 @@ header{
 .delivery-notice strong{
   color:#9a6700;
 }
-/* THANK YOU */
+/* ================= THANK YOU ================= */
 .thank-you{
   display:none;
   background:white;
@@ -246,7 +250,7 @@ header{
   color:#8a5a00;
   font-weight:bold;
 }
-/* FEEDBACK */
+/* ================= FEEDBACK ================= */
 .feedback-section{
   background:white;
   padding:35px 18px;
@@ -303,7 +307,7 @@ header{
   font-size:16px;
   font-weight:bold;
 }
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:30px 15px;
@@ -312,7 +316,7 @@ footer{
   background:#fff8f0;
   line-height:1.7;
 }
-/* CART BAR */
+/* ================= CART ================= */
 .cart-bar{
   position:fixed;
   bottom:0;
@@ -335,7 +339,7 @@ footer{
   font-weight:bold;
   cursor:pointer;
 }
-/* MODAL */
+/* ================= MODAL ================= */
 .modal{
   display:none;
   position:fixed;
@@ -451,7 +455,7 @@ label{
   color:#777;
   padding:20px;
 }
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:600px){
   .logo{
     width:92px;
@@ -481,9 +485,6 @@ label{
   }
 }
 @media(max-width:380px){
-  .products{
-    grid-template-columns:1fr 1fr;
-  }
   .product-image{
     height:135px;
   }
@@ -494,7 +495,7 @@ label{
 </style>
 </head>
 <body>
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
 
 <img
@@ -513,7 +514,7 @@ MUNCH IT • CRUNCH IT • LOVE IT
 Fresh Chicken • Cooked Food • Snacks • Drinks
 </p>
 </header>
-<!-- OPENING HOURS -->
+<!-- ================= OPENING HOURS ================= -->
 <section class="hours-box">
 <div class="hours-title">
 Opening Hours
@@ -526,7 +527,7 @@ Sunday: 10:00 AM – 9:00 PM
 Checking...
 </div>
 </section>
-<!-- WELCOME -->
+<!-- ================= WELCOME ================= -->
 <section class="hero">
 <h2>
 Welcome to Kuku Haven
@@ -535,7 +536,7 @@ Welcome to Kuku Haven
 Choose your favourite food, add it to your cart and place your order.
 </p>
 </section>
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 <div class="categories">
 <button class="active" onclick="showCategory('all',this)">
 All
@@ -556,9 +557,9 @@ Drinks
 Eggs
 </button>
 </div>
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 <main id="products"></main>
-<!-- DELIVERY NOTICE -->
+<!-- ================= DELIVERY NOTICE ================= -->
 <section class="delivery-notice">
 
 Delivery Notice
@@ -567,7 +568,7 @@ separate from your food order total
 and depend on your delivery location.
 
 </section>
-<!-- THANK YOU -->
+<!-- ================= THANK YOU ================= -->
 <section class="thank-you" id="thankYou">
 <h2>
 Thank you for choosing Kuku Haven!
@@ -580,7 +581,7 @@ We can't wait to serve you again.
 Don't forget to rate us or send us your feedback.
 </div>
 </section>
-<!-- FEEDBACK -->
+<!-- ================= FEEDBACK ================= -->
 <section class="feedback-section" id="feedback">
 <div class="feedback-container">
 <h2>
@@ -610,7 +611,7 @@ onclick=“sendFeedback()”
 Send Feedback on WhatsApp
 </div>
 </section>
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer>
 <p>
 © 2026 Kuku Haven
@@ -619,7 +620,7 @@ Send Feedback on WhatsApp
 Fresh food. Great taste. Easy ordering.
 </p>
 </footer>
-<!-- CART BAR -->
+<!-- ================= CART BAR ================= -->
 <div class="cart-bar">
 <div>
 
@@ -635,7 +636,7 @@ KSh <span id="cartTotal">0</span>
 View Cart
 </button>
 </div>
-<!-- CART MODAL -->
+<!-- ================= CART MODAL ================= -->
 <div class="modal" id="cartModal">
 <div class="modal-content">
 <button class="close" onclick="closeCart()">
@@ -705,7 +706,7 @@ Delivery fee is charged separately from the food order total
 and depends on your delivery location.
 
 </div>
-<!-- PAYMENT -->
+<!-- ================= PAYMENT ================= -->
 <div class="payment-section">
 <h3>
 Mode of Payment
@@ -765,357 +766,537 @@ Pay in cash when your order is delivered.
 </p>
 </div>
 </div>
-
-<button
-class=“primary”
-onclick=“placeOrder()”
-
+<button class="primary" onclick="placeOrder()">
 Place Order on WhatsApp
+</button>
 </div>
 </div>
 <script>
-/* WHATSAPP */
+/* =====================================================
+   WHATSAPP
+===================================================== */
 const whatsappNumber = "254728065517";
-/*
-=========================================================
-SIMPLE FOOD IMAGES
-These are intentionally simple food photographs.
-No KFC branding.
-No restaurant branding.
-No emojis.
-=========================================================
-*/
-const images = {
-/* PLAIN CHIPS */
-chips:
-"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85",
-/* CHIPS + CHICKEN */
-chipsChicken:
-"https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN */
-chicken:
-"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN PIECES */
-chickenPiece:
-"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN STRIPS */
-chickenStrips:
-"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85",
-/* WINGS */
-wings:
-"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=85",
-/* NUGGETS */
-nuggets:
-"https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=800&q=85",
-/* THREE SMOKIES */
-smokies:
-"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=800&q=85",
-/* THREE SAUSAGES */
-sausages:
-"https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?auto=format&fit=crop&w=800&q=85",
-/* THREE SAMOSAS */
-samosas:
-"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=85",
-/* HOTDOG */
-hotdog:
-"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=800&q=85",
-/* FRESH WHOLE CHICKEN */
-freshChicken:
-"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN BREAST */
-breast:
-"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN THIGHS */
-thigh:
-"https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=85",
-/* DRUMSTICKS */
-drumstick:
-"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=85",
-/* CHICKEN FEET */
-feet:
-"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
-/* GIZZARDS */
-gizzard:
-"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=85",
-/* LIVER */
-liver:
-"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85",
-/* KENYEJI CHICKEN */
-kienyeji:
-"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=85",
-/* EGGS */
-eggs:
-"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=800&q=85",
-/* CANNED SODA */
-soda:
-"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=800&q=85",
-/* GLASS OF JUICE */
-juice:
-"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=85",
-/* YOGURT */
-yogurt:
-"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=85"
+/* =====================================================
+   INLINE FOOD PICTURES
+   NO EXTERNAL FOOD IMAGE LINKS
+===================================================== */
+function foodPicture(type){
+const pictures = {
+chips: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="125" ry="28" fill="#d9d9d9"/>
+<path d="M90 145 Q200 125 310 145 L285 230 Q200 255 115 230Z" fill="#ffffff"/>
+<path d="M105 150 Q200 135 295 150" fill="none" stroke="#ddd" stroke-width="5"/>
+<g fill="#f5c542" stroke="#d99b20" stroke-width="3">
+<rect x="125" y="78" width="22" height="105" rx="7" transform="rotate(-10 125 78)"/>
+<rect x="150" y="63" width="22" height="120" rx="7" transform="rotate(-4 150 63)"/>
+<rect x="177" y="70" width="22" height="115" rx="7"/>
+<rect x="205" y="58" width="22" height="125" rx="7" transform="rotate(4 205 58)"/>
+<rect x="233" y="70" width="22" height="115" rx="7" transform="rotate(8 233 70)"/>
+<rect x="260" y="84" width="22" height="100" rx="7" transform="rotate(12 260 84)"/>
+<rect x="138" y="93" width="20" height="105" rx="7" transform="rotate(8 138 93)"/>
+<rect x="245" y="90" width="20" height="105" rx="7" transform="rotate(-7 245 90)"/>
+</g>
+</svg>`,
+chipsChicken: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="240" rx="135" ry="25" fill="#ddd"/>
+<path d="M65 150 Q200 125 335 150 L305 230 Q200 250 95 230Z" fill="#fff"/>
+<g fill="#f5c542" stroke="#d99b20" stroke-width="3">
+<rect x="100" y="100" width="18" height="100" rx="6" transform="rotate(-8 100 100)"/>
+<rect x="125" y="82" width="18" height="115" rx="6"/>
+<rect x="150" y="90" width="18" height="110" rx="6"/>
+<rect x="175" y="80" width="18" height="120" rx="6"/>
+<rect x="200" y="90" width="18" height="110" rx="6"/>
+</g>
+<path d="M235 120 C275 95 315 125 302 165 C292 195 260 208 235 190 C215 175 215 140 235 120Z" fill="#b96b35"/>
+<path d="M255 112 Q285 120 295 145" fill="none" stroke="#7d431f" stroke-width="8"/>
+<circle cx="270" cy="140" r="5" fill="#f4c95d"/>
+</svg>`,
+smokie: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="135" ry="24" fill="#ddd"/>
+<g stroke="#6f321e" stroke-width="8" stroke-linecap="round">
+<path d="M80 180 C120 105 150 105 190 180"/>
+<path d="M130 195 C170 120 200 120 240 195"/>
+<path d="M185 180 C225 105 260 105 300 180"/>
+</g>
+<g fill="#a84b29" stroke="#71321e" stroke-width="4">
+<ellipse cx="125" cy="140" rx="32" ry="58" transform="rotate(25 125 140)"/>
+<ellipse cx="200" cy="135" rx="32" ry="60" transform="rotate(18 200 135)"/>
+<ellipse cx="275" cy="140" rx="32" ry="58" transform="rotate(-18 275 140)"/>
+</g>
+<g stroke="#d88b4b" stroke-width="5">
+<path d="M105 125 L140 145"/>
+<path d="M180 120 L215 145"/>
+<path d="M260 125 L290 145"/>
+</g>
+</svg>`,
+sausage: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="135" ry="24" fill="#ddd"/>
+<g fill="#c56a35" stroke="#7f3b20" stroke-width="5">
+<ellipse cx="120" cy="150" rx="30" ry="75" transform="rotate(12 120 150)"/>
+<ellipse cx="200" cy="150" rx="30" ry="75"/>
+<ellipse cx="280" cy="150" rx="30" ry="75" transform="rotate(-12 280 150)"/>
+</g>
+<g stroke="#edaa61" stroke-width="5">
+<path d="M100 130 L138 145"/>
+<path d="M180 125 L220 145"/>
+<path d="M260 145 L300 130"/>
+</g>
+</svg>`,
+samosa: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#d89b35" stroke="#9d631d" stroke-width="5">
+<path d="M75 200 L145 75 L205 205 Z"/>
+<path d="M150 205 L220 75 L280 205 Z"/>
+<path d="M225 205 L295 75 L355 205 Z"/>
+</g>
+<g stroke="#f0c269" stroke-width="5">
+<path d="M110 175 L145 110"/>
+<path d="M185 175 L220 110"/>
+<path d="M260 175 L295 110"/>
+</g>
+</svg>`,
+hotdog: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="145" ry="25" fill="#ddd"/>
+<path d="M70 155 Q200 105 330 155 L310 205 Q200 235 90 205Z" fill="#e7b66a" stroke="#b77a35" stroke-width="5"/>
+<path d="M90 160 Q200 120 310 160 L295 192 Q200 215 105 192Z" fill="#c95d2c" stroke="#84351c" stroke-width="5"/>
+<path d="M105 148 Q200 110 295 148" fill="none" stroke="#f7d56a" stroke-width="8"/>
+<path d="M120 170 Q200 140 280 170" fill="none" stroke="#f0c85c" stroke-width="6"/>
+</svg>`,
+nuggets: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#d79b45" stroke="#9c6523" stroke-width="4">
+<path d="M105 130 Q130 95 160 120 L175 155 Q165 190 130 185 L105 160Z"/>
+<path d="M180 110 Q210 85 235 115 L245 150 Q230 180 195 175 L175 145Z"/>
+<path d="M250 135 Q280 100 310 125 L325 160 Q315 190 280 185 L255 165Z"/>
+<path d="M145 185 Q170 155 200 180 L210 210 Q185 230 155 215Z"/>
+</g>
+<g fill="#f2c16b">
+<circle cx="135" cy="145" r="6"/>
+<circle cx="210" cy="130" r="6"/>
+<circle cx="285" cy="150" r="6"/>
+<circle cx="175" cy="200" r="6"/>
+</g>
+</svg>`,
+burger: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="22" fill="#ddd"/>
+<path d="M85 135 Q200 65 315 135 L300 165 L100 165Z" fill="#d79a45" stroke="#8d5b20" stroke-width="5"/>
+<circle cx="145" cy="115" r="5" fill="#fff"/>
+<circle cx="200" cy="100" r="5" fill="#fff"/>
+<circle cx="255" cy="115" r="5" fill="#fff"/>
+<rect x="95" y="160" width="210" height="35" rx="8" fill="#63361f"/>
+<path d="M100 160 Q200 185 300 160 L300 175 Q200 200 100 175Z" fill="#f3c53e"/>
+<path d="M100 195 L300 195 L285 225 Q200 240 115 225Z" fill="#d78a35"/>
+</svg>`,
+chicken: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<path d="M125 195 C75 155 95 85 155 90 C185 55 250 75 260 115 C315 110 325 175 275 200 C225 225 160 225 125 195Z" fill="#c9793b" stroke="#82411e" stroke-width="6"/>
+<path d="M250 150 Q300 130 315 165" fill="none" stroke="#82411e" stroke-width="14" stroke-linecap="round"/>
+<circle cx="240" cy="120" r="8" fill="#222"/>
+<path d="M250 105 L265 92 L272 112" fill="#d99b25"/>
+</svg>`,
+breast: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#e2a067" stroke="#9b592e" stroke-width="5">
+<path d="M95 170 C100 100 170 75 210 125 C230 155 195 210 140 205 C110 202 92 190 95 170Z"/>
+<path d="M195 165 C210 100 275 90 305 135 C325 170 295 205 245 205 C215 200 190 185 195 165Z"/>
+</g>
+</svg>`,
+thigh: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#c9783b" stroke="#82411e" stroke-width="6">
+<path d="M105 180 C75 145 90 95 140 85 C190 75 220 120 195 160 C175 195 130 205 105 180Z"/>
+<path d="M205 180 C175 145 195 95 245 90 C295 85 320 130 292 170 C270 200 230 205 205 180Z"/>
+</g>
+</svg>`,
+leg: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#c9793b" stroke="#82411e" stroke-width="6">
+<path d="M130 85 C180 90 200 140 175 180 L145 210 L115 190 L135 150 C145 130 120 110 130 85Z"/>
+<path d="M235 90 C285 100 300 145 270 180 L245 210 L215 190 L240 150 C250 130 225 115 235 90Z"/>
+</g>
+<g stroke="#f0ae62" stroke-width="5">
+<path d="M130 120 L165 145"/>
+<path d="M235 125 L270 150"/>
+</g>
+</svg>`,
+wings: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#c7793a" stroke="#82411e" stroke-width="6">
+<path d="M85 170 C75 125 115 90 155 115 C180 130 175 175 145 195 C115 210 90 195 85 170Z"/>
+<path d="M150 160 C145 115 185 90 220 115 C245 135 235 175 205 190 C175 200 155 185 150 160Z"/>
+<path d="M220 165 C220 120 260 100 295 125 C320 145 310 180 280 195 C250 205 225 190 220 165Z"/>
+</g>
+</svg>`,
+drumstick: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#c7793a" stroke="#82411e" stroke-width="6">
+<path d="M130 80 C180 90 200 140 175 180 L150 215 L115 190 L140 150 C150 130 115 110 130 80Z"/>
+<path d="M230 80 C280 90 300 140 275 180 L250 215 L215 190 L240 150 C250 130 215 110 230 80Z"/>
+</g>
+</svg>`,
+feet: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#d9a06a" stroke="#8c552d" stroke-width="5">
+<path d="M130 185 L100 125 L120 115 L145 150 L145 105 L165 105 L165 155 L185 120 L200 130 L170 185Z"/>
+<path d="M230 185 L205 130 L225 120 L245 155 L245 110 L265 110 L265 155 L285 125 L300 138 L270 185Z"/>
+</g>
+</svg>`,
+gizzard: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<g fill="#8b573d" stroke="#5c3829" stroke-width="5">
+<ellipse cx="125" cy="145" rx="48" ry="60" transform="rotate(-15 125 145)"/>
+<ellipse cx="200" cy="160" rx="48" ry="60" transform="rotate(12 200 160)"/>
+<ellipse cx="275" cy="145" rx="48" ry="60" transform="rotate(-10 275 145)"/>
+</g>
+</svg>`,
+liver: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<path d="M80 165 C100 100 170 80 215 110 C245 85 310 105 320 155 C315 205 250 215 205 190 C160 220 95 210 80 165Z" fill="#7b3028" stroke="#4f211d" stroke-width="6"/>
+</svg>`,
+kienyeji: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
+<ellipse cx="195" cy="150" rx="80" ry="65" fill="#8c633f" stroke="#513722" stroke-width="6"/>
+<circle cx="265" cy="105" r="45" fill="#8c633f" stroke="#513722" stroke-width="6"/>
+<circle cx="275" cy="98" r="7" fill="#222"/>
+<path d="M300 110 L335 125 L300 138Z" fill="#d99b25"/>
+<path d="M275 65 Q285 40 295 65 Q310 40 315 70" fill="#b91c1c"/>
+<path d="M150 205 L140 235 M205 210 L200 240" stroke="#d99b25" stroke-width="10"/>
+</svg>`,
+eggs: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="230" rx="125" ry="25" fill="#ddd"/>
+<path d="M90 150 L310 150 L290 215 Q200 245 110 215Z" fill="#d6a34d" stroke="#9a6825" stroke-width="5"/>
+<g fill="#fffaf0" stroke="#cdbd9d" stroke-width="4">
+<ellipse cx="130" cy="135" rx="30" ry="42"/>
+<ellipse cx="180" cy="120" rx="30" ry="42"/>
+<ellipse cx="230" cy="120" rx="30" ry="42"/>
+<ellipse cx="280" cy="135" rx="30" ry="42"/>
+<ellipse cx="155" cy="160" rx="30" ry="42"/>
+<ellipse cx="205" cy="155" rx="30" ry="42"/>
+<ellipse cx="255" cy="160" rx="30" ry="42"/>
+</g>
+</svg>`,
+juice: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="240" rx="80" ry="18" fill="#ddd"/>
+<path d="M135 70 L265 70 L250 225 Q200 245 150 225Z" fill="#f2a52d" fill-opacity=".95" stroke="#b86c15" stroke-width="5"/>
+<path d="M155 100 L245 100 L238 205 Q200 220 162 205Z" fill="#f6b83d"/>
+<path d="M220 70 L250 30" stroke="#b86c15" stroke-width="8" stroke-linecap="round"/>
+<circle cx="180" cy="125" r="15" fill="#ffe39a"/>
+<circle cx="215" cy="145" r="12" fill="#ffe39a"/>
+</svg>`,
+soda: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="240" rx="75" ry="18" fill="#ddd"/>
+<path d="M140 70 L260 70 L245 225 Q200 240 155 225Z" fill="#d71920" stroke="#8f1015" stroke-width="5"/>
+<rect x="150" y="120" width="100" height="70" rx="12" fill="#fff"/>
+<text x="200" y="165" text-anchor="middle" font-size="25" font-weight="bold" fill="#d71920">SODA</text>
+<path d="M145 70 Q200 50 255 70" fill="#eee" stroke="#aaa" stroke-width="5"/>
+</svg>`,
+yogurt: `
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fff3df"/>
+<ellipse cx="200" cy="235" rx="80" ry="18" fill="#ddd"/>
+<path d="M125 100 L275 100 L255 220 Q200 240 145 220Z" fill="#fff" stroke="#bbb" stroke-width="5"/>
+<path d="M125 100 Q200 75 275 100 L275 125 Q200 105 125 125Z" fill="#f2b6c5"/>
+<circle cx="180" cy="155" r="20" fill="#e89aaa"/>
+<circle cx="220" cy="155" r="20" fill="#e89aaa"/>
+<text x="200" y="195" text-anchor="middle" font-size="20" font-weight="bold" fill="#b91c1c">YOGURT</text>
+</svg>`
 };
-/* PRODUCTS */
+return pictures[type] || pictures.chips;
+}
+/* =====================================================
+   PRODUCTS
+===================================================== */
 const products = [
 /* COOKED FOOD */
 {
 name:"Chips",
 price:100,
 category:"cooked",
-image:images.chips
+picture:"chips"
 },
 {
-name:"Chips + ¼ Kuku",
+name:"Chips / ¼ Kuku",
 price:280,
 category:"cooked",
-image:images.chipsChicken
+picture:"chipsChicken"
 },
 {
-name:"Chips + ½ Kuku",
+name:"Chips / ½ Kuku",
 price:460,
 category:"cooked",
-image:images.chipsChicken
+picture:"chipsChicken"
 },
 {
-name:"Chips + 1 Piece Chicken",
+name:"Chips / 1 Piece",
 price:220,
 category:"cooked",
-image:images.chipsChicken
+picture:"chipsChicken"
 },
 {
-name:"Chicken Strips + Chips",
+name:"Chips / Chicken Strips",
 price:200,
 category:"cooked",
-image:images.chickenStrips
+picture:"chipsChicken"
 },
 {
 name:"Burger",
 price:150,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85"
+picture:"burger"
 },
 {
 name:"Chicken Wings",
 price:250,
 category:"cooked",
-image:images.wings
+picture:"wings"
 },
 {
-name:"Chicken Nuggets",
-price:200,
+name:"Nuggets - 1 Piece",
+price:25,
 category:"cooked",
-image:images.nuggets
+picture:"nuggets",
+className:"nugget-piece"
 },
 /* SNACKS */
 {
-name:"3 Smokies",
-price:120,
+name:"Smokie",
+price:40,
 category:"snacks",
-className:"three-food",
-image:images.smokies
+picture:"smokie"
 },
 {
-name:"3 Sausages",
-price:180,
+name:"Sausage",
+price:60,
 category:"snacks",
-className:"three-food",
-image:images.sausages
+picture:"sausage"
 },
 {
-name:"3 Samosas",
-price:120,
+name:"Samosa",
+price:40,
 category:"snacks",
-className:"three-food",
-image:images.samosas
+picture:"samosa"
 },
 {
 name:"Small Hotdog",
 price:80,
 category:"snacks",
-className:"small-hotdog",
-image:images.hotdog
+picture:"hotdog",
+className:"small-hotdog"
 },
 {
 name:"Large Hotdog",
 price:100,
 category:"snacks",
-className:"large-hotdog",
-image:images.hotdog
+picture:"hotdog",
+className:"large-hotdog"
 },
 {
 name:"Nuggets - 1kg",
 price:750,
 category:"snacks",
-image:images.nuggets
+picture:"nuggets"
 },
 {
 name:"Nuggets - 500g",
 price:360,
 category:"snacks",
-image:images.nuggets
+picture:"nuggets"
 },
 {
 name:"Nuggets - 250g",
 price:190,
 category:"snacks",
-image:images.nuggets
+picture:"nuggets"
 },
 {
 name:"Beef Smokies - Pack",
 price:440,
 category:"snacks",
-image:images.smokies
+picture:"smokie"
 },
 {
 name:"Chicken Smokies - Pack",
 price:440,
 category:"snacks",
-image:images.smokies
+picture:"smokie"
 },
 {
 name:"Beef Sausages - Pack",
 price:600,
 category:"snacks",
-image:images.sausages
+picture:"sausage"
 },
 {
 name:"Chicken Sausages - Pack",
 price:580,
 category:"snacks",
-image:images.sausages
+picture:"sausage"
 },
 /* FRESH CHICKEN */
 {
 name:"Capon (Broiler Kuku) - 1kg",
 price:500,
 category:"fresh",
-image:images.freshChicken
+picture:"chicken"
 },
 {
 name:"Boneless Breast - 1kg",
 price:640,
 category:"fresh",
-image:images.breast
+picture:"breast"
 },
 {
-name:"Chicken Thighs - 1kg",
+name:"Thighs - 1kg",
 price:490,
 category:"fresh",
-image:images.thigh
+picture:"thigh"
 },
 {
-name:"Chicken Legs - 1kg",
+name:"Legs - 1kg",
 price:510,
 category:"fresh",
-image:images.drumstick
+picture:"leg"
 },
 {
-name:"Chicken Wings - 1kg",
+name:"Wings - 1kg",
 price:540,
 category:"fresh",
-image:images.wings
+picture:"wings"
 },
 {
-name:"Chicken Drumsticks - 1kg",
+name:"Drumsticks - 1kg",
 price:640,
 category:"fresh",
-image:images.drumstick
-},
-{
-name:"Chicken Feet - 1kg",
-price:350,
-category:"fresh",
-image:images.feet
+picture:"drumstick"
 },
 {
 name:"Gizzards - 1kg",
 price:500,
 category:"fresh",
-image:images.gizzard
+picture:"gizzard"
 },
 {
 name:"Chicken Liver - 1kg",
 price:300,
 category:"fresh",
-image:images.liver
+picture:"liver"
 },
 {
 name:"Kienyeji Kuku - Ex Layers",
 price:700,
 category:"fresh",
-image:images.kienyeji
+picture:"kienyeji"
 },
 {
 name:"Kienyeji Kuku - Improved (Mwera)",
 price:1000,
 category:"fresh",
-image:images.kienyeji
+picture:"kienyeji"
 },
 {
 name:"Kienyeji Kuku - Jogoo",
 price:1500,
 category:"fresh",
-image:images.kienyeji
+picture:"kienyeji"
+},
+{
+name:"Chicken Feet - 1kg",
+price:350,
+category:"fresh",
+picture:"feet"
 },
 /* EGGS */
 {
 name:"Kienyeji Eggs - Tray",
 price:600,
 category:"eggs",
-image:images.eggs
+picture:"eggs"
 },
 {
 name:"Grade Eggs - Tray",
 price:480,
 category:"eggs",
-image:images.eggs
+picture:"eggs"
 },
 /* DRINKS */
 {
 name:"Fresh Fruit Juice",
 price:100,
 category:"drinks",
-image:images.juice
+picture:"juice"
 },
 {
-name:"Coca-Cola",
+name:"Small Soda",
 price:50,
 category:"drinks",
-image:images.soda
+picture:"soda"
 },
 {
-name:"Fanta",
-price:50,
-category:"drinks",
-image:images.soda
-},
-{
-name:"Sprite",
-price:50,
-category:"drinks",
-image:images.soda
-},
-{
-name:"Soda - Large",
+name:"Large Soda",
 price:80,
 category:"drinks",
-image:images.soda
+picture:"soda"
 },
 {
 name:"Yogurt",
 price:100,
 category:"drinks",
-image:images.yogurt
+picture:"yogurt"
 }
 ];
-/* CART */
+/* =====================================================
+   CART
+===================================================== */
 let cart=[];
 let selectedRating=0;
-/* OPENING HOURS */
+/* =====================================================
+   OPENING HOURS - KENYA TIME
+===================================================== */
 function updateOpeningStatus(){
-const now = new Date();
-const kenyaTime = new Intl.DateTimeFormat(
+const now=new Date();
+const parts=new Intl.DateTimeFormat(
 "en-KE",
 {
 timeZone:"Africa/Nairobi",
@@ -1128,7 +1309,7 @@ hour12:false
 let weekday="";
 let hour=0;
 let minute=0;
-kenyaTime.forEach(part=>{
+parts.forEach(part=>{
 if(part.type==="weekday"){
 weekday=part.value;
 }
@@ -1142,8 +1323,7 @@ minute=parseInt(part.value);
 if(hour===24){
 hour=0;
 }
-const currentMinutes =
-hour*60 + minute;
+const currentMinutes=(hour*60)+minute;
 let opening;
 let closing;
 if(weekday==="Sun"){
@@ -1153,8 +1333,7 @@ closing=21*60;
 opening=9*60;
 closing=22*60;
 }
-const status =
-document.getElementById("openStatus");
+const status=document.getElementById("openStatus");
 if(
 currentMinutes>=opening &&
 currentMinutes<closing
@@ -1168,7 +1347,9 @@ status.className="status closed";
 }
 updateOpeningStatus();
 setInterval(updateOpeningStatus,60000);
-/* CATEGORY TITLES */
+/* =====================================================
+   CATEGORY TITLES
+===================================================== */
 function categoryTitle(category){
 const titles={
 cooked:"Cooked Food",
@@ -1179,7 +1360,9 @@ eggs:"Eggs"
 };
 return titles[category] || "Menu";
 }
-/* DISPLAY CATEGORY */
+/* =====================================================
+   DISPLAY CATEGORY
+===================================================== */
 function showCategory(category,button){
 document
 .querySelectorAll(".categories button")
@@ -1189,9 +1372,8 @@ btn.classList.remove("active");
 if(button){
 button.classList.add("active");
 }
-const container =
-document.getElementById("products");
-const filtered =
+const container=document.getElementById("products");
+const filtered=
 category==="all"
 ?products
 :products.filter(
@@ -1208,23 +1390,14 @@ category==="all"
 </h2>
 <div class="products">
 ${filtered.map(product=>{
-const index =
-products.indexOf(product);
-const specialClass =
-product.className
-?
-product.className
-:
-"";
+const index=products.indexOf(product);
+const specialClass=
+product.className || "";
 return`
 <div class="product ${specialClass}">
-<img
-class="product-image"
-src="${product.image}"
-alt="${product.name}"
-loading="lazy"
-onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80';"
->
+<div class="product-image">
+${foodPicture(product.picture)}
+</div>
 <div class="product-info">
 <h3>
 ${product.name}
@@ -1243,10 +1416,12 @@ Add to Cart
 </section>
 `;
 }
-/* ADD TO CART */
+/* =====================================================
+   ADD TO CART
+===================================================== */
 function addToCart(index){
 const product=products[index];
-const existing =
+const existing=
 cart.find(
 item=>item.name===product.name
 );
@@ -1261,54 +1436,45 @@ quantity:1
 }
 updateCart();
 }
-/* UPDATE CART */
+/* =====================================================
+   UPDATE CART
+===================================================== */
 function updateCart(){
-const count =
+const count=
 cart.reduce(
-(total,item)=>
-total+item.quantity,
+(total,item)=>total+item.quantity,
 0
 );
-const total =
+const total=
 cart.reduce(
 (sum,item)=>
-sum+
-item.price*
-item.quantity,
+sum+(item.price*item.quantity),
 0
 );
-document
-.getElementById("cartCount")
-.textContent=count;
-document
-.getElementById("cartTotal")
-.textContent=total;
-document
-.getElementById("modalTotal")
-.textContent=total;
+document.getElementById("cartCount").textContent=count;
+document.getElementById("cartTotal").textContent=total;
+document.getElementById("modalTotal").textContent=total;
 renderCart();
 }
-/* RENDER CART */
+/* =====================================================
+   RENDER CART
+===================================================== */
 function renderCart(){
-const container =
-document.getElementById("cartItems");
+const container=document.getElementById("cartItems");
 if(cart.length===0){
 container.innerHTML=
 '<div class="empty">Your cart is empty.</div>';
 return;
 }
-container.innerHTML =
-cart.map(
-(item,index)=>`
+container.innerHTML=
+cart.map((item,index)=>`
 <div class="cart-item">
 <div>
 <strong>
 ${item.name}
 </strong>
 <br>
-KSh ${item.price}
-×
-${item.quantity}
+KSh ${item.price} × ${item.quantity}
 <br>
 <strong>
 KSh ${item.price*item.quantity}
@@ -1326,148 +1492,112 @@ ${item.quantity}
 </button>
 </div>
 </div>
-`
-).join("");
+`).join("");
 }
-/* CHANGE QUANTITY */
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
 function changeQuantity(index,amount){
-cart[index].quantity += amount;
+cart[index].quantity+=amount;
 if(cart[index].quantity<=0){
 cart.splice(index,1);
 }
 updateCart();
 }
-/* OPEN CART */
+/* =====================================================
+   OPEN CART
+===================================================== */
 function openCart(){
-document
-.getElementById("cartModal")
-.style.display="block";
+document.getElementById("cartModal").style.display="block";
 updateCart();
 }
-/* CLOSE CART */
+/* =====================================================
+   CLOSE CART
+===================================================== */
 function closeCart(){
-document
-.getElementById("cartModal")
-.style.display="none";
+document.getElementById("cartModal").style.display="none";
 }
-/* ORDER TYPE */
+/* =====================================================
+   ORDER TYPE
+===================================================== */
 function handleOrderType(){
-const type =
-document.getElementById("orderType").value;
-const location =
-document.getElementById("customerLocation");
+const type=document.getElementById("orderType").value;
+const location=document.getElementById("customerLocation");
 if(type==="Pickup"){
-location.placeholder=
-"Pickup location / branch";
+location.placeholder="Pickup location / branch";
 }else{
-location.placeholder=
-"e.g. Utawala, Nairobi";
+location.placeholder="e.g. Utawala, Nairobi";
 }
 }
-/* PAYMENT DETAILS */
+/* =====================================================
+   PAYMENT
+===================================================== */
 function showPaymentDetails(){
-const method =
-document.getElementById("paymentMethod").value;
-document
-.getElementById("mpesaPayment")
-.style.display =
-method==="mpesa"
-?"block"
-:"none";
-document
-.getElementById("cashPayment")
-.style.display =
-method==="cash"
-?"block"
-:"none";
+const method=document.getElementById("paymentMethod").value;
+document.getElementById("mpesaPayment").style.display=
+method==="mpesa" ? "block" : "none";
+document.getElementById("cashPayment").style.display=
+method==="cash" ? "block" : "none";
 }
-/* PLACE ORDER */
+/* =====================================================
+   PLACE ORDER
+===================================================== */
 function placeOrder(){
 if(cart.length===0){
-alert(
-"Please add something to your cart first."
-);
+alert("Please add something to your cart first.");
 return;
 }
-const name =
-document
-.getElementById("customerName")
-.value
-.trim();
-const phone =
-document
-.getElementById("customerPhone")
-.value
-.trim();
-const location =
-document
-.getElementById("customerLocation")
-.value
-.trim();
-const notes =
-document
-.getElementById("customerNotes")
-.value
-.trim();
-const orderType =
-document
-.getElementById("orderType")
-.value;
-const paymentMethod =
-document
-.getElementById("paymentMethod")
-.value;
+const name=
+document.getElementById("customerName")
+.value.trim();
+const phone=
+document.getElementById("customerPhone")
+.value.trim();
+const location=
+document.getElementById("customerLocation")
+.value.trim();
+const notes=
+document.getElementById("customerNotes")
+.value.trim();
+const orderType=
+document.getElementById("orderType").value;
+const paymentMethod=
+document.getElementById("paymentMethod").value;
 if(!name || !phone){
-alert(
-"Please enter your name and phone number."
-);
+alert("Please enter your name and phone number.");
 return;
 }
 if(!location){
-alert(
-"Please enter your delivery or pickup location."
-);
+alert("Please enter your delivery or pickup location.");
 return;
 }
 if(!paymentMethod){
-alert(
-"Please select a payment method."
-);
+alert("Please select a payment method.");
 return;
 }
-const total =
+const total=
 cart.reduce(
 (sum,item)=>
-sum+
-item.price*
-item.quantity,
+sum+(item.price*item.quantity),
 0
 );
-let message =
+let message=
 "KUKU HAVEN ORDER\n\n";
-message +=
-"Customer: "+
-name+
-"\n";
-message +=
-"Phone: "+
-phone+
-"\n";
-message +=
+message+=
+"Customer: "+name+"\n";
+message+=
+"Phone: "+phone+"\n";
+message+=
 (
 orderType==="Delivery"
 ?
 "Delivery Location: "
 :
 "Pickup Location: "
-)+
-location+
-"\n";
-message +=
-"Order Type: "+
-orderType+
-"\n";
-message +=
+)+location+"\n";
+message+=
+"Order Type: "+orderType+"\n";
+message+=
 "Payment: "+
 (
 paymentMethod==="mpesa"
@@ -1477,62 +1607,51 @@ paymentMethod==="mpesa"
 "Cash on Delivery"
 )+
 "\n\n";
-message +=
-"ORDER ITEMS:\n";
+message+="ORDER ITEMS:\n";
 cart.forEach(item=>{
-message +=
+message+=
 item.name+
 " x "+
 item.quantity+
 " = KSh "+
-(
-item.price*
-item.quantity
-)+
+(item.price*item.quantity)+
 "\n";
 });
-message +=
-"\nFOOD TOTAL: KSh "+
-total+
-"\n";
+message+=
+"\nFOOD TOTAL: KSh "+total+"\n";
 if(orderType==="Delivery"){
-message +=
+message+=
 "\nDELIVERY FEE: CHARGED SEPARATELY\n";
-message +=
+message+=
 "Delivery fee depends on the delivery location.\n";
 }
 if(paymentMethod==="mpesa"){
-message +=
+message+=
 "\nM-Pesa Till Number: 6485965\n";
-message +=
+message+=
 "Till Name: JOAN WANGECI\n";
-message +=
+message+=
 "Customer will send M-Pesa confirmation message.\n";
 }
 if(paymentMethod==="cash"){
-message +=
+message+=
 "\nPayment will be made in cash on delivery.\n";
 }
 if(notes){
-message +=
+message+=
 "\nDelivery Instructions: "+
 notes+
 "\n";
 }
-message +=
+message+=
 "\nThank you for choosing Kuku Haven!";
-const url =
+const url=
 "https://wa.me/"+
 whatsappNumber+
 "?text="+
 encodeURIComponent(message);
-window.open(
-url,
-"_blank"
-);
-document
-.getElementById("thankYou")
-.style.display="block";
+window.open(url,"_blank");
+document.getElementById("thankYou").style.display="block";
 closeCart();
 setTimeout(()=>{
 document
@@ -1542,13 +1661,14 @@ behavior:"smooth"
 });
 },500);
 }
-/* RATING */
+/* =====================================================
+   RATING
+===================================================== */
 function selectRating(rating){
 selectedRating=rating;
 document
 .querySelectorAll(".star")
-.forEach(
-(star,index)=>{
+.forEach((star,index)=>{
 if(index<rating){
 star.classList.add("selected");
 }else{
@@ -1556,65 +1676,55 @@ star.classList.remove("selected");
 }
 });
 }
-/* FEEDBACK */
+/* =====================================================
+   FEEDBACK
+===================================================== */
 function sendFeedback(){
-const feedback =
-document
-.getElementById("feedbackText")
-.value
-.trim();
+const feedback=
+document.getElementById("feedbackText")
+.value.trim();
 if(selectedRating===0){
-alert(
-"Please select a star rating first."
-);
+alert("Please select a star rating first.");
 return;
 }
 if(!feedback){
-alert(
-"Please tell us about your experience."
-);
+alert("Please tell us about your experience.");
 return;
 }
-const stars =
-"⭐".repeat(selectedRating);
-let message =
+const stars="⭐".repeat(selectedRating);
+let message=
 "KUKU HAVEN CUSTOMER FEEDBACK\n\n";
-message +=
-"Rating: "+
-stars+
-"\n\n";
-message +=
+message+=
+"Rating: "+stars+"\n\n";
+message+=
 "Experience:\n"+
 feedback+
 "\n\n";
-message +=
+message+=
 "Thank you for choosing Kuku Haven!";
-const url =
+const url=
 "https://wa.me/"+
 whatsappNumber+
 "?text="+
 encodeURIComponent(message);
-window.open(
-url,
-"_blank"
-);
+window.open(url,"_blank");
 }
-/* CLOSE MODAL OUTSIDE */
-window.addEventListener(
-"click",
-function(event){
-const modal =
-document.getElementById("cartModal");
+/* =====================================================
+   CLOSE MODAL OUTSIDE
+===================================================== */
+window.addEventListener("click",function(event){
+const modal=document.getElementById("cartModal");
 if(event.target===modal){
 closeCart();
 }
 });
-/* START MENU */
+/* =====================================================
+   START MENU
+===================================================== */
 showCategory(
 "all",
-document.querySelector(
-".categories button"
-));
+document.querySelector(".categories button")
+);
 </script>
 </body>
 </html>
