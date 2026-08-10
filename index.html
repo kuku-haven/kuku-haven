@@ -17,13 +17,13 @@ body{
   font-family:Arial, sans-serif;
   background:#fff8f0;
   color:#222;
-  padding-bottom:90px;
+  padding-bottom:110px;
 }
 /* ================= HEADER ================= */
 header{
   background:#b91c1c;
   color:white;
-  padding:16px 15px 22px;
+  padding:20px 15px 25px;
   text-align:center;
   position:sticky;
   top:0;
@@ -34,13 +34,13 @@ header{
   height:100px;
   object-fit:cover;
   display:block;
-  margin:0 auto 8px;
+  margin:0 auto 10px;
   border-radius:50%;
   background:white;
   padding:4px;
 }
 .brand-name{
-  font-size:40px;
+  font-size:42px;
   line-height:1;
   font-weight:900;
   letter-spacing:1px;
@@ -53,16 +53,16 @@ header{
 }
 .tagline{
   margin-top:9px;
-  font-size:13px;
+  font-size:14px;
   font-weight:900;
-  letter-spacing:1.2px;
+  letter-spacing:1.5px;
 }
 .header-description{
   margin-top:8px;
   font-size:13px;
   color:#fff3df;
 }
-/* ================= HOURS ================= */
+/* ================= HOURS & DELIVERY ================= */
 .hours-box{
   background:white;
   padding:17px 15px;
@@ -91,76 +91,66 @@ header{
   background:#dcfce7;
   color:#15803d;
 }
-/* ================= HERO ================= */
+/* ================= HERO SECTION ================= */
 .hero{
-  padding:27px 18px;
+  padding:30px 18px;
   text-align:center;
   background:#fff;
+  border-bottom:1px solid #f1f1f1;
 }
 .hero h2{
-  font-size:24px;
+  font-size:26px;
   margin-bottom:8px;
+  color:#111;
 }
 .hero p{
   color:#666;
   line-height:1.5;
+  font-size:15px;
 }
-/* ================= CATEGORIES ================= */
-.categories{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:14px 15px;
-  background:white;
-  position:sticky;
-  top:184px;
-  z-index:10;
-  scrollbar-width:none;
-}
-.categories::-webkit-scrollbar{
-  display:none;
-}
-.categories button{
-  border:none;
-  background:#f1f1f1;
-  padding:10px 15px;
-  border-radius:25px;
-  white-space:nowrap;
-  font-weight:bold;
-  cursor:pointer;
-}
-.categories button.active{
-  background:#b91c1c;
-  color:white;
-}
-/* ================= PRODUCTS ================= */
+/* ================= PRODUCTS LAYOUT ================= */
 #products{
   background:#fff8f0;
-  min-height:300px;
+  min-height:400px;
 }
 .section{
-  padding:22px 15px;
+  padding:25px 15px;
   max-width:1100px;
   margin:auto;
 }
-.section h2{
-  margin-bottom:15px;
-  font-size:22px;
+.section h2 {
+  margin-top:35px;
+  margin-bottom:18px;
+  font-size:24px;
+  border-left: 5px solid #b91c1c;
+  padding-left: 10px;
+  color: #b91c1c;
+}
+.section:first-of-type h2 {
+  margin-top: 10px;
 }
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
-  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 .product{
   background:white;
   border-radius:15px;
   overflow:hidden;
-  box-shadow:0 3px 10px rgba(0,0,0,.09);
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
 }
 .product-image{
   width:100%;
-  height:165px;
+  height:180px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -173,69 +163,86 @@ header{
   object-fit:cover;
 }
 .product-info{
-  padding:13px;
+  padding:15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product h3{
-  font-size:15px;
+  font-size:16px;
   line-height:1.3;
-  margin-bottom:8px;
+  margin-bottom:6px;
+  color:#111;
+  min-height: 42px;
 }
 .product-rating {
   font-size:13px;
   color:#f59e0b;
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 .product p{
   color:#b91c1c;
   font-weight:bold;
-  margin-bottom:11px;
+  margin-bottom:14px;
+  font-size:18px;
 }
 .product button{
   width:100%;
   border:none;
   background:#b91c1c;
   color:white;
-  padding:10px;
+  padding:12px;
   border-radius:9px;
   font-weight:bold;
+  font-size:14px;
   cursor:pointer;
+  transition: background 0.2s;
+}
+.product button:hover {
+  background: #a31818;
 }
 .product button:active{
-  transform:scale(.98);
+  transform:scale(.97);
 }
-/* ================= FEEDBACK ================= */
+/* ================= FEEDBACK SECTION ================= */
 .feedback-section{
   background:white;
-  padding:35px 18px;
+  padding:40px 18px;
   text-align:center;
   border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
 }
 .feedback-container{
   max-width:650px;
   margin:auto;
 }
 .feedback-section h2{
-  font-size:22px;
+  font-size:24px;
   margin-bottom:8px;
 }
 .feedback-section .subtitle{
   color:#666;
   margin-bottom:20px;
   line-height:1.5;
+  font-size:15px;
 }
 .stars{
   display:flex;
   justify-content:center;
-  gap:7px;
-  margin:18px 0;
+  gap:10px;
+  margin:20px 0;
 }
 .star{
   border:none;
   background:transparent;
-  font-size:35px;
+  font-size:42px;
   color:#ccc;
   cursor:pointer;
-  transition: color 0.2s;
+  transition: transform 0.1s, color 0.2s;
+}
+.star:hover {
+  transform: scale(1.15);
 }
 .star.selected{
   color:#f59e0b;
@@ -243,34 +250,25 @@ header{
 .feedback-section textarea{
   width:100%;
   min-height:120px;
-  padding:13px;
+  padding:14px;
   border:1px solid #ddd;
   border-radius:10px;
   font-size:15px;
   resize:vertical;
-  margin-bottom:12px;
+  margin-bottom:15px;
 }
 .feedback-button{
   width:100%;
   border:none;
   background:#b91c1c;
   color:white;
-  padding:14px;
+  padding:15px;
   border-radius:10px;
   font-size:16px;
   font-weight:bold;
   cursor:pointer;
 }
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:30px 15px;
-  color:#777;
-  font-size:14px;
-  background:#fff8f0;
-  line-height:1.7;
-}
-/* ================= CART BAR ================= */
+/* ================= FLOATING CART BAR ================= */
 .cart-bar{
   position:fixed;
   bottom:0;
@@ -278,168 +276,181 @@ footer{
   right:0;
   background:#111;
   color:white;
-  padding:13px 16px;
+  padding:15px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   z-index:50;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+}
+.cart-bar-info {
+  font-size: 16px;
+  font-weight: bold;
 }
 .cart-bar button{
   background:#f59e0b;
   color:#111;
   border:none;
-  padding:11px 17px;
+  padding:12px 22px;
   border-radius:9px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+/* ================= MODAL WINDOW OVERLAY ================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  z-index:100;
+  padding:15px;
+  overflow-y:auto;
+}
+.modal-content{
+  background:white;
+  max-width:550px;
+  margin:50px auto;
+  border-radius:16px;
+  padding:25px;
+  position: relative;
+}
+.close{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border:none;
+  background:#eee;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight: bold;
+  cursor:pointer;
+}
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+  align-items: center;
+  font-size: 16px;
+}
+.cart-item-remove {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+.total{
+  font-size:22px;
+  font-weight:bold;
+  margin:22px 0;
+  text-align:right;
+  color: #111;
+}
+.till-box {
+  background: #fdf2f2;
+  border: 2px dashed #b91c1c;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.till-box strong {
+  font-size: 18px;
+  color: #b91c1c;
+}
+.primary{
+  width:100%;
+  border:none;
+  background:#16a34a;
+  color:white;
+  padding:15px;
+  border-radius:10px;
+  font-size:16px;
   font-weight:bold;
   cursor:pointer;
 }
-/* ================= MOBILE ================= */
+.empty{
+  text-align:center;
+  color:#777;
+  padding:30px 10px;
+  font-size:16px;
+}
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:35px 15px;
+  color:#777;
+  font-size:14px;
+  background:#fff8f0;
+  line-height:1.7;
+}
+/* ================= RESPONSIVE MOBILE SCALING ================= */
 @media(max-width:600px){
-  .logo{ width:92px; height:92px; }
-  .brand-name{ font-size:37px; }
-  .categories{ top:178px; }
-  .products{ grid-template-columns:repeat(2,1fr); gap:10px; }
-  .product-image{ height:145px; }
+  .logo{ width:90px; height:90px; }
+  .brand-name{ font-size:36px; }
+  .products{ grid-template-columns:repeat(2,1fr); gap:12px; }
+  .product-image{ height:140px; }
   .product-info{ padding:10px; }
-  .product h3{ font-size:14px; }
-  .star{ font-size:32px; }
+  .product h3{ font-size:14px; min-height:38px; }
+  .product p { font-size: 16px; margin-bottom: 10px; }
+  .product button { padding: 10px; font-size: 13px; }
+  .star{ font-size:36px; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://unsplash.com" alt="Kuku Haven Logo" class="logo">
+  
+  <img src="79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg" alt="Kuku Haven Logo" class="logo">
   <div class="brand-name">
     <span class="brand-kuku">Kuku</span> <span class="brand-haven">Haven</span>
   </div>
   <div class="tagline">CRISPY, FRESH & FLAVORFUL</div>
-  <div class="header-description">Your favorite premium grilled chicken, delicious smokies, and classic sides.</div>
+  <div class="header-description">Premium raw chicken cuts, fast food meals, packs, and custom orders shipped fresh daily.</div>
 </header>
 
 <div class="hours-box">
-  <div class="hours-title">Delivery Status</div>
-  <div class="hours-text">Open daily from 10:00 AM to 10:00 PM</div>
+  <div class="hours-title">Store & Delivery Status</div>
+  <div class="hours-text">Open every single day from 8:00 AM to 9:00 PM</div>
   <span class="status open">We are Open!</span>
 </div>
 
 <div class="hero">
-  <h2>Our Fast Food Menu</h2>
-  <p>Freshly prepared items cooked to juicy perfection with every order.</p>
+  <h2>Welcome to Our Dynamic Storefront</h2>
+  <p>Select your items down below to calculate your totals instantly and send a structured order ticket straight onto our WhatsApp line.</p>
 </div>
 
-<div class="categories">
-  <button class="active">All Items</button>
-  <button>Chicken</button>
-  <button>Smokies</button>
-</div>
-
-<div id="products" class="section">
-  <h2>Menu Items</h2>
-  <div class="products">
-    
-    <!-- Item 1: Grilled Chicken -->
-    <div class="product">
-      <div class="product-image">
-        <img src="https://unsplash.com" alt="Crispy Fried Chicken">
-      </div>
-      <div class="product-info">
-        <h3 class="item-name">Crispy Fried Chicken</h3>
-        <div class="product-rating">★★★★★ 4.9</div>
-        <p>$8.99</p>
-        <button onclick="addToCart('Crispy Fried Chicken', 8.99)">Add to Cart</button>
-      </div>
-    </div>
-
-    <!-- Item 2: Smokies / Hotdogs -->
-    <div class="product">
-      <div class="product-image">
-        <img src="https://unsplash.com" alt="Premium Smokies">
-      </div>
-      <div class="product-info">
-        <h3 class="item-name">Premium Smokies (Pair)</h3>
-        <div class="product-rating">★★★★☆ 4.7</div>
-        <p>$3.50</p>
-        <button onclick="addToCart('Premium Smokies (Pair)', 3.50)">Add to Cart</button>
-      </div>
-    </div>
-
-    <!-- Item 3: Chicken Nuggets -->
-    <div class="product">
-      <div class="product-image">
-        <img src="https://unsplash.com" alt="Chicken Nuggets">
-      </div>
-      <div class="product-info">
-        <h3>Chicken Nuggets (6pc)</h3>
-        <div class="product-rating">★★★★★ 4.8</div>
-        <p>$4.99</p>
-        <button onclick="addToCart('Chicken Nuggets (6pc)', 4.99)">Add to Cart</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Interactive Feedback & Clickable Star Rating Section -->
-<div class="feedback-section">
-  <div class="feedback-container">
-    <h2>Rate Your Experience</h2>
-    <p class="subtitle">Select your stars and write a message to share it instantly via WhatsApp!</p>
-    
-    <div class="stars" id="starContainer">
-      <button class="star" data-value="1">★</button>
-      <button class="star" data-value="2">★</button>
-      <button class="star" data-value="3">★</button>
-      <button class="star" data-value="4">★</button>
-      <button class="star" data-value="5">★</button>
-    </div>
-    
-    <textarea id="feedbackText" placeholder="Tell us what you liked or how we can improve..."></textarea>
-    <button class="feedback-button" onclick="sendWhatsAppFeedback()">Submit via WhatsApp</button>
-  </div>
-</div>
-
-<!-- Live Floating Cart Status Bar -->
-<div class="cart-bar">
-  <div>Cart Count: <span id="cartCount">0</span> Items (<span id="cartTotal">$0.00</span>)</div>
-  <button onclick="checkoutCart()">Order on WhatsApp</button>
-</div>
-
-<footer>
-  <p>&copy; 2026 Kuku Haven. All rights reserved.</p>
-</footer>
-
-<script>
-// ================= INTERACTIVE CART LOGIC =================
-let cart = [];
-
-function addToCart(name, price) {
-  cart.push({ name: name, price: price });
-  updateCartUI();
-}
-
-function updateCartUI() {
-  document.getElementById('cartCount').innerText = cart.length;
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
-  document.getElementById('cartTotal').innerText = '$' + total.toFixed(2);
-}
-
-function checkoutCart() {
-  if(cart.length === 0) {
-    alert("Your cart is empty! Please add items before checking out.");
-    return;
-  }
+<div id="products">
   
-  // Replace this with your exact business WhatsApp phone number
-  const whatsappNumber = "254700000000"; 
-  
-  let itemSummary = {};
-  cart.forEach(item => {
-    itemSummary[item.name] = (itemSummary[item.name] || 0) + 1;
-  });
-  
-  let message = "*New Food Order from Kuku Haven*\n\n";
-  for (let item in itemSummary) {
-    message += `• ${item} x${itemSummary[item]}\n`;
-  }
-  
+  <!-- ================= FAST FOOD MEALS SECTION ================= -->
+  <div class="section">
+    <h2>Fast Food Meals & Snacks</h2>
+    <div class="products">
+      <div class="product">
+        <div class="product-image"><img src="https://unsplash.com" alt="Chips"></div>
+        <div class="product-info"><h3>Chips (Plain)</h3><div class="product-rating">★★★★★ 4.8</div><p>Ksh 100</p><button onclick="addToCart('Chips (Plain)', 100)">Add to Cart</button></div>
+      </div>
+      <div class="product">
+        <div class="product-image"><img src="https://unsplash.com" alt="Smokie"></div>
+        <div class="product-info"><h3>Smokie</h3><div class="product-rating">★★★★☆ 4.6</div><p>Ksh 40</p><button onclick="addToCart('Smokie', 40)">Add to Cart</button></div>
+      </div>
+      <div class="product">
+        <div class="product-image"><img src="https://unsplash.com" alt="Sausage"></div>
+        <div class="product-info"><h3>Sausage</h3><div class="product-rating">★★★★☆ 4.7</div><p>Ksh 60</p><button onclick="addToCart('Sausage', 60)">Add to Cart</button></div>
+      </div>
+      <div class="product">
+        <div class="product-image"><img src="https://unsplash.com" alt="Samosa"></div>
+        <div class="product-info"><h3>Samosa</h3><div class="product-rating">★★★★★ 4.9</div><p>Ksh 40</p><button onclick="addToCart('Samosa', 40)">Add to Cart</button></div>
+      </div>
+      <div class="product">
