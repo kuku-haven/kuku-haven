@@ -26,7 +26,8 @@ body{
   padding-bottom:85px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
   background:#b91c1c;
   color:white;
@@ -78,7 +79,8 @@ header{
   color:#fff3df;
 }
 
-/* HOURS */
+/* ================= HOURS ================= */
+
 .hours-box{
   background:white;
   padding:18px 15px;
@@ -118,7 +120,8 @@ header{
   color:#b91c1c;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
   padding:28px 18px;
   text-align:center;
@@ -136,7 +139,8 @@ header{
   line-height:1.5;
 }
 
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
+
 .categories{
   display:flex;
   gap:8px;
@@ -168,7 +172,8 @@ header{
   color:white;
 }
 
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
+
 #products{
   background:#fff8f0;
   min-height:300px;
@@ -234,7 +239,12 @@ header{
   cursor:pointer;
 }
 
-/* DELIVERY */
+.product button:active{
+  transform:scale(.98);
+}
+
+/* ================= DELIVERY ================= */
+
 .delivery-notice{
   max-width:900px;
   margin:10px auto 25px;
@@ -250,7 +260,8 @@ header{
   color:#9a6700;
 }
 
-/* FEEDBACK */
+/* ================= FEEDBACK ================= */
+
 .feedback-section{
   background:white;
   padding:35px 18px;
@@ -316,7 +327,8 @@ header{
   font-weight:bold;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
   text-align:center;
   padding:30px 15px;
@@ -326,7 +338,8 @@ footer{
   line-height:1.7;
 }
 
-/* CART */
+/* ================= CART ================= */
+
 .cart-bar{
   position:fixed;
   bottom:0;
@@ -350,7 +363,8 @@ footer{
   font-weight:bold;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
+
 .modal{
   display:none;
   position:fixed;
@@ -496,7 +510,8 @@ label{
   font-weight:bold;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
+
 @media(max-width:600px){
 
   .logo{
@@ -818,7 +833,7 @@ and depends on your delivery location.
 
 </div>
 
-<!-- PAYMENT -->
+<!-- ================= PAYMENT ================= -->
 
 <div class="payment-section">
 
@@ -920,9 +935,12 @@ const whatsappNumber = "254728065517";
 
 /* =====================================================
    MENU PRODUCTS
+   UNIQUE IMAGE FOR EACH PRODUCT
 ===================================================== */
 
 const products = [
+
+/* ================= COOKED FOOD ================= */
 
 {
 name:"Chips",
@@ -977,8 +995,10 @@ image:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&
 name:"Chicken Nuggets",
 price:200,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1606502973842-f64bc2785fe5?auto=format&fit=crop&w=700&q=90"
 },
+
+/* ================= SNACKS ================= */
 
 {
 name:"Smokie",
@@ -1005,36 +1025,66 @@ image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&
 name:"Small Hotdog",
 price:80,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1613482084286-41f25b486fa2?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Large Hotdog",
 price:100,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1599599810694-57a5e0c2b7d4?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Nuggets - 1kg",
 price:750,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1562967915-92ae0c320a01?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Nuggets - 500g",
 price:360,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Nuggets - 250g",
 price:190,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1593504049359-74330189a345?auto=format&fit=crop&w=700&q=90"
 },
+
+{
+name:"Beef Smokies - Pack",
+price:440,
+category:"snacks",
+image:"https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=90"
+},
+
+{
+name:"Chicken Smokies - Pack",
+price:440,
+category:"snacks",
+image:"https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=90"
+},
+
+{
+name:"Beef Sausages - Pack",
+price:600,
+category:"snacks",
+image:"https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?auto=format&fit=crop&w=700&q=90"
+},
+
+{
+name:"Chicken Sausages - Pack",
+price:580,
+category:"snacks",
+image:"https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=700&q=90"
+},
+
+/* ================= FRESH CHICKEN ================= */
 
 {
 name:"Capon (Broiler Kuku) - 1kg",
@@ -1068,35 +1118,35 @@ image:"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&
 name:"Chicken Wings - 1kg",
 price:540,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1608039755401-742486ec03f6?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Chicken Drumsticks - 1kg",
 price:640,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Chicken Feet - 1kg",
 price:350,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Gizzards - 1kg",
 price:500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Chicken Liver - 1kg",
 price:300,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=90"
 },
 
 {
@@ -1110,21 +1160,23 @@ image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit
 name:"Kienyeji Kuku - Improved (Mwera)",
 price:1000,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=700&q=90"
 },
 
 {
 name:"Kienyeji Kuku - Jogoo",
 price:1500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=90"
 },
+
+/* ================= EGGS ================= */
 
 {
 name:"Kienyeji Eggs - Tray",
 price:600,
 category:"eggs",
-image:"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=700&q=90"
 },
 
 {
@@ -1134,33 +1186,7 @@ category:"eggs",
 image:"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=700&q=90"
 },
 
-{
-name:"Beef Smokies - Pack",
-price:440,
-category:"snacks",
-image:"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=90"
-},
-
-{
-name:"Chicken Smokies - Pack",
-price:440,
-category:"snacks",
-image:"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=90"
-},
-
-{
-name:"Beef Sausages - Pack",
-price:600,
-category:"snacks",
-image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=90"
-},
-
-{
-name:"Chicken Sausages - Pack",
-price:580,
-category:"snacks",
-image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=90"
-},
+/* ================= DRINKS ================= */
 
 {
 name:"Fresh Fruit Juice",
@@ -1173,7 +1199,7 @@ image:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&
 name:"Small Soda",
 price:50,
 category:"drinks",
-image:"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=700&q=90"
 },
 
 {
@@ -1302,7 +1328,7 @@ class="product-image"
 src="${product.image}"
 alt="${product.name}"
 loading="lazy"
-onerror="this.style.display='none'"
+onerror="this.style.background='#f3f3f3';this.alt='Image unavailable';"
 >
 
 <div class="product-info">
@@ -1752,6 +1778,23 @@ encodeURIComponent(message);
 window.open(url,"_blank");
 
 }
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
+
+window.addEventListener("click",function(event){
+
+const modal=document.getElementById("cartModal");
+
+if(event.target===modal){
+
+closeCart();
+
+}
+
+});
 
 
 /* =====================================================
