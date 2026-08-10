@@ -208,13 +208,36 @@
     .product {
       background: rgba(255,255,255,0.97);
       border-radius: 14px;
-      padding: 15px;
+      overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(0,0,0,.12);
+    }
+
+    /* =========================
+       PRODUCT IMAGE
+    ========================== */
+
+    .product-image {
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      display: block;
+      background: #f3f3f3;
+    }
+
+    .product-info {
+      padding: 15px;
     }
 
     .product h3 {
       font-size: 17px;
       margin-bottom: 8px;
+      line-height: 1.25;
     }
 
     .product p {
@@ -569,6 +592,32 @@
 
       .categories {
         top: 181px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .product-image {
+        height: 125px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product h3 {
+        font-size: 15px;
+      }
+
+      .product p {
+        font-size: 14px;
+      }
+
+      .product button {
+        font-size: 13px;
+        padding: 9px 5px;
       }
     }
   </style>
@@ -1079,89 +1128,268 @@
       </button>
 
     </div>
-
   </div>
 
 
   <script>
 
     /* =========================
-       PRODUCTS
+       PRODUCTS + ACTUAL IMAGES
     ========================== */
 
     const products = [
 
-      { name:"Chips", price:100, category:"cooked" },
+      {
+        name: "Chips",
+        price: 100,
+        category: "cooked",
+        image: "kuku_assets/chips.jpg"
+      },
 
-      { name:"Chips + ¼ Kuku", price:280, category:"cooked" },
+      {
+        name: "Chips + ¼ Kuku",
+        price: 280,
+        category: "cooked",
+        image: "kuku_assets/chips_kuku.jpg"
+      },
 
-      { name:"Chips + ½ Kuku", price:460, category:"cooked" },
+      {
+        name: "Chips + ½ Kuku",
+        price: 460,
+        category: "cooked",
+        image: "kuku_assets/chips_kuku.jpg"
+      },
 
-      { name:"Chips + 1 Piece Chicken", price:220, category:"cooked" },
+      {
+        name: "Chips + 1 Piece Chicken",
+        price: 220,
+        category: "cooked",
+        image: "kuku_assets/chips_kuku.jpg"
+      },
 
-      { name:"Chips + Chicken Strips", price:200, category:"cooked" },
+      {
+        name: "Chips + Chicken Strips",
+        price: 200,
+        category: "cooked",
+        image: "kuku_assets/chips_strips.jpg"
+      },
 
-      { name:"Burger", price:150, category:"cooked" },
+      {
+        name: "Burger",
+        price: 150,
+        category: "cooked",
+        image: "kuku_assets/burger.jpg"
+      },
 
-      { name:"Smokie", price:40, category:"snacks" },
+      {
+        name: "Smokie",
+        price: 40,
+        category: "snacks",
+        image: "kuku_assets/smokie.jpg"
+      },
 
-      { name:"Sausage", price:60, category:"snacks" },
+      {
+        name: "Sausage",
+        price: 60,
+        category: "snacks",
+        image: "kuku_assets/sausage.jpg"
+      },
 
-      { name:"Samosa", price:40, category:"snacks" },
+      {
+        name: "Samosa",
+        price: 40,
+        category: "snacks",
+        image: "kuku_assets/samosa.jpg"
+      },
 
-      { name:"Small Hotdog", price:80, category:"snacks" },
+      {
+        name: "Small Hotdog",
+        price: 80,
+        category: "snacks",
+        image: "kuku_assets/hotdog_small.jpg"
+      },
 
-      { name:"Large Hotdog", price:100, category:"snacks" },
+      {
+        name: "Large Hotdog",
+        price: 100,
+        category: "snacks",
+        image: "kuku_assets/hotdog_large.jpg"
+      },
 
-      { name:"Nuggets - 1 piece", price:25, category:"snacks" },
+      {
+        name: "Nuggets - 1 piece",
+        price: 25,
+        category: "snacks",
+        image: "kuku_assets/nuggets.jpg"
+      },
 
-      { name:"Capon (Broiler Kuku) - 1kg", price:500, category:"fresh" },
+      {
+        name: "Capon (Broiler Kuku) - 1kg",
+        price: 500,
+        category: "fresh",
+        image: "kuku_assets/capon.jpg"
+      },
 
-      { name:"Boneless Breast - 1kg", price:640, category:"fresh" },
+      {
+        name: "Boneless Breast - 1kg",
+        price: 640,
+        category: "fresh",
+        image: "kuku_assets/boneless_breast.jpg"
+      },
 
-      { name:"Thighs - 1kg", price:490, category:"fresh" },
+      {
+        name: "Thighs - 1kg",
+        price: 490,
+        category: "fresh",
+        image: "kuku_assets/thighs.jpg"
+      },
 
-      { name:"Legs - 1kg", price:510, category:"fresh" },
+      {
+        name: "Legs - 1kg",
+        price: 510,
+        category: "fresh",
+        image: "kuku_assets/legs.jpg"
+      },
 
-      { name:"Wings - 1kg", price:540, category:"fresh" },
+      {
+        name: "Wings - 1kg",
+        price: 540,
+        category: "fresh",
+        image: "kuku_assets/wings.jpg"
+      },
 
-      { name:"Drumsticks - 1kg", price:640, category:"fresh" },
+      {
+        name: "Drumsticks - 1kg",
+        price: 640,
+        category: "fresh",
+        image: "kuku_assets/drumsticks.jpg"
+      },
 
-      { name:"Gizzards - 1kg", price:500, category:"fresh" },
+      {
+        name: "Gizzards - 1kg",
+        price: 500,
+        category: "fresh",
+        image: "kuku_assets/gizzards.jpg"
+      },
 
-      { name:"Chicken Liver - 1kg", price:300, category:"fresh" },
+      {
+        name: "Chicken Liver - 1kg",
+        price: 300,
+        category: "fresh",
+        image: "kuku_assets/chicken_liver.jpg"
+      },
 
-      { name:"Nuggets - 1kg", price:750, category:"snacks" },
+      {
+        name: "Nuggets - 1kg",
+        price: 750,
+        category: "snacks",
+        image: "kuku_assets/nuggets.jpg"
+      },
 
-      { name:"Nuggets - 500g", price:360, category:"snacks" },
+      {
+        name: "Nuggets - 500g",
+        price: 360,
+        category: "snacks",
+        image: "kuku_assets/nuggets.jpg"
+      },
 
-      { name:"Nuggets - 250g", price:190, category:"snacks" },
+      {
+        name: "Nuggets - 250g",
+        price: 190,
+        category: "snacks",
+        image: "kuku_assets/nuggets.jpg"
+      },
 
-      { name:"Kienyeji Kuku - Ex Layers", price:700, category:"fresh" },
+      {
+        name: "Kienyeji Kuku - Ex Layers",
+        price: 700,
+        category: "fresh",
+        image: "kuku_assets/kienyeji.jpg"
+      },
 
-      { name:"Kienyeji Kuku - Improved (Mwera)", price:1000, category:"fresh" },
+      {
+        name: "Kienyeji Kuku - Improved (Mwera)",
+        price: 1000,
+        category: "fresh",
+        image: "kuku_assets/kienyeji.jpg"
+      },
 
-      { name:"Kienyeji Kuku - Jogoo", price:1500, category:"fresh" },
+      {
+        name: "Kienyeji Kuku - Jogoo",
+        price: 1500,
+        category: "fresh",
+        image: "kuku_assets/kienyeji.jpg"
+      },
 
-      { name:"Kienyeji Eggs - Tray", price:600, category:"eggs" },
+      {
+        name: "Kienyeji Eggs - Tray",
+        price: 600,
+        category: "eggs",
+        image: "kuku_assets/kienyeji_eggs.jpg"
+      },
 
-      { name:"Grade Eggs - Tray", price:480, category:"eggs" },
+      {
+        name: "Grade Eggs - Tray",
+        price: 480,
+        category: "eggs",
+        image: "kuku_assets/grade_eggs.jpg"
+      },
 
-      { name:"Beef Smokies - Pack", price:440, category:"snacks" },
+      {
+        name: "Beef Smokies - Pack",
+        price: 440,
+        category: "snacks",
+        image: "kuku_assets/smokie.jpg"
+      },
 
-      { name:"Chicken Smokies - Pack", price:440, category:"snacks" },
+      {
+        name: "Chicken Smokies - Pack",
+        price: 440,
+        category: "snacks",
+        image: "kuku_assets/smokie.jpg"
+      },
 
-      { name:"Beef Sausages - Pack", price:600, category:"snacks" },
+      {
+        name: "Beef Sausages - Pack",
+        price: 600,
+        category: "snacks",
+        image: "kuku_assets/sausage.jpg"
+      },
 
-      { name:"Chicken Sausages - Pack", price:580, category:"snacks" },
+      {
+        name: "Chicken Sausages - Pack",
+        price: 580,
+        category: "snacks",
+        image: "kuku_assets/sausage.jpg"
+      },
 
-      { name:"Fruit Juice", price:100, category:"drinks" },
+      {
+        name: "Fruit Juice",
+        price: 100,
+        category: "drinks",
+        image: "kuku_assets/juice.jpg"
+      },
 
-      { name:"Small Soda", price:50, category:"drinks" },
+      {
+        name: "Small Soda",
+        price: 50,
+        category: "drinks",
+        image: "kuku_assets/soda.jpg"
+      },
 
-      { name:"Large Soda", price:80, category:"drinks" },
+      {
+        name: "Large Soda",
+        price: 80,
+        category: "drinks",
+        image: "kuku_assets/soda.jpg"
+      },
 
-      { name:"Yogurt", price:100, category:"drinks" }
+      {
+        name: "Yogurt",
+        price: 100,
+        category: "drinks",
+        image: "kuku_assets/yogurt.jpg"
+      }
 
     ];
 
@@ -1194,13 +1422,11 @@
 
       if (day === 0) {
 
-        // Sunday
         openingMinutes = 10 * 60;
         closingMinutes = 21 * 60;
 
       } else {
 
-        // Monday - Saturday
         openingMinutes = 9 * 60;
         closingMinutes = 22 * 60;
 
@@ -1287,19 +1513,31 @@
 
                 <div class="product">
 
-                  <h3>
-                    ${product.name}
-                  </h3>
-
-                  <p>
-                    KSh ${product.price}
-                  </p>
-
-                  <button
-                    onclick="addToCart(${originalIndex})"
+                  <img
+                    class="product-image"
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='kuku_assets/food-placeholder.jpg';"
                   >
-                    Add to Cart
-                  </button>
+
+                  <div class="product-info">
+
+                    <h3>
+                      ${product.name}
+                    </h3>
+
+                    <p>
+                      KSh ${product.price}
+                    </p>
+
+                    <button
+                      onclick="addToCart(${originalIndex})"
+                    >
+                      Add to Cart
+                    </button>
+
+                  </div>
 
                 </div>
 
@@ -1840,7 +2078,6 @@
       );
 
 
-      // Show thank-you confirmation
       alert(
         "Thank you for choosing Kuku Haven. Your support means the world to us, and we can't wait to serve you again. Munch it. Crunch it. Love it."
       );
