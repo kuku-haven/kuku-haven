@@ -28,7 +28,7 @@
     header {
       background: #b91c1c;
       color: white;
-      padding: 18px 16px 22px;
+      padding: 18px 16px 24px;
       text-align: center;
       position: sticky;
       top: 0;
@@ -49,11 +49,11 @@
     .brand-name {
       font-family: "Baloo 2", Arial, sans-serif;
       font-size: 42px;
-      line-height: .95;
+      line-height: 0.95;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      text-shadow: 2px 3px 0 rgba(0,0,0,.12);
+      text-shadow: 2px 3px 0 rgba(0,0,0,0.12);
     }
 
     .brand-kuku {
@@ -70,8 +70,9 @@
       font-size: 14px;
       font-weight: 900;
       letter-spacing: 1.4px;
-      color: white;
+      color: #fff;
       text-transform: uppercase;
+      text-shadow: 1px 2px 0 rgba(0,0,0,0.15);
     }
 
     .header-description {
@@ -81,47 +82,43 @@
     }
 
     /* =========================
-       OPEN / CLOSED STATUS
+       OPENING HOURS
     ========================== */
 
-    .opening-status {
-      background: white;
+    .opening-hours {
+      background: #fff;
       text-align: center;
-      padding: 17px 15px;
+      padding: 18px 15px;
       border-bottom: 1px solid #eee;
     }
 
-    .status-badge {
+    .status {
       display: inline-block;
       padding: 8px 16px;
-      border-radius: 30px;
+      border-radius: 25px;
       font-weight: 900;
       font-size: 15px;
       margin-bottom: 8px;
     }
 
-    .status-open {
+    .status.open {
       background: #dcfce7;
       color: #15803d;
     }
 
-    .status-closed {
+    .status.closed {
       background: #fee2e2;
       color: #b91c1c;
     }
 
-    .opening-hours {
-      color: #555;
+    .hours-text {
       font-size: 13px;
+      color: #666;
       line-height: 1.6;
     }
 
-    .opening-hours strong {
-      color: #222;
-    }
-
     /* =========================
-       WELCOME
+       HERO
     ========================== */
 
     .hero {
@@ -187,28 +184,11 @@
       background: #fff8f0;
     }
 
-    #products::before {
-      content: "";
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      width: 500px;
-      height: 500px;
-      transform: translateX(-50%);
-      background-image: url("79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: .055;
-      pointer-events: none;
-      z-index: 0;
-    }
-
     .section {
       position: relative;
       z-index: 1;
       padding: 22px 15px;
-      max-width: 950px;
+      max-width: 900px;
       margin: auto;
     }
 
@@ -221,39 +201,26 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-      gap: 13px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
     }
 
     .product {
-      background: rgba(255,255,255,.97);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 9px rgba(0,0,0,.09);
-    }
-
-    .product-image {
-      width: 100%;
-      height: 145px;
-      object-fit: cover;
-      display: block;
-      background: #eee;
-    }
-
-    .product-info {
-      padding: 14px;
+      background: rgba(255,255,255,0.97);
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
     }
 
     .product h3 {
-      font-size: 16px;
-      line-height: 1.25;
-      margin-bottom: 7px;
+      font-size: 17px;
+      margin-bottom: 8px;
     }
 
     .product p {
       color: #b91c1c;
       font-weight: bold;
-      margin-bottom: 11px;
+      margin-bottom: 12px;
     }
 
     .product button {
@@ -372,6 +339,30 @@
     }
 
     /* =========================
+       DELIVERY NOTICE
+    ========================== */
+
+    .delivery-notice {
+      background: #fff8f0;
+      border: 1px solid #f3d7bd;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 18px 0;
+    }
+
+    .delivery-notice h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #b91c1c;
+    }
+
+    .delivery-notice p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* =========================
        PAYMENT
     ========================== */
 
@@ -412,16 +403,6 @@
       letter-spacing: 2px;
     }
 
-    .delivery-notice {
-      background: #fff7ed;
-      border-left: 4px solid #f59e0b;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 10px 0 18px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
     .primary {
       width: 100%;
       border: none;
@@ -454,68 +435,52 @@
     ========================== */
 
     .thank-you {
-      display: none;
       background: #fff;
       text-align: center;
-      padding: 30px 20px;
+      padding: 35px 18px;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
-    }
-
-    .thank-you-box {
-      max-width: 650px;
-      margin: auto;
-      background: #fff8f0;
-      border-radius: 18px;
-      padding: 28px 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.06);
     }
 
     .thank-you h2 {
       color: #b91c1c;
       font-family: "Montserrat", Arial, sans-serif;
-      font-size: 23px;
-      margin-bottom: 13px;
+      margin-bottom: 10px;
     }
 
     .thank-you p {
+      color: #555;
       line-height: 1.6;
-      color: #444;
-    }
-
-    .thank-you .slogan {
-      margin-top: 15px;
-      color: #b91c1c;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    /* =========================
-       RATE US / FEEDBACK
-    ========================== */
-
-    .feedback-section {
-      background: white;
-      padding: 35px 18px;
-      text-align: center;
-      border-top: 1px solid #eee;
-    }
-
-    .feedback-box {
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .feedback-box h2 {
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 24px;
       margin-bottom: 8px;
     }
 
-    .feedback-box > p {
+    .motto {
+      font-weight: 900;
+      color: #b91c1c !important;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       RATE & FEEDBACK
+    ========================== */
+
+    .feedback-section {
+      background: #fff8f0;
+      padding: 35px 18px;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .feedback-section h2 {
+      font-family: "Montserrat", Arial, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .feedback-section > p {
       color: #666;
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin-bottom: 18px;
     }
 
     .stars {
@@ -528,42 +493,45 @@
     .star {
       border: none;
       background: transparent;
+      font-size: 36px;
       color: #ccc;
-      font-size: 38px;
       cursor: pointer;
-      padding: 2px;
-      line-height: 1;
-      transition: .15s;
+      padding: 0;
+      transition: transform .15s, color .15s;
     }
 
-    .star.selected,
-    .star:hover {
+    .star.selected {
       color: #f59e0b;
-      transform: scale(1.08);
     }
 
-    .feedback-box textarea {
-      min-height: 120px;
+    .star:hover {
+      transform: scale(1.1);
+    }
+
+    .rating-text {
+      font-size: 14px;
+      color: #777;
+      min-height: 20px;
+      margin-bottom: 12px;
+    }
+
+    .feedback-section textarea {
+      background: white;
+      min-height: 110px;
       resize: vertical;
-      margin-bottom: 10px;
     }
 
-    .feedback-send {
+    .feedback-button {
       width: 100%;
+      max-width: 400px;
       border: none;
       background: #b91c1c;
       color: white;
-      padding: 14px;
+      padding: 13px;
       border-radius: 10px;
-      font-size: 16px;
       font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
-    }
-
-    .feedback-status {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #777;
     }
 
     /* =========================
@@ -576,10 +544,7 @@
       color: #777;
       font-size: 14px;
       background: #fff8f0;
-    }
-
-    footer p + p {
-      margin-top: 6px;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -604,19 +569,6 @@
 
       .categories {
         top: 181px;
-      }
-
-      #products::before {
-        width: 380px;
-        height: 380px;
-      }
-
-      .product-image {
-        height: 135px;
-      }
-
-      .star {
-        font-size: 34px;
       }
     }
   </style>
@@ -656,26 +608,24 @@
        OPENING HOURS
   ========================== -->
 
-  <section class="opening-status">
+  <section class="opening-hours">
 
     <div
-      id="statusBadge"
-      class="status-badge"
+      id="openStatus"
+      class="status"
     >
       Checking status...
     </div>
 
-    <div class="opening-hours">
+    <div class="hours-text">
 
-      <div>
-        <strong>Monday – Saturday:</strong>
-        9:00 AM – 10:00 PM
-      </div>
+      Monday – Saturday:
+      <strong>9:00 AM – 10:00 PM</strong>
 
-      <div>
-        <strong>Sunday:</strong>
-        10:00 AM – 9:00 PM
-      </div>
+      <br>
+
+      Sunday:
+      <strong>10:00 AM – 9:00 PM</strong>
 
     </div>
 
@@ -753,123 +703,106 @@
 
 
   <!-- =========================
-       AFTER ORDER THANK YOU
+       THANK YOU
   ========================== -->
 
-  <section
-    id="thankYou"
-    class="thank-you"
-  >
+  <section class="thank-you">
 
-    <div class="thank-you-box">
+    <h2>
+      Thank You ❤️
+    </h2>
 
-      <h2>
-        🐔 THANK YOU FOR CHOOSING KUKU HAVEN! ❤️
-      </h2>
+    <p>
+      Thank you for choosing Kuku Haven.
+    </p>
 
-      <p>
-        Your support means the world to us,
-        and we can’t wait to serve you again.
-      </p>
+    <p>
+      Your support means the world to us, and we can't wait to serve you again.
+    </p>
 
-      <p class="slogan">
-        MUNCH IT • CRUNCH IT • LOVE IT! 😋🔥
-      </p>
-
-    </div>
+    <p class="motto">
+      Munch it. Crunch it. Love it.
+    </p>
 
   </section>
 
 
   <!-- =========================
-       RATE US & FEEDBACK
-       AVAILABLE TO EVERYONE
+       RATE & FEEDBACK
   ========================== -->
 
   <section class="feedback-section">
 
-    <div class="feedback-box">
+    <h2>
+      ⭐ Rate Us
+    </h2>
 
-      <h2>
-        ⭐ Rate Us & Give Feedback
-      </h2>
+    <p>
+      How would you rate your Kuku Haven experience?
+    </p>
 
-      <p>
-        How was your Kuku Haven experience?
-        Your feedback helps us serve you better.
-      </p>
-
-      <label>
-        Your Rating
-      </label>
-
-      <div
-        class="stars"
-        id="stars"
-      >
-
-        <button
-          class="star"
-          data-rating="1"
-          onclick="selectRating(1)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star"
-          data-rating="2"
-          onclick="selectRating(2)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star"
-          data-rating="3"
-          onclick="selectRating(3)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star"
-          data-rating="4"
-          onclick="selectRating(4)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star"
-          data-rating="5"
-          onclick="selectRating(5)"
-        >
-          ★
-        </button>
-
-      </div>
-
-      <textarea
-        id="feedbackText"
-        placeholder="Tell us about your experience..."
-      ></textarea>
+    <div class="stars">
 
       <button
-        class="feedback-send"
-        onclick="sendFeedback()"
+        class="star"
+        onclick="selectRating(1)"
+        aria-label="1 star"
       >
-        Send Feedback on WhatsApp
+        ★
       </button>
 
-      <div
-        id="feedbackStatus"
-        class="feedback-status"
+      <button
+        class="star"
+        onclick="selectRating(2)"
+        aria-label="2 stars"
       >
-        You don't need to place an order to send feedback.
-      </div>
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(3)"
+        aria-label="3 stars"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(4)"
+        aria-label="4 stars"
+      >
+        ★
+      </button>
+
+      <button
+        class="star"
+        onclick="selectRating(5)"
+        aria-label="5 stars"
+      >
+        ★
+      </button>
 
     </div>
+
+    <div
+      id="ratingText"
+      class="rating-text"
+    >
+      Select a rating from 1 to 5 stars.
+    </div>
+
+    <textarea
+      id="feedbackText"
+      placeholder="Write your feedback here..."
+    ></textarea>
+
+    <button
+      class="feedback-button"
+      onclick="sendFeedback()"
+    >
+      Send Feedback on WhatsApp
+    </button>
 
   </section>
 
@@ -943,11 +876,14 @@
 
       <div class="total">
 
-        Total:
+        Food Order Total:
         KSh
         <span id="modalTotal">0</span>
 
       </div>
+
+
+      <!-- DELIVERY DETAILS -->
 
       <h2>
         Delivery Details
@@ -993,11 +929,15 @@
         placeholder="Any instructions for your order?"
       ></textarea>
 
+
       <label>
         Order Type
       </label>
 
-      <select id="orderType">
+      <select
+        id="orderType"
+        onchange="updateDeliveryNotice()"
+      >
 
         <option value="Delivery">
           Delivery
@@ -1009,13 +949,25 @@
 
       </select>
 
-      <div class="delivery-notice">
 
-        🚚 <strong>Delivery Fee Notice:</strong><br>
+      <!-- =========================
+           DELIVERY NOTICE
+      ========================== -->
 
-        Delivery charges are separate from your food
-        order total and will be calculated depending
-        on the delivery location.
+      <div
+        id="deliveryNotice"
+        class="delivery-notice"
+      >
+
+        <h3>
+          🛵 Delivery Notice
+        </h3>
+
+        <p>
+          Please note that delivery charges are separate from your food order total.
+          The delivery fee varies depending on your location and will be communicated
+          to you before your order is delivered.
+        </p>
 
       </div>
 
@@ -1117,6 +1069,8 @@
       </div>
 
 
+      <!-- PLACE ORDER -->
+
       <button
         class="primary"
         onclick="placeOrder()"
@@ -1132,330 +1086,144 @@
   <script>
 
     /* =========================
-       WHATSAPP NUMBER
-    ========================== */
-
-    const whatsappNumber = "254728065517";
-
-
-    /* =========================
        PRODUCTS
     ========================== */
 
     const products = [
 
-      {
-        name: "Chips",
-        price: 100,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/french,fries?lock=1"
-      },
+      { name:"Chips", price:100, category:"cooked" },
 
-      {
-        name: "Chips + ¼ Kuku",
-        price: 280,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/chips,fried,chicken?lock=2"
-      },
+      { name:"Chips + ¼ Kuku", price:280, category:"cooked" },
 
-      {
-        name: "Chips + ½ Kuku",
-        price: 460,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/fried,chicken,fries?lock=3"
-      },
+      { name:"Chips + ½ Kuku", price:460, category:"cooked" },
 
-      {
-        name: "Chips + 1 Piece Chicken",
-        price: 220,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/fried,chicken,fries?lock=4"
-      },
+      { name:"Chips + 1 Piece Chicken", price:220, category:"cooked" },
 
-      {
-        name: "Chips + Chicken Strips",
-        price: 200,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/chicken,strips,fries?lock=5"
-      },
+      { name:"Chips + Chicken Strips", price:200, category:"cooked" },
 
-      {
-        name: "Burger",
-        price: 150,
-        category: "cooked",
-        image: "https://loremflickr.com/600/400/burger?lock=6"
-      },
+      { name:"Burger", price:150, category:"cooked" },
 
-      {
-        name: "Smokie",
-        price: 40,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/sausage,hotdog?lock=7"
-      },
+      { name:"Smokie", price:40, category:"snacks" },
 
-      {
-        name: "Sausage",
-        price: 60,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/sausage?lock=8"
-      },
+      { name:"Sausage", price:60, category:"snacks" },
 
-      {
-        name: "Samosa",
-        price: 40,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/samosa?lock=9"
-      },
+      { name:"Samosa", price:40, category:"snacks" },
 
-      {
-        name: "Small Hotdog",
-        price: 80,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/hotdog?lock=10"
-      },
+      { name:"Small Hotdog", price:80, category:"snacks" },
 
-      {
-        name: "Large Hotdog",
-        price: 100,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/hotdog?lock=11"
-      },
+      { name:"Large Hotdog", price:100, category:"snacks" },
 
-      {
-        name: "Nuggets - 1 piece",
-        price: 25,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,nuggets?lock=12"
-      },
+      { name:"Nuggets - 1 piece", price:25, category:"snacks" },
 
-      {
-        name: "Capon (Broiler Kuku) - 1kg",
-        price: 500,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/whole,chicken?lock=13"
-      },
+      { name:"Capon (Broiler Kuku) - 1kg", price:500, category:"fresh" },
 
-      {
-        name: "Boneless Breast - 1kg",
-        price: 640,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,breast?lock=14"
-      },
+      { name:"Boneless Breast - 1kg", price:640, category:"fresh" },
 
-      {
-        name: "Thighs - 1kg",
-        price: 490,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,thighs?lock=15"
-      },
+      { name:"Thighs - 1kg", price:490, category:"fresh" },
 
-      {
-        name: "Legs - 1kg",
-        price: 510,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,legs?lock=16"
-      },
+      { name:"Legs - 1kg", price:510, category:"fresh" },
 
-      {
-        name: "Wings - 1kg",
-        price: 540,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,wings?lock=17"
-      },
+      { name:"Wings - 1kg", price:540, category:"fresh" },
 
-      {
-        name: "Drumsticks - 1kg",
-        price: 640,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,drumsticks?lock=18"
-      },
+      { name:"Drumsticks - 1kg", price:640, category:"fresh" },
 
-      {
-        name: "Gizzards - 1kg",
-        price: 500,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,gizzards?lock=19"
-      },
+      { name:"Gizzards - 1kg", price:500, category:"fresh" },
 
-      {
-        name: "Chicken Liver - 1kg",
-        price: 300,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,liver?lock=20"
-      },
+      { name:"Chicken Liver - 1kg", price:300, category:"fresh" },
 
-      {
-        name: "Nuggets - 1kg",
-        price: 750,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,nuggets?lock=21"
-      },
+      { name:"Nuggets - 1kg", price:750, category:"snacks" },
 
-      {
-        name: "Nuggets - 500g",
-        price: 360,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,nuggets?lock=22"
-      },
+      { name:"Nuggets - 500g", price:360, category:"snacks" },
 
-      {
-        name: "Nuggets - 250g",
-        price: 190,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,nuggets?lock=23"
-      },
+      { name:"Nuggets - 250g", price:190, category:"snacks" },
 
-      {
-        name: "Kienyeji Kuku - Ex Layers",
-        price: 700,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/whole,chicken?lock=24"
-      },
+      { name:"Kienyeji Kuku - Ex Layers", price:700, category:"fresh" },
 
-      {
-        name: "Kienyeji Kuku - Improved (Mwera)",
-        price: 1000,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/whole,chicken?lock=25"
-      },
+      { name:"Kienyeji Kuku - Improved (Mwera)", price:1000, category:"fresh" },
 
-      {
-        name: "Kienyeji Kuku - Jogoo",
-        price: 1500,
-        category: "fresh",
-        image: "https://loremflickr.com/600/400/chicken,rooster?lock=26"
-      },
+      { name:"Kienyeji Kuku - Jogoo", price:1500, category:"fresh" },
 
-      {
-        name: "Kienyeji Eggs - Tray",
-        price: 600,
-        category: "eggs",
-        image: "https://loremflickr.com/600/400/eggs,carton?lock=27"
-      },
+      { name:"Kienyeji Eggs - Tray", price:600, category:"eggs" },
 
-      {
-        name: "Grade Eggs - Tray",
-        price: 480,
-        category: "eggs",
-        image: "https://loremflickr.com/600/400/eggs,carton?lock=28"
-      },
+      { name:"Grade Eggs - Tray", price:480, category:"eggs" },
 
-      {
-        name: "Beef Smokies - Pack",
-        price: 440,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/sausages,pack?lock=29"
-      },
+      { name:"Beef Smokies - Pack", price:440, category:"snacks" },
 
-      {
-        name: "Chicken Smokies - Pack",
-        price: 440,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,sausages?lock=30"
-      },
+      { name:"Chicken Smokies - Pack", price:440, category:"snacks" },
 
-      {
-        name: "Beef Sausages - Pack",
-        price: 600,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/sausages,pack?lock=31"
-      },
+      { name:"Beef Sausages - Pack", price:600, category:"snacks" },
 
-      {
-        name: "Chicken Sausages - Pack",
-        price: 580,
-        category: "snacks",
-        image: "https://loremflickr.com/600/400/chicken,sausages?lock=32"
-      },
+      { name:"Chicken Sausages - Pack", price:580, category:"snacks" },
 
-      {
-        name: "Fruit Juice",
-        price: 100,
-        category: "drinks",
-        image: "https://loremflickr.com/600/400/fruit,juice?lock=33"
-      },
+      { name:"Fruit Juice", price:100, category:"drinks" },
 
-      {
-        name: "Small Soda",
-        price: 50,
-        category: "drinks",
-        image: "https://loremflickr.com/600/400/soda,drink?lock=34"
-      },
+      { name:"Small Soda", price:50, category:"drinks" },
 
-      {
-        name: "Large Soda",
-        price: 80,
-        category: "drinks",
-        image: "https://loremflickr.com/600/400/soda,drink?lock=35"
-      },
+      { name:"Large Soda", price:80, category:"drinks" },
 
-      {
-        name: "Yogurt",
-        price: 100,
-        category: "drinks",
-        image: "https://loremflickr.com/600/400/yogurt?lock=36"
-      }
+      { name:"Yogurt", price:100, category:"drinks" }
 
     ];
 
 
     let cart = [];
-
     let selectedRating = 0;
 
 
     /* =========================
-       OPENING / CLOSING STATUS
+       OPENING HOURS
     ========================== */
 
     function updateOpeningStatus() {
+
+      const status =
+        document.getElementById("openStatus");
 
       const now = new Date();
 
       const day = now.getDay();
 
-      const minutes =
-        now.getHours() * 60 +
-        now.getMinutes();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
 
-      let openingTime;
-      let closingTime;
+      const currentMinutes =
+        hours * 60 + minutes;
+
+      let openingMinutes;
+      let closingMinutes;
 
       if (day === 0) {
 
-        openingTime = 10 * 60;
-        closingTime = 21 * 60;
+        // Sunday
+        openingMinutes = 10 * 60;
+        closingMinutes = 21 * 60;
 
       } else {
 
-        openingTime = 9 * 60;
-        closingTime = 22 * 60;
+        // Monday - Saturday
+        openingMinutes = 9 * 60;
+        closingMinutes = 22 * 60;
 
       }
 
-      const badge =
-        document.getElementById(
-          "statusBadge"
-        );
-
       if (
-        minutes >= openingTime &&
-        minutes < closingTime
+        currentMinutes >= openingMinutes &&
+        currentMinutes < closingMinutes
       ) {
 
-        badge.textContent =
+        status.textContent =
           "🟢 OPEN NOW";
 
-        badge.className =
-          "status-badge status-open";
+        status.className =
+          "status open";
 
       } else {
 
-        badge.textContent =
+        status.textContent =
           "🔴 CLOSED";
 
-        badge.className =
-          "status-badge status-closed";
+        status.className =
+          "status closed";
 
       }
 
@@ -1465,12 +1233,12 @@
 
     setInterval(
       updateOpeningStatus,
-      30000
+      60000
     );
 
 
     /* =========================
-       CATEGORY
+       SHOW CATEGORY
     ========================== */
 
     function showCategory(
@@ -1479,33 +1247,21 @@
     ) {
 
       document
-        .querySelectorAll(
-          ".categories button"
-        )
+        .querySelectorAll(".categories button")
         .forEach(btn => {
-
-          btn.classList.remove(
-            "active"
-          );
-
+          btn.classList.remove("active");
         });
 
-      button.classList.add(
-        "active"
-      );
+      button.classList.add("active");
 
       const container =
-        document.getElementById(
-          "products"
-        );
+        document.getElementById("products");
 
       const filtered =
         category === "all"
           ? products
           : products.filter(
-              p =>
-                p.category ===
-                category
+              p => p.category === category
             );
 
       container.innerHTML = `
@@ -1525,39 +1281,25 @@
             ${filtered.map(product => {
 
               const originalIndex =
-                products.indexOf(
-                  product
-                );
+                products.indexOf(product);
 
               return `
 
                 <div class="product">
 
-                  <img
-                    class="product-image"
-                    src="${product.image}"
-                    alt="${product.name}"
-                    loading="lazy"
-                    onerror="this.src='https://loremflickr.com/600/400/food?lock=${originalIndex + 100}'"
+                  <h3>
+                    ${product.name}
+                  </h3>
+
+                  <p>
+                    KSh ${product.price}
+                  </p>
+
+                  <button
+                    onclick="addToCart(${originalIndex})"
                   >
-
-                  <div class="product-info">
-
-                    <h3>
-                      ${product.name}
-                    </h3>
-
-                    <p>
-                      KSh ${product.price}
-                    </p>
-
-                    <button
-                      onclick="addToCart(${originalIndex})"
-                    >
-                      Add to Cart
-                    </button>
-
-                  </div>
+                    Add to Cart
+                  </button>
 
                 </div>
 
@@ -1573,6 +1315,10 @@
 
     }
 
+
+    /* =========================
+       CATEGORY TITLES
+    ========================== */
 
     function categoryTitle(
       category
@@ -1601,7 +1347,7 @@
 
 
     /* =========================
-       CART
+       ADD TO CART
     ========================== */
 
     function addToCart(index) {
@@ -1610,12 +1356,9 @@
         products[index];
 
       const existing =
-        cart.find(
-          item =>
-            item.name ===
-              product.name &&
-            item.price ===
-              product.price
+        cart.find(item =>
+          item.name === product.name &&
+          item.price === product.price
         );
 
       if (existing) {
@@ -1641,13 +1384,16 @@
     }
 
 
+    /* =========================
+       UPDATE CART
+    ========================== */
+
     function updateCart() {
 
       const count =
         cart.reduce(
           (total, item) =>
-            total +
-            item.quantity,
+            total + item.quantity,
           0
         );
 
@@ -1677,6 +1423,10 @@
     }
 
 
+    /* =========================
+       RENDER CART
+    ========================== */
+
     function renderCart() {
 
       const container =
@@ -1684,9 +1434,7 @@
           "cartItems"
         );
 
-      if (
-        cart.length === 0
-      ) {
+      if (cart.length === 0) {
 
         container.innerHTML =
           '<div class="empty">Your cart is empty.</div>';
@@ -1751,23 +1499,22 @@
     }
 
 
+    /* =========================
+       CHANGE QUANTITY
+    ========================== */
+
     function changeQuantity(
       index,
       amount
     ) {
 
-      cart[index].quantity +=
-        amount;
+      cart[index].quantity += amount;
 
       if (
-        cart[index].quantity <=
-        0
+        cart[index].quantity <= 0
       ) {
 
-        cart.splice(
-          index,
-          1
-        );
+        cart.splice(index, 1);
 
       }
 
@@ -1775,6 +1522,10 @@
 
     }
 
+
+    /* =========================
+       OPEN CART
+    ========================== */
 
     function openCart() {
 
@@ -1787,6 +1538,10 @@
     }
 
 
+    /* =========================
+       CLOSE CART
+    ========================== */
+
     function closeCart() {
 
       document.getElementById(
@@ -1797,7 +1552,38 @@
 
 
     /* =========================
-       PAYMENT
+       DELIVERY NOTICE
+    ========================== */
+
+    function updateDeliveryNotice() {
+
+      const orderType =
+        document.getElementById(
+          "orderType"
+        ).value;
+
+      const notice =
+        document.getElementById(
+          "deliveryNotice"
+        );
+
+      if (orderType === "Delivery") {
+
+        notice.style.display =
+          "block";
+
+      } else {
+
+        notice.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* =========================
+       PAYMENT DETAILS
     ========================== */
 
     function showPaymentDetails() {
@@ -1807,16 +1593,22 @@
           "paymentMethod"
         ).value;
 
-      document.getElementById(
-        "mpesaPayment"
-      ).style.display =
+      const mpesa =
+        document.getElementById(
+          "mpesaPayment"
+        );
+
+      const cash =
+        document.getElementById(
+          "cashPayment"
+        );
+
+      mpesa.style.display =
         method === "mpesa"
           ? "block"
           : "none";
 
-      document.getElementById(
-        "cashPayment"
-      ).style.display =
+      cash.style.display =
         method === "cash"
           ? "block"
           : "none";
@@ -1825,14 +1617,12 @@
 
 
     /* =========================
-       PLACE ORDER
+       PLACE WHATSAPP ORDER
     ========================== */
 
     function placeOrder() {
 
-      if (
-        cart.length === 0
-      ) {
+      if (cart.length === 0) {
 
         alert(
           "Please add something to your cart first."
@@ -1898,9 +1688,7 @@
 
       }
 
-      if (
-        !paymentMethod
-      ) {
+      if (!paymentMethod) {
 
         alert(
           "Please select a payment method."
@@ -1919,8 +1707,10 @@
           0
         );
 
+
       let message =
         "🐔 KUKU HAVEN ORDER\n\n";
+
 
       message +=
         "Customer: " +
@@ -1945,25 +1735,16 @@
       message +=
         "Payment: " +
         (
-          paymentMethod ===
-          "mpesa"
+          paymentMethod === "mpesa"
             ? "M-Pesa"
             : "Cash on Delivery"
         ) +
-        "\n";
+        "\n\n";
 
-      if (
-        orderType ===
-        "Delivery"
-      ) {
-
-        message +=
-          "Delivery Fee: To be calculated separately\n";
-
-      }
 
       message +=
-        "\nORDER ITEMS:\n";
+        "ORDER ITEMS:\n";
+
 
       cart.forEach(item => {
 
@@ -1980,14 +1761,33 @@
 
       });
 
+
       message +=
-        "\nFOOD TOTAL: KSh " +
+        "\nFOOD ORDER TOTAL: KSh " +
         total +
         "\n";
 
+
       if (
-        paymentMethod ===
-        "mpesa"
+        orderType === "Delivery"
+      ) {
+
+        message +=
+          "DELIVERY FEE: Charged separately according to location.\n";
+
+        message +=
+          "The delivery fee will be communicated before delivery.\n";
+
+      } else {
+
+        message +=
+          "PICKUP: No delivery fee.\n";
+
+      }
+
+
+      if (
+        paymentMethod === "mpesa"
       ) {
 
         message +=
@@ -2001,15 +1801,16 @@
 
       }
 
+
       if (
-        paymentMethod ===
-        "cash"
+        paymentMethod === "cash"
       ) {
 
         message +=
           "\nPayment will be made in cash on delivery.\n";
 
       }
+
 
       if (notes) {
 
@@ -2019,6 +1820,11 @@
 
       }
 
+
+      const whatsappNumber =
+        "254728065517";
+
+
       const url =
         "https://wa.me/" +
         whatsappNumber +
@@ -2027,27 +1833,17 @@
           message
         );
 
+
       window.open(
         url,
         "_blank"
       );
 
 
-      /* SHOW THANK YOU */
-
-      document.getElementById(
-        "thankYou"
-      ).style.display = "block";
-
-      setTimeout(() => {
-
-        document.getElementById(
-          "thankYou"
-        ).scrollIntoView({
-          behavior: "smooth"
-        });
-
-      }, 500);
+      // Show thank-you confirmation
+      alert(
+        "Thank you for choosing Kuku Haven. Your support means the world to us, and we can't wait to serve you again. Munch it. Crunch it. Love it."
+      );
 
     }
 
@@ -2063,52 +1859,67 @@
       selectedRating =
         rating;
 
-      document
-        .querySelectorAll(
+      const stars =
+        document.querySelectorAll(
           ".star"
-        )
-        .forEach(star => {
+        );
 
-          const value =
-            Number(
-              star.dataset.rating
+      stars.forEach(
+        (star, index) => {
+
+          if (
+            index < rating
+          ) {
+
+            star.classList.add(
+              "selected"
             );
 
-          star.classList.toggle(
-            "selected",
-            value <= rating
-          );
+          } else {
 
-        });
+            star.classList.remove(
+              "selected"
+            );
+
+          }
+
+        }
+      );
+
+
+      document.getElementById(
+        "ratingText"
+      ).textContent =
+        rating +
+        " out of 5 stars selected.";
 
     }
 
 
     /* =========================
-       SEND FEEDBACK
+       SEND FEEDBACK TO WHATSAPP
     ========================== */
 
     function sendFeedback() {
 
       const feedback =
-        document
-          .getElementById(
-            "feedbackText"
-          )
-          .value
-          .trim();
+        document.getElementById(
+          "feedbackText"
+        ).value.trim();
+
 
       if (
         selectedRating === 0
       ) {
 
         alert(
-          "Please select a rating from 1 to 5 stars."
+          "Please select a star rating from 1 to 5."
         );
 
         return;
 
       }
+
 
       if (!feedback) {
 
@@ -2120,24 +1931,25 @@
 
       }
 
-      const stars =
-        "⭐".repeat(
-          selectedRating
-        );
+
+      const whatsappNumber =
+        "254728065517";
+
 
       let message =
         "⭐ KUKU HAVEN FEEDBACK\n\n";
 
+
       message +=
         "Rating: " +
-        stars +
-        " (" +
         selectedRating +
-        "/5)\n\n";
+        "/5 stars\n\n";
+
 
       message +=
         "Feedback:\n" +
         feedback;
+
 
       const url =
         "https://wa.me/" +
@@ -2147,15 +1959,11 @@
           message
         );
 
+
       window.open(
         url,
         "_blank"
       );
-
-      document.getElementById(
-        "feedbackStatus"
-      ).textContent =
-        "Thank you for your feedback! ❤️";
 
     }
 
@@ -2170,6 +1978,8 @@
         ".categories button"
       )
     );
+
+    updateDeliveryNotice();
 
   </script>
 
