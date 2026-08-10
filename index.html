@@ -32,7 +32,7 @@ header{
 .logo{
   width:100px;
   height:100px;
-  object-fit:contain;
+  object-fit:cover;
   display:block;
   margin:0 auto 8px;
   border-radius:50%;
@@ -90,10 +90,6 @@ header{
 .status.open{
   background:#dcfce7;
   color:#15803d;
-}
-.status.closed{
-  background:#fee2e2;
-  color:#b91c1c;
 }
 /* ================= HERO ================= */
 .hero{
@@ -171,10 +167,10 @@ header{
   background:#fff3df;
   overflow:hidden;
 }
-.product-image svg{
+.product-image img{
   width:100%;
   height:100%;
-  display:block;
+  object-fit:cover;
 }
 .product-info{
   padding:13px;
@@ -183,6 +179,11 @@ header{
   font-size:15px;
   line-height:1.3;
   margin-bottom:8px;
+}
+.product-rating {
+  font-size:13px;
+  color:#f59e0b;
+  margin-bottom:6px;
 }
 .product p{
   color:#b91c1c;
@@ -201,54 +202,6 @@ header{
 }
 .product button:active{
   transform:scale(.98);
-}
-/* ================= SIZE DIFFERENCES ================= */
-.small-hotdog .product-image svg{
-  transform:scale(.65);
-}
-.large-hotdog .product-image svg{
-  transform:scale(1.12);
-}
-.nugget-piece .product-image svg{
-  transform:scale(.9);
-}
-/* ================= DELIVERY ================= */
-.delivery-notice{
-  max-width:900px;
-  margin:10px auto 25px;
-  padding:16px;
-  background:#fff7d6;
-  border:1px solid #f4d35e;
-  border-radius:13px;
-  text-align:center;
-  line-height:1.5;
-}
-.delivery-notice strong{
-  color:#9a6700;
-}
-/* ================= THANK YOU ================= */
-.thank-you{
-  display:none;
-  background:white;
-  text-align:center;
-  padding:30px 18px;
-  border-top:1px solid #eee;
-}
-.thank-you h2{
-  margin-bottom:10px;
-}
-.thank-you p{
-  color:#666;
-  line-height:1.5;
-}
-.rate-reminder{
-  display:inline-block;
-  margin-top:12px;
-  padding:10px 15px;
-  border-radius:9px;
-  background:#fff7d6;
-  color:#8a5a00;
-  font-weight:bold;
 }
 /* ================= FEEDBACK ================= */
 .feedback-section{
@@ -282,9 +235,9 @@ header{
   font-size:35px;
   color:#ccc;
   cursor:pointer;
+  transition: color 0.2s;
 }
-.star.selected,
-.star:hover{
+.star.selected{
   color:#f59e0b;
 }
 .feedback-section textarea{
@@ -306,6 +259,7 @@ header{
   border-radius:10px;
   font-size:16px;
   font-weight:bold;
+  cursor:pointer;
 }
 /* ================= FOOTER ================= */
 footer{
@@ -316,7 +270,7 @@ footer{
   background:#fff8f0;
   line-height:1.7;
 }
-/* ================= CART ================= */
+/* ================= CART BAR ================= */
 .cart-bar{
   position:fixed;
   bottom:0;
@@ -339,1392 +293,153 @@ footer{
   font-weight:bold;
   cursor:pointer;
 }
-/* ================= MODAL ================= */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  z-index:100;
-  padding:15px;
-  overflow-y:auto;
-}
-.modal-content{
-  background:white;
-  max-width:600px;
-  margin:30px auto;
-  border-radius:16px;
-  padding:20px;
-}
-.close{
-  float:right;
-  border:none;
-  background:#eee;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-}
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:12px 0;
-  border-bottom:1px solid #eee;
-}
-.cart-controls{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.cart-controls button{
-  width:30px;
-  height:30px;
-  border:none;
-  border-radius:6px;
-  background:#eee;
-  font-weight:bold;
-  cursor:pointer;
-}
-.total{
-  font-size:21px;
-  font-weight:bold;
-  margin:18px 0;
-  text-align:right;
-}
-input,
-textarea,
-select{
-  width:100%;
-  padding:12px;
-  margin:7px 0 12px;
-  border:1px solid #ddd;
-  border-radius:9px;
-  font-size:15px;
-}
-label{
-  font-weight:bold;
-  font-size:14px;
-}
-.payment-section{
-  background:#fff8f0;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:15px;
-  margin:20px 0;
-}
-.payment-details{
-  display:none;
-  background:white;
-  border-radius:10px;
-  padding:15px;
-  margin-top:12px;
-  border:1px solid #eee;
-}
-.till-number{
-  background:#b91c1c;
-  color:white;
-  font-size:28px;
-  font-weight:bold;
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  margin:12px 0;
-}
-.delivery-warning{
-  background:#fff7d6;
-  border:1px solid #f4d35e;
-  padding:12px;
-  border-radius:9px;
-  margin:12px 0;
-  line-height:1.5;
-  font-size:14px;
-}
-.primary{
-  width:100%;
-  border:none;
-  background:#16a34a;
-  color:white;
-  padding:14px;
-  border-radius:10px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-}
-.empty{
-  text-align:center;
-  color:#777;
-  padding:20px;
-}
 /* ================= MOBILE ================= */
 @media(max-width:600px){
-  .logo{
-    width:92px;
-    height:92px;
-  }
-  .brand-name{
-    font-size:37px;
-  }
-  .categories{
-    top:178px;
-  }
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
-  .product-image{
-    height:145px;
-  }
-  .product-info{
-    padding:10px;
-  }
-  .product h3{
-    font-size:14px;
-  }
-  .star{
-    font-size:32px;
-  }
-}
-@media(max-width:380px){
-  .product-image{
-    height:135px;
-  }
-  .brand-name{
-    font-size:34px;
-  }
+  .logo{ width:92px; height:92px; }
+  .brand-name{ font-size:37px; }
+  .categories{ top:178px; }
+  .products{ grid-template-columns:repeat(2,1fr); gap:10px; }
+  .product-image{ height:145px; }
+  .product-info{ padding:10px; }
+  .product h3{ font-size:14px; }
+  .star{ font-size:32px; }
 }
 </style>
 </head>
 <body>
-<!-- ================= HEADER ================= -->
+
 <header>
-
-<img
-src=“79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg”
-alt=“Kuku Haven Logo”
-class=“logo”
-
-<div class="brand-name">
-<span class="brand-kuku">KUKU</span>
-<span class="brand-haven">HAVEN</span>
-</div>
-<div class="tagline">
-MUNCH IT • CRUNCH IT • LOVE IT
-</div>
-<p class="header-description">
-Fresh Chicken • Cooked Food • Snacks • Drinks
-</p>
+  <img src="https://unsplash.com" alt="Kuku Haven Logo" class="logo">
+  <div class="brand-name">
+    <span class="brand-kuku">Kuku</span> <span class="brand-haven">Haven</span>
+  </div>
+  <div class="tagline">CRISPY, FRESH & FLAVORFUL</div>
+  <div class="header-description">Your favorite premium grilled chicken, delicious smokies, and classic sides.</div>
 </header>
-<!-- ================= OPENING HOURS ================= -->
-<section class="hours-box">
-<div class="hours-title">
-Opening Hours
+
+<div class="hours-box">
+  <div class="hours-title">Delivery Status</div>
+  <div class="hours-text">Open daily from 10:00 AM to 10:00 PM</div>
+  <span class="status open">We are Open!</span>
 </div>
-<div class="hours-text">
-Monday – Saturday: 9:00 AM – 10:00 PM<br>
-Sunday: 10:00 AM – 9:00 PM
+
+<div class="hero">
+  <h2>Our Fast Food Menu</h2>
+  <p>Freshly prepared items cooked to juicy perfection with every order.</p>
 </div>
-<div id="openStatus" class="status">
-Checking...
-</div>
-</section>
-<!-- ================= WELCOME ================= -->
-<section class="hero">
-<h2>
-Welcome to Kuku Haven
-</h2>
-<p>
-Choose your favourite food, add it to your cart and place your order.
-</p>
-</section>
-<!-- ================= CATEGORIES ================= -->
+
 <div class="categories">
-<button class="active" onclick="showCategory('all',this)">
-All
-</button>
-<button onclick="showCategory('cooked',this)">
-Cooked Food
-</button>
-<button onclick="showCategory('fresh',this)">
-Fresh Chicken
-</button>
-<button onclick="showCategory('snacks',this)">
-Snacks
-</button>
-<button onclick="showCategory('drinks',this)">
-Drinks
-</button>
-<button onclick="showCategory('eggs',this)">
-Eggs
-</button>
+  <button class="active">All Items</button>
+  <button>Chicken</button>
+  <button>Smokies</button>
 </div>
-<!-- ================= PRODUCTS ================= -->
-<main id="products"></main>
-<!-- ================= DELIVERY NOTICE ================= -->
-<section class="delivery-notice">
 
-Delivery Notice
-Delivery charges are
-separate from your food order total
-and depend on your delivery location.
+<div id="products" class="section">
+  <h2>Menu Items</h2>
+  <div class="products">
+    
+    <!-- Item 1: Grilled Chicken -->
+    <div class="product">
+      <div class="product-image">
+        <img src="https://unsplash.com" alt="Crispy Fried Chicken">
+      </div>
+      <div class="product-info">
+        <h3 class="item-name">Crispy Fried Chicken</h3>
+        <div class="product-rating">★★★★★ 4.9</div>
+        <p>$8.99</p>
+        <button onclick="addToCart('Crispy Fried Chicken', 8.99)">Add to Cart</button>
+      </div>
+    </div>
 
-</section>
-<!-- ================= THANK YOU ================= -->
-<section class="thank-you" id="thankYou">
-<h2>
-Thank you for choosing Kuku Haven!
-</h2>
-<p>
-Your support means the world to us.<br>
-We can't wait to serve you again.
-</p>
-<div class="rate-reminder">
-Don't forget to rate us or send us your feedback.
+    <!-- Item 2: Smokies / Hotdogs -->
+    <div class="product">
+      <div class="product-image">
+        <img src="https://unsplash.com" alt="Premium Smokies">
+      </div>
+      <div class="product-info">
+        <h3 class="item-name">Premium Smokies (Pair)</h3>
+        <div class="product-rating">★★★★☆ 4.7</div>
+        <p>$3.50</p>
+        <button onclick="addToCart('Premium Smokies (Pair)', 3.50)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Item 3: Chicken Nuggets -->
+    <div class="product">
+      <div class="product-image">
+        <img src="https://unsplash.com" alt="Chicken Nuggets">
+      </div>
+      <div class="product-info">
+        <h3>Chicken Nuggets (6pc)</h3>
+        <div class="product-rating">★★★★★ 4.8</div>
+        <p>$4.99</p>
+        <button onclick="addToCart('Chicken Nuggets (6pc)', 4.99)">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
 </div>
-</section>
-<!-- ================= FEEDBACK ================= -->
-<section class="feedback-section" id="feedback">
-<div class="feedback-container">
-<h2>
-Share Your Kuku Haven Experience
-</h2>
-<p class="subtitle">
-Rate us and tell us about your experience.
-</p>
-<div class="stars">
 
-★
-★
-★
-★
-★
-
+<!-- Interactive Feedback & Clickable Star Rating Section -->
+<div class="feedback-section">
+  <div class="feedback-container">
+    <h2>Rate Your Experience</h2>
+    <p class="subtitle">Select your stars and write a message to share it instantly via WhatsApp!</p>
+    
+    <div class="stars" id="starContainer">
+      <button class="star" data-value="1">★</button>
+      <button class="star" data-value="2">★</button>
+      <button class="star" data-value="3">★</button>
+      <button class="star" data-value="4">★</button>
+      <button class="star" data-value="5">★</button>
+    </div>
+    
+    <textarea id="feedbackText" placeholder="Tell us what you liked or how we can improve..."></textarea>
+    <button class="feedback-button" onclick="sendWhatsAppFeedback()">Submit via WhatsApp</button>
+  </div>
 </div>
-<textarea
-id="feedbackText"
-placeholder="Tell us about your experience with Kuku Haven..."
-></textarea>
 
-<button
-class=“feedback-button”
-onclick=“sendFeedback()”
-
-Send Feedback on WhatsApp
-</div>
-</section>
-<!-- ================= FOOTER ================= -->
-<footer>
-<p>
-© 2026 Kuku Haven
-</p>
-<p>
-Fresh food. Great taste. Easy ordering.
-</p>
-</footer>
-<!-- ================= CART BAR ================= -->
+<!-- Live Floating Cart Status Bar -->
 <div class="cart-bar">
-<div>
-
-Cart:
-0 items
-
-<br>
-<strong>
-KSh <span id="cartTotal">0</span>
-</strong>
+  <div>Cart Count: <span id="cartCount">0</span> Items (<span id="cartTotal">$0.00</span>)</div>
+  <button onclick="checkoutCart()">Order on WhatsApp</button>
 </div>
-<button onclick="openCart()">
-View Cart
-</button>
-</div>
-<!-- ================= CART MODAL ================= -->
-<div class="modal" id="cartModal">
-<div class="modal-content">
-<button class="close" onclick="closeCart()">
-Close
-</button>
-<h2>
-Your Cart
-</h2>
-<div id="cartItems"></div>
-<div class="total">
-Total:
-KSh <span id="modalTotal">0</span>
-</div>
-<h2>
-Delivery Details
-</h2>
-<label>
-Your Name
-</label>
 
-<input
-id=“customerName”
-type=“text”
-placeholder=“Enter your name”
+<footer>
+  <p>&copy; 2026 Kuku Haven. All rights reserved.</p>
+</footer>
 
-<label>
-Phone Number
-</label>
-
-<input
-id=“customerPhone”
-type=“tel”
-placeholder=“07XXXXXXXX”
-
-<label>
-Delivery Location
-</label>
-
-<input
-id=“customerLocation”
-type=“text”
-placeholder=“e.g. Utawala, Nairobi”
-
-<label>
-Delivery Instructions
-</label>
-<textarea
-id="customerNotes"
-rows="3"
-placeholder="Any instructions for your order?"
-></textarea>
-<label>
-Order Type
-</label>
-<select id="orderType" onchange="handleOrderType()">
-<option value="Delivery">
-Delivery
-</option>
-<option value="Pickup">
-Pickup
-</option>
-</select>
-<div class="delivery-warning">
-
-Important:
-Delivery fee is charged separately from the food order total
-and depends on your delivery location.
-
-</div>
-<!-- ================= PAYMENT ================= -->
-<div class="payment-section">
-<h3>
-Mode of Payment
-</h3>
-
-<select
-id=“paymentMethod”
-onchange=“showPaymentDetails()”
-
-<option value="">
-Select payment method
-</option>
-<option value="mpesa">
-M-Pesa
-</option>
-<option value="cash">
-Cash on Delivery
-</option>
-</select>
-<div id="mpesaPayment" class="payment-details">
-<h4>
-M-Pesa Payment
-</h4>
-<p>
-Pay using M-Pesa Buy Goods & Services.
-</p>
-<div class="till-number">
-6485965
-</div>
-<p style="text-align:center;">
-<strong>
-JOAN WANGECI
-</strong>
-</p>
-<p style="margin-top:10px;line-height:1.5;">
-
-Go to M-Pesa →
-Lipa na M-Pesa →
-Buy Goods and Services →
-enter Till Number
-6485965.
-
-</p>
-<p style="margin-top:10px;line-height:1.5;">
-
-After payment, send your M-Pesa confirmation
-message together with your order on WhatsApp.
-
-</p>
-</div>
-<div id="cashPayment" class="payment-details">
-<h4>
-Cash on Delivery
-</h4>
-<p>
-Pay in cash when your order is delivered.
-</p>
-</div>
-</div>
-<button class="primary" onclick="placeOrder()">
-Place Order on WhatsApp
-</button>
-</div>
-</div>
 <script>
-/* =====================================================
-   WHATSAPP
-===================================================== */
-const whatsappNumber = "254728065517";
-/* =====================================================
-   INLINE FOOD PICTURES
-   NO EXTERNAL FOOD IMAGE LINKS
-===================================================== */
-function foodPicture(type){
-const pictures = {
-chips: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="125" ry="28" fill="#d9d9d9"/>
-<path d="M90 145 Q200 125 310 145 L285 230 Q200 255 115 230Z" fill="#ffffff"/>
-<path d="M105 150 Q200 135 295 150" fill="none" stroke="#ddd" stroke-width="5"/>
-<g fill="#f5c542" stroke="#d99b20" stroke-width="3">
-<rect x="125" y="78" width="22" height="105" rx="7" transform="rotate(-10 125 78)"/>
-<rect x="150" y="63" width="22" height="120" rx="7" transform="rotate(-4 150 63)"/>
-<rect x="177" y="70" width="22" height="115" rx="7"/>
-<rect x="205" y="58" width="22" height="125" rx="7" transform="rotate(4 205 58)"/>
-<rect x="233" y="70" width="22" height="115" rx="7" transform="rotate(8 233 70)"/>
-<rect x="260" y="84" width="22" height="100" rx="7" transform="rotate(12 260 84)"/>
-<rect x="138" y="93" width="20" height="105" rx="7" transform="rotate(8 138 93)"/>
-<rect x="245" y="90" width="20" height="105" rx="7" transform="rotate(-7 245 90)"/>
-</g>
-</svg>`,
-chipsChicken: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="240" rx="135" ry="25" fill="#ddd"/>
-<path d="M65 150 Q200 125 335 150 L305 230 Q200 250 95 230Z" fill="#fff"/>
-<g fill="#f5c542" stroke="#d99b20" stroke-width="3">
-<rect x="100" y="100" width="18" height="100" rx="6" transform="rotate(-8 100 100)"/>
-<rect x="125" y="82" width="18" height="115" rx="6"/>
-<rect x="150" y="90" width="18" height="110" rx="6"/>
-<rect x="175" y="80" width="18" height="120" rx="6"/>
-<rect x="200" y="90" width="18" height="110" rx="6"/>
-</g>
-<path d="M235 120 C275 95 315 125 302 165 C292 195 260 208 235 190 C215 175 215 140 235 120Z" fill="#b96b35"/>
-<path d="M255 112 Q285 120 295 145" fill="none" stroke="#7d431f" stroke-width="8"/>
-<circle cx="270" cy="140" r="5" fill="#f4c95d"/>
-</svg>`,
-smokie: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="135" ry="24" fill="#ddd"/>
-<g stroke="#6f321e" stroke-width="8" stroke-linecap="round">
-<path d="M80 180 C120 105 150 105 190 180"/>
-<path d="M130 195 C170 120 200 120 240 195"/>
-<path d="M185 180 C225 105 260 105 300 180"/>
-</g>
-<g fill="#a84b29" stroke="#71321e" stroke-width="4">
-<ellipse cx="125" cy="140" rx="32" ry="58" transform="rotate(25 125 140)"/>
-<ellipse cx="200" cy="135" rx="32" ry="60" transform="rotate(18 200 135)"/>
-<ellipse cx="275" cy="140" rx="32" ry="58" transform="rotate(-18 275 140)"/>
-</g>
-<g stroke="#d88b4b" stroke-width="5">
-<path d="M105 125 L140 145"/>
-<path d="M180 120 L215 145"/>
-<path d="M260 125 L290 145"/>
-</g>
-</svg>`,
-sausage: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="135" ry="24" fill="#ddd"/>
-<g fill="#c56a35" stroke="#7f3b20" stroke-width="5">
-<ellipse cx="120" cy="150" rx="30" ry="75" transform="rotate(12 120 150)"/>
-<ellipse cx="200" cy="150" rx="30" ry="75"/>
-<ellipse cx="280" cy="150" rx="30" ry="75" transform="rotate(-12 280 150)"/>
-</g>
-<g stroke="#edaa61" stroke-width="5">
-<path d="M100 130 L138 145"/>
-<path d="M180 125 L220 145"/>
-<path d="M260 145 L300 130"/>
-</g>
-</svg>`,
-samosa: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#d89b35" stroke="#9d631d" stroke-width="5">
-<path d="M75 200 L145 75 L205 205 Z"/>
-<path d="M150 205 L220 75 L280 205 Z"/>
-<path d="M225 205 L295 75 L355 205 Z"/>
-</g>
-<g stroke="#f0c269" stroke-width="5">
-<path d="M110 175 L145 110"/>
-<path d="M185 175 L220 110"/>
-<path d="M260 175 L295 110"/>
-</g>
-</svg>`,
-hotdog: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="145" ry="25" fill="#ddd"/>
-<path d="M70 155 Q200 105 330 155 L310 205 Q200 235 90 205Z" fill="#e7b66a" stroke="#b77a35" stroke-width="5"/>
-<path d="M90 160 Q200 120 310 160 L295 192 Q200 215 105 192Z" fill="#c95d2c" stroke="#84351c" stroke-width="5"/>
-<path d="M105 148 Q200 110 295 148" fill="none" stroke="#f7d56a" stroke-width="8"/>
-<path d="M120 170 Q200 140 280 170" fill="none" stroke="#f0c85c" stroke-width="6"/>
-</svg>`,
-nuggets: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#d79b45" stroke="#9c6523" stroke-width="4">
-<path d="M105 130 Q130 95 160 120 L175 155 Q165 190 130 185 L105 160Z"/>
-<path d="M180 110 Q210 85 235 115 L245 150 Q230 180 195 175 L175 145Z"/>
-<path d="M250 135 Q280 100 310 125 L325 160 Q315 190 280 185 L255 165Z"/>
-<path d="M145 185 Q170 155 200 180 L210 210 Q185 230 155 215Z"/>
-</g>
-<g fill="#f2c16b">
-<circle cx="135" cy="145" r="6"/>
-<circle cx="210" cy="130" r="6"/>
-<circle cx="285" cy="150" r="6"/>
-<circle cx="175" cy="200" r="6"/>
-</g>
-</svg>`,
-burger: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="22" fill="#ddd"/>
-<path d="M85 135 Q200 65 315 135 L300 165 L100 165Z" fill="#d79a45" stroke="#8d5b20" stroke-width="5"/>
-<circle cx="145" cy="115" r="5" fill="#fff"/>
-<circle cx="200" cy="100" r="5" fill="#fff"/>
-<circle cx="255" cy="115" r="5" fill="#fff"/>
-<rect x="95" y="160" width="210" height="35" rx="8" fill="#63361f"/>
-<path d="M100 160 Q200 185 300 160 L300 175 Q200 200 100 175Z" fill="#f3c53e"/>
-<path d="M100 195 L300 195 L285 225 Q200 240 115 225Z" fill="#d78a35"/>
-</svg>`,
-chicken: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<path d="M125 195 C75 155 95 85 155 90 C185 55 250 75 260 115 C315 110 325 175 275 200 C225 225 160 225 125 195Z" fill="#c9793b" stroke="#82411e" stroke-width="6"/>
-<path d="M250 150 Q300 130 315 165" fill="none" stroke="#82411e" stroke-width="14" stroke-linecap="round"/>
-<circle cx="240" cy="120" r="8" fill="#222"/>
-<path d="M250 105 L265 92 L272 112" fill="#d99b25"/>
-</svg>`,
-breast: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#e2a067" stroke="#9b592e" stroke-width="5">
-<path d="M95 170 C100 100 170 75 210 125 C230 155 195 210 140 205 C110 202 92 190 95 170Z"/>
-<path d="M195 165 C210 100 275 90 305 135 C325 170 295 205 245 205 C215 200 190 185 195 165Z"/>
-</g>
-</svg>`,
-thigh: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#c9783b" stroke="#82411e" stroke-width="6">
-<path d="M105 180 C75 145 90 95 140 85 C190 75 220 120 195 160 C175 195 130 205 105 180Z"/>
-<path d="M205 180 C175 145 195 95 245 90 C295 85 320 130 292 170 C270 200 230 205 205 180Z"/>
-</g>
-</svg>`,
-leg: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#c9793b" stroke="#82411e" stroke-width="6">
-<path d="M130 85 C180 90 200 140 175 180 L145 210 L115 190 L135 150 C145 130 120 110 130 85Z"/>
-<path d="M235 90 C285 100 300 145 270 180 L245 210 L215 190 L240 150 C250 130 225 115 235 90Z"/>
-</g>
-<g stroke="#f0ae62" stroke-width="5">
-<path d="M130 120 L165 145"/>
-<path d="M235 125 L270 150"/>
-</g>
-</svg>`,
-wings: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#c7793a" stroke="#82411e" stroke-width="6">
-<path d="M85 170 C75 125 115 90 155 115 C180 130 175 175 145 195 C115 210 90 195 85 170Z"/>
-<path d="M150 160 C145 115 185 90 220 115 C245 135 235 175 205 190 C175 200 155 185 150 160Z"/>
-<path d="M220 165 C220 120 260 100 295 125 C320 145 310 180 280 195 C250 205 225 190 220 165Z"/>
-</g>
-</svg>`,
-drumstick: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#c7793a" stroke="#82411e" stroke-width="6">
-<path d="M130 80 C180 90 200 140 175 180 L150 215 L115 190 L140 150 C150 130 115 110 130 80Z"/>
-<path d="M230 80 C280 90 300 140 275 180 L250 215 L215 190 L240 150 C250 130 215 110 230 80Z"/>
-</g>
-</svg>`,
-feet: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#d9a06a" stroke="#8c552d" stroke-width="5">
-<path d="M130 185 L100 125 L120 115 L145 150 L145 105 L165 105 L165 155 L185 120 L200 130 L170 185Z"/>
-<path d="M230 185 L205 130 L225 120 L245 155 L245 110 L265 110 L265 155 L285 125 L300 138 L270 185Z"/>
-</g>
-</svg>`,
-gizzard: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<g fill="#8b573d" stroke="#5c3829" stroke-width="5">
-<ellipse cx="125" cy="145" rx="48" ry="60" transform="rotate(-15 125 145)"/>
-<ellipse cx="200" cy="160" rx="48" ry="60" transform="rotate(12 200 160)"/>
-<ellipse cx="275" cy="145" rx="48" ry="60" transform="rotate(-10 275 145)"/>
-</g>
-</svg>`,
-liver: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<path d="M80 165 C100 100 170 80 215 110 C245 85 310 105 320 155 C315 205 250 215 205 190 C160 220 95 210 80 165Z" fill="#7b3028" stroke="#4f211d" stroke-width="6"/>
-</svg>`,
-kienyeji: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="130" ry="25" fill="#ddd"/>
-<ellipse cx="195" cy="150" rx="80" ry="65" fill="#8c633f" stroke="#513722" stroke-width="6"/>
-<circle cx="265" cy="105" r="45" fill="#8c633f" stroke="#513722" stroke-width="6"/>
-<circle cx="275" cy="98" r="7" fill="#222"/>
-<path d="M300 110 L335 125 L300 138Z" fill="#d99b25"/>
-<path d="M275 65 Q285 40 295 65 Q310 40 315 70" fill="#b91c1c"/>
-<path d="M150 205 L140 235 M205 210 L200 240" stroke="#d99b25" stroke-width="10"/>
-</svg>`,
-eggs: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="230" rx="125" ry="25" fill="#ddd"/>
-<path d="M90 150 L310 150 L290 215 Q200 245 110 215Z" fill="#d6a34d" stroke="#9a6825" stroke-width="5"/>
-<g fill="#fffaf0" stroke="#cdbd9d" stroke-width="4">
-<ellipse cx="130" cy="135" rx="30" ry="42"/>
-<ellipse cx="180" cy="120" rx="30" ry="42"/>
-<ellipse cx="230" cy="120" rx="30" ry="42"/>
-<ellipse cx="280" cy="135" rx="30" ry="42"/>
-<ellipse cx="155" cy="160" rx="30" ry="42"/>
-<ellipse cx="205" cy="155" rx="30" ry="42"/>
-<ellipse cx="255" cy="160" rx="30" ry="42"/>
-</g>
-</svg>`,
-juice: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="240" rx="80" ry="18" fill="#ddd"/>
-<path d="M135 70 L265 70 L250 225 Q200 245 150 225Z" fill="#f2a52d" fill-opacity=".95" stroke="#b86c15" stroke-width="5"/>
-<path d="M155 100 L245 100 L238 205 Q200 220 162 205Z" fill="#f6b83d"/>
-<path d="M220 70 L250 30" stroke="#b86c15" stroke-width="8" stroke-linecap="round"/>
-<circle cx="180" cy="125" r="15" fill="#ffe39a"/>
-<circle cx="215" cy="145" r="12" fill="#ffe39a"/>
-</svg>`,
-soda: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="240" rx="75" ry="18" fill="#ddd"/>
-<path d="M140 70 L260 70 L245 225 Q200 240 155 225Z" fill="#d71920" stroke="#8f1015" stroke-width="5"/>
-<rect x="150" y="120" width="100" height="70" rx="12" fill="#fff"/>
-<text x="200" y="165" text-anchor="middle" font-size="25" font-weight="bold" fill="#d71920">SODA</text>
-<path d="M145 70 Q200 50 255 70" fill="#eee" stroke="#aaa" stroke-width="5"/>
-</svg>`,
-yogurt: `
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="300" fill="#fff3df"/>
-<ellipse cx="200" cy="235" rx="80" ry="18" fill="#ddd"/>
-<path d="M125 100 L275 100 L255 220 Q200 240 145 220Z" fill="#fff" stroke="#bbb" stroke-width="5"/>
-<path d="M125 100 Q200 75 275 100 L275 125 Q200 105 125 125Z" fill="#f2b6c5"/>
-<circle cx="180" cy="155" r="20" fill="#e89aaa"/>
-<circle cx="220" cy="155" r="20" fill="#e89aaa"/>
-<text x="200" y="195" text-anchor="middle" font-size="20" font-weight="bold" fill="#b91c1c">YOGURT</text>
-</svg>`
-};
-return pictures[type] || pictures.chips;
+// ================= INTERACTIVE CART LOGIC =================
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name: name, price: price });
+  updateCartUI();
 }
-/* =====================================================
-   PRODUCTS
-===================================================== */
-const products = [
-/* COOKED FOOD */
-{
-name:"Chips",
-price:100,
-category:"cooked",
-picture:"chips"
-},
-{
-name:"Chips / ¼ Kuku",
-price:280,
-category:"cooked",
-picture:"chipsChicken"
-},
-{
-name:"Chips / ½ Kuku",
-price:460,
-category:"cooked",
-picture:"chipsChicken"
-},
-{
-name:"Chips / 1 Piece",
-price:220,
-category:"cooked",
-picture:"chipsChicken"
-},
-{
-name:"Chips / Chicken Strips",
-price:200,
-category:"cooked",
-picture:"chipsChicken"
-},
-{
-name:"Burger",
-price:150,
-category:"cooked",
-picture:"burger"
-},
-{
-name:"Chicken Wings",
-price:250,
-category:"cooked",
-picture:"wings"
-},
-{
-name:"Nuggets - 1 Piece",
-price:25,
-category:"cooked",
-picture:"nuggets",
-className:"nugget-piece"
-},
-/* SNACKS */
-{
-name:"Smokie",
-price:40,
-category:"snacks",
-picture:"smokie"
-},
-{
-name:"Sausage",
-price:60,
-category:"snacks",
-picture:"sausage"
-},
-{
-name:"Samosa",
-price:40,
-category:"snacks",
-picture:"samosa"
-},
-{
-name:"Small Hotdog",
-price:80,
-category:"snacks",
-picture:"hotdog",
-className:"small-hotdog"
-},
-{
-name:"Large Hotdog",
-price:100,
-category:"snacks",
-picture:"hotdog",
-className:"large-hotdog"
-},
-{
-name:"Nuggets - 1kg",
-price:750,
-category:"snacks",
-picture:"nuggets"
-},
-{
-name:"Nuggets - 500g",
-price:360,
-category:"snacks",
-picture:"nuggets"
-},
-{
-name:"Nuggets - 250g",
-price:190,
-category:"snacks",
-picture:"nuggets"
-},
-{
-name:"Beef Smokies - Pack",
-price:440,
-category:"snacks",
-picture:"smokie"
-},
-{
-name:"Chicken Smokies - Pack",
-price:440,
-category:"snacks",
-picture:"smokie"
-},
-{
-name:"Beef Sausages - Pack",
-price:600,
-category:"snacks",
-picture:"sausage"
-},
-{
-name:"Chicken Sausages - Pack",
-price:580,
-category:"snacks",
-picture:"sausage"
-},
-/* FRESH CHICKEN */
-{
-name:"Capon (Broiler Kuku) - 1kg",
-price:500,
-category:"fresh",
-picture:"chicken"
-},
-{
-name:"Boneless Breast - 1kg",
-price:640,
-category:"fresh",
-picture:"breast"
-},
-{
-name:"Thighs - 1kg",
-price:490,
-category:"fresh",
-picture:"thigh"
-},
-{
-name:"Legs - 1kg",
-price:510,
-category:"fresh",
-picture:"leg"
-},
-{
-name:"Wings - 1kg",
-price:540,
-category:"fresh",
-picture:"wings"
-},
-{
-name:"Drumsticks - 1kg",
-price:640,
-category:"fresh",
-picture:"drumstick"
-},
-{
-name:"Gizzards - 1kg",
-price:500,
-category:"fresh",
-picture:"gizzard"
-},
-{
-name:"Chicken Liver - 1kg",
-price:300,
-category:"fresh",
-picture:"liver"
-},
-{
-name:"Kienyeji Kuku - Ex Layers",
-price:700,
-category:"fresh",
-picture:"kienyeji"
-},
-{
-name:"Kienyeji Kuku - Improved (Mwera)",
-price:1000,
-category:"fresh",
-picture:"kienyeji"
-},
-{
-name:"Kienyeji Kuku - Jogoo",
-price:1500,
-category:"fresh",
-picture:"kienyeji"
-},
-{
-name:"Chicken Feet - 1kg",
-price:350,
-category:"fresh",
-picture:"feet"
-},
-/* EGGS */
-{
-name:"Kienyeji Eggs - Tray",
-price:600,
-category:"eggs",
-picture:"eggs"
-},
-{
-name:"Grade Eggs - Tray",
-price:480,
-category:"eggs",
-picture:"eggs"
-},
-/* DRINKS */
-{
-name:"Fresh Fruit Juice",
-price:100,
-category:"drinks",
-picture:"juice"
-},
-{
-name:"Small Soda",
-price:50,
-category:"drinks",
-picture:"soda"
-},
-{
-name:"Large Soda",
-price:80,
-category:"drinks",
-picture:"soda"
-},
-{
-name:"Yogurt",
-price:100,
-category:"drinks",
-picture:"yogurt"
+
+function updateCartUI() {
+  document.getElementById('cartCount').innerText = cart.length;
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  document.getElementById('cartTotal').innerText = '$' + total.toFixed(2);
 }
-];
-/* =====================================================
-   CART
-===================================================== */
-let cart=[];
-let selectedRating=0;
-/* =====================================================
-   OPENING HOURS - KENYA TIME
-===================================================== */
-function updateOpeningStatus(){
-const now=new Date();
-const parts=new Intl.DateTimeFormat(
-"en-KE",
-{
-timeZone:"Africa/Nairobi",
-weekday:"short",
-hour:"2-digit",
-minute:"2-digit",
-hour12:false
-}
-).formatToParts(now);
-let weekday="";
-let hour=0;
-let minute=0;
-parts.forEach(part=>{
-if(part.type==="weekday"){
-weekday=part.value;
-}
-if(part.type==="hour"){
-hour=parseInt(part.value);
-}
-if(part.type==="minute"){
-minute=parseInt(part.value);
-}
-});
-if(hour===24){
-hour=0;
-}
-const currentMinutes=(hour*60)+minute;
-let opening;
-let closing;
-if(weekday==="Sun"){
-opening=10*60;
-closing=21*60;
-}else{
-opening=9*60;
-closing=22*60;
-}
-const status=document.getElementById("openStatus");
-if(
-currentMinutes>=opening &&
-currentMinutes<closing
-){
-status.textContent="OPEN NOW";
-status.className="status open";
-}else{
-status.textContent="CLOSED";
-status.className="status closed";
-}
-}
-updateOpeningStatus();
-setInterval(updateOpeningStatus,60000);
-/* =====================================================
-   CATEGORY TITLES
-===================================================== */
-function categoryTitle(category){
-const titles={
-cooked:"Cooked Food",
-fresh:"Fresh Chicken",
-snacks:"Snacks",
-drinks:"Drinks",
-eggs:"Eggs"
-};
-return titles[category] || "Menu";
-}
-/* =====================================================
-   DISPLAY CATEGORY
-===================================================== */
-function showCategory(category,button){
-document
-.querySelectorAll(".categories button")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
-if(button){
-button.classList.add("active");
-}
-const container=document.getElementById("products");
-const filtered=
-category==="all"
-?products
-:products.filter(
-p=>p.category===category
-);
-container.innerHTML=`
-<section class="section">
-<h2>
-${
-category==="all"
-?"Our Menu"
-:categoryTitle(category)
-}
-</h2>
-<div class="products">
-${filtered.map(product=>{
-const index=products.indexOf(product);
-const specialClass=
-product.className || "";
-return`
-<div class="product ${specialClass}">
-<div class="product-image">
-${foodPicture(product.picture)}
-</div>
-<div class="product-info">
-<h3>
-${product.name}
-</h3>
-<p>
-KSh ${product.price}
-</p>
-<button onclick="addToCart(${index})">
-Add to Cart
-</button>
-</div>
-</div>
-`;
-}).join("")}
-</div>
-</section>
-`;
-}
-/* =====================================================
-   ADD TO CART
-===================================================== */
-function addToCart(index){
-const product=products[index];
-const existing=
-cart.find(
-item=>item.name===product.name
-);
-if(existing){
-existing.quantity++;
-}else{
-cart.push({
-name:product.name,
-price:product.price,
-quantity:1
-});
-}
-updateCart();
-}
-/* =====================================================
-   UPDATE CART
-===================================================== */
-function updateCart(){
-const count=
-cart.reduce(
-(total,item)=>total+item.quantity,
-0
-);
-const total=
-cart.reduce(
-(sum,item)=>
-sum+(item.price*item.quantity),
-0
-);
-document.getElementById("cartCount").textContent=count;
-document.getElementById("cartTotal").textContent=total;
-document.getElementById("modalTotal").textContent=total;
-renderCart();
-}
-/* =====================================================
-   RENDER CART
-===================================================== */
-function renderCart(){
-const container=document.getElementById("cartItems");
-if(cart.length===0){
-container.innerHTML=
-'<div class="empty">Your cart is empty.</div>';
-return;
-}
-container.innerHTML=
-cart.map((item,index)=>`
-<div class="cart-item">
-<div>
-<strong>
-${item.name}
-</strong>
-<br>
-KSh ${item.price} × ${item.quantity}
-<br>
-<strong>
-KSh ${item.price*item.quantity}
-</strong>
-</div>
-<div class="cart-controls">
-<button onclick="changeQuantity(${index},-1)">
-−
-</button>
-<span>
-${item.quantity}
-</span>
-<button onclick="changeQuantity(${index},1)">
-+
-</button>
-</div>
-</div>
-`).join("");
-}
-/* =====================================================
-   CHANGE QUANTITY
-===================================================== */
-function changeQuantity(index,amount){
-cart[index].quantity+=amount;
-if(cart[index].quantity<=0){
-cart.splice(index,1);
-}
-updateCart();
-}
-/* =====================================================
-   OPEN CART
-===================================================== */
-function openCart(){
-document.getElementById("cartModal").style.display="block";
-updateCart();
-}
-/* =====================================================
-   CLOSE CART
-===================================================== */
-function closeCart(){
-document.getElementById("cartModal").style.display="none";
-}
-/* =====================================================
-   ORDER TYPE
-===================================================== */
-function handleOrderType(){
-const type=document.getElementById("orderType").value;
-const location=document.getElementById("customerLocation");
-if(type==="Pickup"){
-location.placeholder="Pickup location / branch";
-}else{
-location.placeholder="e.g. Utawala, Nairobi";
-}
-}
-/* =====================================================
-   PAYMENT
-===================================================== */
-function showPaymentDetails(){
-const method=document.getElementById("paymentMethod").value;
-document.getElementById("mpesaPayment").style.display=
-method==="mpesa" ? "block" : "none";
-document.getElementById("cashPayment").style.display=
-method==="cash" ? "block" : "none";
-}
-/* =====================================================
-   PLACE ORDER
-===================================================== */
-function placeOrder(){
-if(cart.length===0){
-alert("Please add something to your cart first.");
-return;
-}
-const name=
-document.getElementById("customerName")
-.value.trim();
-const phone=
-document.getElementById("customerPhone")
-.value.trim();
-const location=
-document.getElementById("customerLocation")
-.value.trim();
-const notes=
-document.getElementById("customerNotes")
-.value.trim();
-const orderType=
-document.getElementById("orderType").value;
-const paymentMethod=
-document.getElementById("paymentMethod").value;
-if(!name || !phone){
-alert("Please enter your name and phone number.");
-return;
-}
-if(!location){
-alert("Please enter your delivery or pickup location.");
-return;
-}
-if(!paymentMethod){
-alert("Please select a payment method.");
-return;
-}
-const total=
-cart.reduce(
-(sum,item)=>
-sum+(item.price*item.quantity),
-0
-);
-let message=
-"KUKU HAVEN ORDER\n\n";
-message+=
-"Customer: "+name+"\n";
-message+=
-"Phone: "+phone+"\n";
-message+=
-(
-orderType==="Delivery"
-?
-"Delivery Location: "
-:
-"Pickup Location: "
-)+location+"\n";
-message+=
-"Order Type: "+orderType+"\n";
-message+=
-"Payment: "+
-(
-paymentMethod==="mpesa"
-?
-"M-Pesa"
-:
-"Cash on Delivery"
-)+
-"\n\n";
-message+="ORDER ITEMS:\n";
-cart.forEach(item=>{
-message+=
-item.name+
-" x "+
-item.quantity+
-" = KSh "+
-(item.price*item.quantity)+
-"\n";
-});
-message+=
-"\nFOOD TOTAL: KSh "+total+"\n";
-if(orderType==="Delivery"){
-message+=
-"\nDELIVERY FEE: CHARGED SEPARATELY\n";
-message+=
-"Delivery fee depends on the delivery location.\n";
-}
-if(paymentMethod==="mpesa"){
-message+=
-"\nM-Pesa Till Number: 6485965\n";
-message+=
-"Till Name: JOAN WANGECI\n";
-message+=
-"Customer will send M-Pesa confirmation message.\n";
-}
-if(paymentMethod==="cash"){
-message+=
-"\nPayment will be made in cash on delivery.\n";
-}
-if(notes){
-message+=
-"\nDelivery Instructions: "+
-notes+
-"\n";
-}
-message+=
-"\nThank you for choosing Kuku Haven!";
-const url=
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(message);
-window.open(url,"_blank");
-document.getElementById("thankYou").style.display="block";
-closeCart();
-setTimeout(()=>{
-document
-.getElementById("thankYou")
-.scrollIntoView({
-behavior:"smooth"
-});
-},500);
-}
-/* =====================================================
-   RATING
-===================================================== */
-function selectRating(rating){
-selectedRating=rating;
-document
-.querySelectorAll(".star")
-.forEach((star,index)=>{
-if(index<rating){
-star.classList.add("selected");
-}else{
-star.classList.remove("selected");
-}
-});
-}
-/* =====================================================
-   FEEDBACK
-===================================================== */
-function sendFeedback(){
-const feedback=
-document.getElementById("feedbackText")
-.value.trim();
-if(selectedRating===0){
-alert("Please select a star rating first.");
-return;
-}
-if(!feedback){
-alert("Please tell us about your experience.");
-return;
-}
-const stars="⭐".repeat(selectedRating);
-let message=
-"KUKU HAVEN CUSTOMER FEEDBACK\n\n";
-message+=
-"Rating: "+stars+"\n\n";
-message+=
-"Experience:\n"+
-feedback+
-"\n\n";
-message+=
-"Thank you for choosing Kuku Haven!";
-const url=
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(message);
-window.open(url,"_blank");
-}
-/* =====================================================
-   CLOSE MODAL OUTSIDE
-===================================================== */
-window.addEventListener("click",function(event){
-const modal=document.getElementById("cartModal");
-if(event.target===modal){
-closeCart();
-}
-});
-/* =====================================================
-   START MENU
-===================================================== */
-showCategory(
-"all",
-document.querySelector(".categories button")
-);
-</script>
-</body>
-</html>
+
+function checkoutCart() {
+  if(cart.length === 0) {
+    alert("Your cart is empty! Please add items before checking out.");
+    return;
+  }
+  
+  // Replace this with your exact business WhatsApp phone number
+  const whatsappNumber = "254700000000"; 
+  
+  let itemSummary = {};
+  cart.forEach(item => {
+    itemSummary[item.name] = (itemSummary[item.name] || 0) + 1;
+  });
+  
+  let message = "*New Food Order from Kuku Haven*\n\n";
+  for (let item in itemSummary) {
+    message += `• ${item} x${itemSummary[item]}\n`;
+  }
+  
