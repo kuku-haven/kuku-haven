@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Kuku Haven | Order Online</title>
-
 <style>
-
-/* =====================================================
-   BASIC
-===================================================== */
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
-
 html{
   scroll-behavior:smooth;
 }
-
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#fff8f0;
   color:#222;
   padding-bottom:90px;
 }
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
+/* HEADER */
 header{
   background:#b91c1c;
   color:white;
@@ -44,7 +29,6 @@ header{
   top:0;
   z-index:20;
 }
-
 .logo{
   width:100px;
   height:100px;
@@ -55,60 +39,46 @@ header{
   background:white;
   padding:4px;
 }
-
 .brand-name{
-  font-family:Arial,sans-serif;
   font-size:40px;
   line-height:1;
   font-weight:900;
   letter-spacing:1px;
 }
-
 .brand-kuku{
   color:white;
 }
-
 .brand-haven{
   color:#f7c948;
 }
-
 .tagline{
   margin-top:9px;
   font-size:13px;
   font-weight:900;
   letter-spacing:1.2px;
 }
-
 .header-description{
   margin-top:8px;
   font-size:13px;
   color:#fff3df;
 }
-
-
-/* =====================================================
-   OPENING HOURS
-===================================================== */
-
+/* OPENING HOURS */
 .hours-box{
   background:white;
   padding:17px 15px;
   text-align:center;
   border-bottom:1px solid #eee;
 }
-
 .hours-title{
   font-size:18px;
   font-weight:900;
   margin-bottom:7px;
 }
-
 .hours-text{
   color:#555;
   line-height:1.6;
   font-size:14px;
 }
-
 .status{
   display:inline-block;
   margin-top:10px;
@@ -117,43 +87,29 @@ header{
   font-weight:bold;
   font-size:14px;
 }
-
 .status.open{
   background:#dcfce7;
   color:#15803d;
 }
-
 .status.closed{
   background:#fee2e2;
   color:#b91c1c;
 }
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
+/* HERO */
 .hero{
   padding:27px 18px;
   text-align:center;
   background:#fff;
 }
-
 .hero h2{
   font-size:24px;
   margin-bottom:8px;
 }
-
 .hero p{
   color:#666;
   line-height:1.5;
 }
-
-
-/* =====================================================
-   CATEGORIES
-===================================================== */
-
+/* CATEGORIES */
 .categories{
   display:flex;
   gap:8px;
@@ -165,11 +121,9 @@ header{
   z-index:10;
   scrollbar-width:none;
 }
-
 .categories::-webkit-scrollbar{
   display:none;
 }
-
 .categories button{
   border:none;
   background:#f1f1f1;
@@ -179,46 +133,35 @@ header{
   font-weight:bold;
   cursor:pointer;
 }
-
 .categories button.active{
   background:#b91c1c;
   color:white;
 }
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
+/* PRODUCTS */
 #products{
   background:#fff8f0;
   min-height:300px;
 }
-
 .section{
   padding:22px 15px;
   max-width:1100px;
   margin:auto;
 }
-
 .section h2{
   margin-bottom:15px;
   font-size:22px;
 }
-
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
   gap:14px;
 }
-
 .product{
   background:white;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 3px 10px rgba(0,0,0,.09);
 }
-
 .product-image{
   width:100%;
   height:165px;
@@ -226,34 +169,32 @@ header{
   display:block;
   background:#eee;
 }
-
-/* Makes small and large hotdogs visually different */
+/* HOTDOG SIZE DIFFERENCE */
 .product.small-hotdog .product-image{
   object-fit:contain;
-  padding:28px 45px;
+  padding:38px 55px;
 }
-
 .product.large-hotdog .product-image{
   object-fit:contain;
-  padding:5px 8px;
+  padding:8px 10px;
 }
-
+/* THREE-PIECE FOOD */
+.product.three-food .product-image{
+  object-fit:cover;
+}
 .product-info{
   padding:13px;
 }
-
 .product h3{
   font-size:15px;
   line-height:1.3;
   margin-bottom:8px;
 }
-
 .product p{
   color:#b91c1c;
   font-weight:bold;
   margin-bottom:11px;
 }
-
 .product button{
   width:100%;
   border:none;
@@ -264,16 +205,10 @@ header{
   font-weight:bold;
   cursor:pointer;
 }
-
 .product button:active{
   transform:scale(.98);
 }
-
-
-/* =====================================================
-   DELIVERY NOTICE
-===================================================== */
-
+/* DELIVERY NOTICE */
 .delivery-notice{
   max-width:900px;
   margin:10px auto 25px;
@@ -284,16 +219,10 @@ header{
   text-align:center;
   line-height:1.5;
 }
-
 .delivery-notice strong{
   color:#9a6700;
 }
-
-
-/* =====================================================
-   THANK YOU
-===================================================== */
-
+/* THANK YOU */
 .thank-you{
   display:none;
   background:white;
@@ -301,16 +230,13 @@ header{
   padding:30px 18px;
   border-top:1px solid #eee;
 }
-
 .thank-you h2{
   margin-bottom:10px;
 }
-
 .thank-you p{
   color:#666;
   line-height:1.5;
 }
-
 .rate-reminder{
   display:inline-block;
   margin-top:12px;
@@ -320,42 +246,32 @@ header{
   color:#8a5a00;
   font-weight:bold;
 }
-
-
-/* =====================================================
-   FEEDBACK
-===================================================== */
-
+/* FEEDBACK */
 .feedback-section{
   background:white;
   padding:35px 18px;
   text-align:center;
   border-top:1px solid #eee;
 }
-
 .feedback-container{
   max-width:650px;
   margin:auto;
 }
-
 .feedback-section h2{
   font-size:22px;
   margin-bottom:8px;
 }
-
 .feedback-section .subtitle{
   color:#666;
   margin-bottom:20px;
   line-height:1.5;
 }
-
 .stars{
   display:flex;
   justify-content:center;
   gap:7px;
   margin:18px 0;
 }
-
 .star{
   border:none;
   background:transparent;
@@ -363,12 +279,10 @@ header{
   color:#ccc;
   cursor:pointer;
 }
-
 .star.selected,
 .star:hover{
   color:#f59e0b;
 }
-
 .feedback-section textarea{
   width:100%;
   min-height:120px;
@@ -379,7 +293,6 @@ header{
   resize:vertical;
   margin-bottom:12px;
 }
-
 .feedback-button{
   width:100%;
   border:none;
@@ -390,12 +303,7 @@ header{
   font-size:16px;
   font-weight:bold;
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px 15px;
@@ -404,12 +312,7 @@ footer{
   background:#fff8f0;
   line-height:1.7;
 }
-
-
-/* =====================================================
-   CART BAR
-===================================================== */
-
+/* CART BAR */
 .cart-bar{
   position:fixed;
   bottom:0;
@@ -423,7 +326,6 @@ footer{
   align-items:center;
   z-index:50;
 }
-
 .cart-bar button{
   background:#f59e0b;
   color:#111;
@@ -433,12 +335,7 @@ footer{
   font-weight:bold;
   cursor:pointer;
 }
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -448,7 +345,6 @@ footer{
   padding:15px;
   overflow-y:auto;
 }
-
 .modal-content{
   background:white;
   max-width:600px;
@@ -456,7 +352,6 @@ footer{
   border-radius:16px;
   padding:20px;
 }
-
 .close{
   float:right;
   border:none;
@@ -465,7 +360,6 @@ footer{
   border-radius:8px;
   cursor:pointer;
 }
-
 .cart-item{
   display:flex;
   justify-content:space-between;
@@ -473,13 +367,11 @@ footer{
   padding:12px 0;
   border-bottom:1px solid #eee;
 }
-
 .cart-controls{
   display:flex;
   align-items:center;
   gap:8px;
 }
-
 .cart-controls button{
   width:30px;
   height:30px;
@@ -489,14 +381,12 @@ footer{
   font-weight:bold;
   cursor:pointer;
 }
-
 .total{
   font-size:21px;
   font-weight:bold;
   margin:18px 0;
   text-align:right;
 }
-
 input,
 textarea,
 select{
@@ -507,12 +397,10 @@ select{
   border-radius:9px;
   font-size:15px;
 }
-
 label{
   font-weight:bold;
   font-size:14px;
 }
-
 .payment-section{
   background:#fff8f0;
   border:1px solid #eee;
@@ -520,7 +408,6 @@ label{
   padding:15px;
   margin:20px 0;
 }
-
 .payment-details{
   display:none;
   background:white;
@@ -529,7 +416,6 @@ label{
   margin-top:12px;
   border:1px solid #eee;
 }
-
 .till-number{
   background:#b91c1c;
   color:white;
@@ -540,7 +426,6 @@ label{
   border-radius:10px;
   margin:12px 0;
 }
-
 .delivery-warning{
   background:#fff7d6;
   border:1px solid #f4d35e;
@@ -550,7 +435,6 @@ label{
   line-height:1.5;
   font-size:14px;
 }
-
 .primary{
   width:100%;
   border:none;
@@ -562,764 +446,489 @@ label{
   font-weight:bold;
   cursor:pointer;
 }
-
 .empty{
   text-align:center;
   color:#777;
   padding:20px;
 }
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
+/* MOBILE */
 @media(max-width:600px){
-
   .logo{
     width:92px;
     height:92px;
   }
-
   .brand-name{
     font-size:37px;
   }
-
   .categories{
     top:178px;
   }
-
   .products{
     grid-template-columns:repeat(2,1fr);
     gap:10px;
   }
-
   .product-image{
     height:145px;
   }
-
   .product-info{
     padding:10px;
   }
-
   .product h3{
     font-size:14px;
   }
-
   .star{
     font-size:32px;
   }
-
 }
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
 @media(max-width:380px){
-
   .products{
     grid-template-columns:1fr 1fr;
   }
-
   .product-image{
     height:135px;
   }
-
   .brand-name{
     font-size:34px;
   }
-
 }
-
 </style>
-
 </head>
-
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
+<!-- HEADER -->
 <header>
 
 <img
-src="79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg"
-alt="Kuku Haven Logo"
-class="logo"
->
+src=“79C3D28C-BEBA-4248-9741-2B232E3DAC14.jpeg”
+alt=“Kuku Haven Logo”
+class=“logo”
 
 <div class="brand-name">
 <span class="brand-kuku">KUKU</span>
 <span class="brand-haven">HAVEN</span>
 </div>
-
 <div class="tagline">
 MUNCH IT • CRUNCH IT • LOVE IT
 </div>
-
 <p class="header-description">
 Fresh Chicken • Cooked Food • Snacks • Drinks
 </p>
-
 </header>
-
-
-<!-- =====================================================
-     OPENING HOURS
-===================================================== -->
-
+<!-- OPENING HOURS -->
 <section class="hours-box">
-
 <div class="hours-title">
 Opening Hours
 </div>
-
 <div class="hours-text">
 Monday – Saturday: 9:00 AM – 10:00 PM<br>
 Sunday: 10:00 AM – 9:00 PM
 </div>
-
 <div id="openStatus" class="status">
 Checking...
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     WELCOME
-===================================================== -->
-
+<!-- WELCOME -->
 <section class="hero">
-
 <h2>
 Welcome to Kuku Haven
 </h2>
-
 <p>
 Choose your favourite food, add it to your cart and place your order.
 </p>
-
 </section>
-
-
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
-
+<!-- CATEGORIES -->
 <div class="categories">
-
-<button
-class="active"
-onclick="showCategory('all',this)"
->
+<button class="active" onclick="showCategory('all',this)">
 All
 </button>
-
-<button
-onclick="showCategory('cooked',this)"
->
+<button onclick="showCategory('cooked',this)">
 Cooked Food
 </button>
-
-<button
-onclick="showCategory('fresh',this)"
->
+<button onclick="showCategory('fresh',this)">
 Fresh Chicken
 </button>
-
-<button
-onclick="showCategory('snacks',this)"
->
+<button onclick="showCategory('snacks',this)">
 Snacks
 </button>
-
-<button
-onclick="showCategory('drinks',this)"
->
+<button onclick="showCategory('drinks',this)">
 Drinks
 </button>
-
-<button
-onclick="showCategory('eggs',this)"
->
+<button onclick="showCategory('eggs',this)">
 Eggs
 </button>
-
 </div>
-
-
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
-
+<!-- PRODUCTS -->
 <main id="products"></main>
-
-
-<!-- =====================================================
-     DELIVERY NOTICE
-===================================================== -->
-
+<!-- DELIVERY NOTICE -->
 <section class="delivery-notice">
 
-<strong>Delivery Notice</strong>
-<br>
-
+Delivery Notice
 Delivery charges are
-<strong>separate from your food order total</strong>
+separate from your food order total
 and depend on your delivery location.
 
 </section>
-
-
-<!-- =====================================================
-     THANK YOU
-===================================================== -->
-
-<section
-class="thank-you"
-id="thankYou"
->
-
+<!-- THANK YOU -->
+<section class="thank-you" id="thankYou">
 <h2>
 Thank you for choosing Kuku Haven!
 </h2>
-
 <p>
 Your support means the world to us.<br>
 We can't wait to serve you again.
 </p>
-
 <div class="rate-reminder">
 Don't forget to rate us or send us your feedback.
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     FEEDBACK
-===================================================== -->
-
-<section
-class="feedback-section"
-id="feedback"
->
-
+<!-- FEEDBACK -->
+<section class="feedback-section" id="feedback">
 <div class="feedback-container">
-
 <h2>
 Share Your Kuku Haven Experience
 </h2>
-
 <p class="subtitle">
 Rate us and tell us about your experience.
 </p>
-
 <div class="stars">
 
-<button
-class="star"
-onclick="selectRating(1)"
->
 ★
-</button>
-
-<button
-class="star"
-onclick="selectRating(2)"
->
 ★
-</button>
-
-<button
-class="star"
-onclick="selectRating(3)"
->
 ★
-</button>
-
-<button
-class="star"
-onclick="selectRating(4)"
->
 ★
-</button>
-
-<button
-class="star"
-onclick="selectRating(5)"
->
 ★
-</button>
 
 </div>
-
 <textarea
 id="feedbackText"
 placeholder="Tell us about your experience with Kuku Haven..."
 ></textarea>
 
 <button
-class="feedback-button"
-onclick="sendFeedback()"
->
+class=“feedback-button”
+onclick=“sendFeedback()”
+
 Send Feedback on WhatsApp
-</button>
-
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
+<!-- FOOTER -->
 <footer>
-
 <p>
 © 2026 Kuku Haven
 </p>
-
 <p>
 Fresh food. Great taste. Easy ordering.
 </p>
-
 </footer>
-
-
-<!-- =====================================================
-     CART BAR
-===================================================== -->
-
+<!-- CART BAR -->
 <div class="cart-bar">
-
 <div>
 
 Cart:
-<strong id="cartCount">0</strong> items
+0 items
 
 <br>
-
 <strong>
 KSh <span id="cartTotal">0</span>
 </strong>
-
 </div>
-
 <button onclick="openCart()">
 View Cart
 </button>
-
 </div>
-
-
-<!-- =====================================================
-     CART MODAL
-===================================================== -->
-
-<div
-class="modal"
-id="cartModal"
->
-
+<!-- CART MODAL -->
+<div class="modal" id="cartModal">
 <div class="modal-content">
-
-<button
-class="close"
-onclick="closeCart()"
->
+<button class="close" onclick="closeCart()">
 Close
 </button>
-
 <h2>
 Your Cart
 </h2>
-
 <div id="cartItems"></div>
-
 <div class="total">
 Total:
 KSh <span id="modalTotal">0</span>
 </div>
-
-
-<!-- =====================================================
-     CUSTOMER DETAILS
-===================================================== -->
-
 <h2>
 Delivery Details
 </h2>
-
 <label>
 Your Name
 </label>
 
 <input
-id="customerName"
-type="text"
-placeholder="Enter your name"
->
+id=“customerName”
+type=“text”
+placeholder=“Enter your name”
 
 <label>
 Phone Number
 </label>
 
 <input
-id="customerPhone"
-type="tel"
-placeholder="07XXXXXXXX"
->
+id=“customerPhone”
+type=“tel”
+placeholder=“07XXXXXXXX”
 
 <label>
 Delivery Location
 </label>
 
 <input
-id="customerLocation"
-type="text"
-placeholder="e.g. Utawala, Nairobi"
->
+id=“customerLocation”
+type=“text”
+placeholder=“e.g. Utawala, Nairobi”
 
 <label>
 Delivery Instructions
 </label>
-
 <textarea
 id="customerNotes"
 rows="3"
 placeholder="Any instructions for your order?"
 ></textarea>
-
 <label>
 Order Type
 </label>
-
-<select
-id="orderType"
-onchange="handleOrderType()"
->
-
+<select id="orderType" onchange="handleOrderType()">
 <option value="Delivery">
 Delivery
 </option>
-
 <option value="Pickup">
 Pickup
 </option>
-
 </select>
-
-
-<!-- =====================================================
-     DELIVERY WARNING
-===================================================== -->
-
 <div class="delivery-warning">
 
-<strong>Important:</strong>
-<br>
-
+Important:
 Delivery fee is charged separately from the food order total
 and depends on your delivery location.
 
 </div>
-
-
-<!-- =====================================================
-     PAYMENT
-===================================================== -->
-
+<!-- PAYMENT -->
 <div class="payment-section">
-
 <h3>
 Mode of Payment
 </h3>
 
 <select
-id="paymentMethod"
-onchange="showPaymentDetails()"
->
+id=“paymentMethod”
+onchange=“showPaymentDetails()”
 
 <option value="">
 Select payment method
 </option>
-
 <option value="mpesa">
 M-Pesa
 </option>
-
 <option value="cash">
 Cash on Delivery
 </option>
-
 </select>
-
-
-<!-- M-PESA -->
-
-<div
-id="mpesaPayment"
-class="payment-details"
->
-
+<div id="mpesaPayment" class="payment-details">
 <h4>
 M-Pesa Payment
 </h4>
-
 <p>
 Pay using M-Pesa Buy Goods & Services.
 </p>
-
 <div class="till-number">
 6485965
 </div>
-
 <p style="text-align:center;">
 <strong>
 JOAN WANGECI
 </strong>
 </p>
-
 <p style="margin-top:10px;line-height:1.5;">
 
 Go to M-Pesa →
 Lipa na M-Pesa →
 Buy Goods and Services →
 enter Till Number
-<strong>6485965</strong>.
+6485965.
 
 </p>
-
 <p style="margin-top:10px;line-height:1.5;">
 
 After payment, send your M-Pesa confirmation
 message together with your order on WhatsApp.
 
 </p>
-
 </div>
-
-
-<!-- CASH -->
-
-<div
-id="cashPayment"
-class="payment-details"
->
-
+<div id="cashPayment" class="payment-details">
 <h4>
 Cash on Delivery
 </h4>
-
 <p>
 Pay in cash when your order is delivered.
 </p>
-
 </div>
-
 </div>
-
-
-<!-- =====================================================
-     PLACE ORDER
-===================================================== -->
 
 <button
-class="primary"
-onclick="placeOrder()"
->
+class=“primary”
+onclick=“placeOrder()”
+
 Place Order on WhatsApp
-</button>
-
 </div>
-
 </div>
-
-
 <script>
-
-
-/* =====================================================
-   WHATSAPP
-===================================================== */
-
+/* WHATSAPP */
 const whatsappNumber = "254728065517";
-
-
-/* =====================================================
-   PRODUCT IMAGES
-===================================================== */
-
+/*
+=========================================================
+SIMPLE FOOD IMAGES
+These are intentionally simple food photographs.
+No KFC branding.
+No restaurant branding.
+No emojis.
+=========================================================
+*/
 const images = {
-
+/* PLAIN CHIPS */
 chips:
-"https://supermarket.co.ug/2166-large_default/plain-chips-delivery.jpg",
-
-chipsQuarter:
-"https://tb-static.uber.com/prod/image-proc/processed_images/db04beeb0a4c33a810963fb8cda6aa5d/a19bb09692310dfd41e49a96c424b3a6.jpeg",
-
-chipsHalf:
-"https://tb-static.uber.com/prod/image-proc/processed_images/52083bc5511f82fa8a457ff3c7b7ecb2/7f4ae9ca0446cbc23e71d8d395a98428.jpeg",
-
+"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85",
+/* CHIPS + CHICKEN */
 chipsChicken:
-"https://mindtrip.ai/restaurants/7b03/1042/6ddf/3bc8/5f64/0fb9/43a1/3e2a",
-
+"https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN */
+chicken:
+"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN PIECES */
+chickenPiece:
+"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN STRIPS */
 chickenStrips:
-"https://imageproxy.wolt.com/assets/684975175c258b47da380a64",
-
+"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85",
+/* WINGS */
 wings:
-"https://sd-images.simplydelivery.io/cdn-cgi/image/format%3Dauto%2Cquality%3D85%2Cwidth%3D500%2Cfit%3Dcover/https%3A/sd-images.simplydelivery.io/ZP269F9878k2672/images/articles/f3caf80306a4f91ba467c697a5569c2103c88cc0.png",
-
+"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=85",
+/* NUGGETS */
 nuggets:
-"https://www.europepackaging.com/tr/frontend/storage/zproducts/chicken-box-756eb11.jpeg",
-
-smokie:
-"https://cdn.7daysmeal.com/2024/01/smokie-recipe.jpg",
-
-sausage:
-"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85",
-
-samosa:
-"https://slice-menu-assets-prod.imgix.net/109577/1711491880_87571f1e12",
-
+"https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=800&q=85",
+/* THREE SMOKIES */
+smokies:
+"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=800&q=85",
+/* THREE SAUSAGES */
+sausages:
+"https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?auto=format&fit=crop&w=800&q=85",
+/* THREE SAMOSAS */
+samosas:
+"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=85",
+/* HOTDOG */
 hotdog:
-"https://images.unsplash.com/photo-1613482084286-41f25b486fa2?auto=format&fit=crop&w=700&q=85",
-
+"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=800&q=85",
+/* FRESH WHOLE CHICKEN */
 freshChicken:
-"https://www.joesfreshpoultry.com.au/cdn/shop/products/whole-chicken.jpg",
-
+"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN BREAST */
 breast:
-"https://static.wixstatic.com/media/5eb9e1_19b6ac6d0aca46eca5dd7e66809ea13a~mv2.jpg/v1/fill/w_480%2Ch_534%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/5eb9e1_19b6ac6d0aca46eca5dd7e66809ea13a~mv2.jpg",
-
+"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN THIGHS */
 thigh:
-"https://chopbox.com/cdn/shop/products/chickenthighs_02_1.jpg?v=1762457458&width=460",
-
+"https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=85",
+/* DRUMSTICKS */
 drumstick:
-"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=700&q=85",
-
+"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=85",
+/* CHICKEN FEET */
 feet:
-"https://www.daralzainfoods.com/cdn/shop/files/chicken-feet.png?v=1764264091",
-
+"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85",
+/* GIZZARDS */
 gizzard:
-"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=85",
-
+"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=85",
+/* LIVER */
 liver:
-"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85",
-
+"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85",
+/* KENYEJI CHICKEN */
 kienyeji:
-"https://karenfork.com/wp-content/uploads/elementor/thumbs/Kenbro-Free-Range-Kienyeji-KarenFork-qy0bf1gdrn9y5m7u77japvvi9nrfh195wisw1mj628.jpg",
-
+"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=85",
+/* EGGS */
 eggs:
-"https://static-01.daraz.com.np/p/92ad6eeccf731ad9251fb1ed1cfaf73c.png",
-
+"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=800&q=85",
+/* CANNED SODA */
 soda:
-"https://images.cdn-files-a.com/uploads/3529708/800_crop_5f0044d49e41f_5f0042c77d204.jpg",
-
+"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=800&q=85",
+/* GLASS OF JUICE */
 juice:
-"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=85",
-
+"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=85",
+/* YOGURT */
 yogurt:
-"https://www.collinsdictionary.com/images/full/yoghurt_383001505_1000.jpg"
-
+"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=85"
 };
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
+/* PRODUCTS */
 const products = [
-
 /* COOKED FOOD */
-
 {
 name:"Chips",
 price:100,
 category:"cooked",
 image:images.chips
 },
-
 {
 name:"Chips + ¼ Kuku",
 price:280,
 category:"cooked",
-image:images.chipsQuarter
+image:images.chipsChicken
 },
-
 {
 name:"Chips + ½ Kuku",
 price:460,
 category:"cooked",
-image:images.chipsHalf
+image:images.chipsChicken
 },
-
 {
 name:"Chips + 1 Piece Chicken",
 price:220,
 category:"cooked",
 image:images.chipsChicken
 },
-
 {
 name:"Chicken Strips + Chips",
 price:200,
 category:"cooked",
 image:images.chickenStrips
 },
-
 {
 name:"Burger",
 price:150,
 category:"cooked",
-image:"https://joinhalal.com/wp-content/uploads/2025/06/abus-burger-7.webp"
+image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85"
 },
-
 {
 name:"Chicken Wings",
 price:250,
 category:"cooked",
 image:images.wings
 },
-
 {
 name:"Chicken Nuggets",
 price:200,
 category:"cooked",
 image:images.nuggets
 },
-
-
 /* SNACKS */
-
 {
-name:"Smokie",
-price:40,
+name:"3 Smokies",
+price:120,
 category:"snacks",
-image:images.smokie
+className:"three-food",
+image:images.smokies
 },
-
 {
-name:"Sausage",
-price:60,
+name:"3 Sausages",
+price:180,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85"
+className:"three-food",
+image:images.sausages
 },
-
 {
-name:"Samosa",
-price:40,
+name:"3 Samosas",
+price:120,
 category:"snacks",
-image:images.samosa
+className:"three-food",
+image:images.samosas
 },
-
 {
 name:"Small Hotdog",
 price:80,
@@ -1327,7 +936,6 @@ category:"snacks",
 className:"small-hotdog",
 image:images.hotdog
 },
-
 {
 name:"Large Hotdog",
 price:100,
@@ -1335,351 +943,262 @@ category:"snacks",
 className:"large-hotdog",
 image:images.hotdog
 },
-
 {
 name:"Nuggets - 1kg",
 price:750,
 category:"snacks",
 image:images.nuggets
 },
-
 {
 name:"Nuggets - 500g",
 price:360,
 category:"snacks",
 image:images.nuggets
 },
-
 {
 name:"Nuggets - 250g",
 price:190,
 category:"snacks",
 image:images.nuggets
 },
-
 {
 name:"Beef Smokies - Pack",
 price:440,
 category:"snacks",
-image:"https://goldbelly.imgix.net/uploads/showcase_media_asset/image/82047/sausage-collection.4c31cd5c481c313b6f340a5a213b03f8.jpg?ar=1%3A1&auto=format&fit=crop&ixlib=react-9.10.0&w=1000"
+image:images.smokies
 },
-
 {
 name:"Chicken Smokies - Pack",
 price:440,
 category:"snacks",
-image:"https://cdn.7daysmeal.com/2024/01/smokie-recipe.jpg"
+image:images.smokies
 },
-
 {
 name:"Beef Sausages - Pack",
 price:600,
 category:"snacks",
-image:"https://goldbelly.imgix.net/uploads/showcase_media_asset/image/82047/sausage-collection.4c31cd5c481c313b6f340a5a213b03f8.jpg?ar=1%3A1&auto=format&fit=crop&ixlib=react-9.10.0&w=1000"
+image:images.sausages
 },
-
 {
 name:"Chicken Sausages - Pack",
 price:580,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85"
+image:images.sausages
 },
-
-
 /* FRESH CHICKEN */
-
 {
 name:"Capon (Broiler Kuku) - 1kg",
 price:500,
 category:"fresh",
 image:images.freshChicken
 },
-
 {
 name:"Boneless Breast - 1kg",
 price:640,
 category:"fresh",
 image:images.breast
 },
-
 {
 name:"Chicken Thighs - 1kg",
 price:490,
 category:"fresh",
 image:images.thigh
 },
-
 {
 name:"Chicken Legs - 1kg",
 price:510,
 category:"fresh",
 image:images.drumstick
 },
-
 {
 name:"Chicken Wings - 1kg",
 price:540,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1608039755401-742486ec03f6?auto=format&fit=crop&w=700&q=85"
+image:images.wings
 },
-
 {
 name:"Chicken Drumsticks - 1kg",
 price:640,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=700&q=85"
+image:images.drumstick
 },
-
 {
 name:"Chicken Feet - 1kg",
 price:350,
 category:"fresh",
 image:images.feet
 },
-
 {
 name:"Gizzards - 1kg",
 price:500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=85"
+image:images.gizzard
 },
-
 {
 name:"Chicken Liver - 1kg",
 price:300,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85"
+image:images.liver
 },
-
 {
 name:"Kienyeji Kuku - Ex Layers",
 price:700,
 category:"fresh",
 image:images.kienyeji
 },
-
 {
 name:"Kienyeji Kuku - Improved (Mwera)",
 price:1000,
 category:"fresh",
 image:images.kienyeji
 },
-
 {
 name:"Kienyeji Kuku - Jogoo",
 price:1500,
 category:"fresh",
 image:images.kienyeji
 },
-
-
 /* EGGS */
-
 {
 name:"Kienyeji Eggs - Tray",
 price:600,
 category:"eggs",
 image:images.eggs
 },
-
 {
 name:"Grade Eggs - Tray",
 price:480,
 category:"eggs",
 image:images.eggs
 },
-
-
 /* DRINKS */
-
 {
 name:"Fresh Fruit Juice",
 price:100,
 category:"drinks",
 image:images.juice
 },
-
 {
-name:"Small Soda",
+name:"Coca-Cola",
 price:50,
 category:"drinks",
 image:images.soda
 },
-
 {
-name:"Large Soda",
+name:"Fanta",
+price:50,
+category:"drinks",
+image:images.soda
+},
+{
+name:"Sprite",
+price:50,
+category:"drinks",
+image:images.soda
+},
+{
+name:"Soda - Large",
 price:80,
 category:"drinks",
 image:images.soda
 },
-
 {
 name:"Yogurt",
 price:100,
 category:"drinks",
 image:images.yogurt
 }
-
 ];
-
-
-/* =====================================================
-   CART
-===================================================== */
-
+/* CART */
 let cart=[];
 let selectedRating=0;
-
-
-/* =====================================================
-   OPENING HOURS
-   KENYA TIME
-===================================================== */
-
+/* OPENING HOURS */
 function updateOpeningStatus(){
-
 const now = new Date();
-
 const kenyaTime = new Intl.DateTimeFormat(
-  "en-KE",
-  {
-    timeZone:"Africa/Nairobi",
-    weekday:"short",
-    hour:"2-digit",
-    minute:"2-digit",
-    hour12:false
-  }
+"en-KE",
+{
+timeZone:"Africa/Nairobi",
+weekday:"short",
+hour:"2-digit",
+minute:"2-digit",
+hour12:false
+}
 ).formatToParts(now);
-
 let weekday="";
 let hour=0;
 let minute=0;
-
 kenyaTime.forEach(part=>{
-
 if(part.type==="weekday"){
 weekday=part.value;
 }
-
 if(part.type==="hour"){
 hour=parseInt(part.value);
 }
-
 if(part.type==="minute"){
 minute=parseInt(part.value);
 }
-
 });
-
 if(hour===24){
 hour=0;
 }
-
-const currentMinutes=
-hour*60+
-minute;
-
+const currentMinutes =
+hour*60 + minute;
 let opening;
 let closing;
-
 if(weekday==="Sun"){
-
 opening=10*60;
 closing=21*60;
-
 }else{
-
 opening=9*60;
 closing=22*60;
-
 }
-
-const status=
+const status =
 document.getElementById("openStatus");
-
 if(
 currentMinutes>=opening &&
 currentMinutes<closing
 ){
-
 status.textContent="OPEN NOW";
 status.className="status open";
-
 }else{
-
 status.textContent="CLOSED";
 status.className="status closed";
-
 }
-
 }
-
 updateOpeningStatus();
-
-setInterval(
-updateOpeningStatus,
-60000
-);
-
-
-/* =====================================================
-   CATEGORY TITLES
-===================================================== */
-
+setInterval(updateOpeningStatus,60000);
+/* CATEGORY TITLES */
 function categoryTitle(category){
-
 const titles={
-
 cooked:"Cooked Food",
-
 fresh:"Fresh Chicken",
-
 snacks:"Snacks",
-
 drinks:"Drinks",
-
 eggs:"Eggs"
-
 };
-
 return titles[category] || "Menu";
-
 }
-
-
-/* =====================================================
-   DISPLAY CATEGORY
-===================================================== */
-
-function showCategory(
-category,
-button
-){
-
+/* DISPLAY CATEGORY */
+function showCategory(category,button){
 document
 .querySelectorAll(".categories button")
 .forEach(btn=>{
 btn.classList.remove("active");
 });
-
 if(button){
 button.classList.add("active");
 }
-
-const container=
+const container =
 document.getElementById("products");
-
-const filtered=
+const filtered =
 category==="all"
 ?products
 :products.filter(
 p=>p.category===category
 );
-
 container.innerHTML=`
-
 <section class="section">
-
 <h2>
 ${
 category==="all"
@@ -1687,119 +1206,70 @@ category==="all"
 :categoryTitle(category)
 }
 </h2>
-
 <div class="products">
-
 ${filtered.map(product=>{
-
-const index=
+const index =
 products.indexOf(product);
-
-const specialClass=
+const specialClass =
 product.className
 ?
 product.className
 :
 "";
-
 return`
-
-<div
-class="product ${specialClass}"
->
-
+<div class="product ${specialClass}">
 <img
 class="product-image"
 src="${product.image}"
 alt="${product.name}"
 loading="lazy"
-onerror="this.style.background='#eee';this.removeAttribute('src');"
+onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80';"
 >
-
 <div class="product-info">
-
 <h3>
 ${product.name}
 </h3>
-
 <p>
 KSh ${product.price}
 </p>
-
-<button
-onclick="addToCart(${index})"
->
+<button onclick="addToCart(${index})">
 Add to Cart
 </button>
-
 </div>
-
 </div>
-
 `;
-
 }).join("")}
-
 </div>
-
 </section>
-
 `;
-
 }
-
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
-
+/* ADD TO CART */
 function addToCart(index){
-
-const product=
-products[index];
-
-const existing=
+const product=products[index];
+const existing =
 cart.find(
 item=>item.name===product.name
 );
-
 if(existing){
-
 existing.quantity++;
-
 }else{
-
 cart.push({
-
 name:product.name,
-
 price:product.price,
-
 quantity:1
-
 });
-
 }
-
 updateCart();
-
 }
-
-
-/* =====================================================
-   UPDATE CART
-===================================================== */
-
+/* UPDATE CART */
 function updateCart(){
-
-const count=
+const count =
 cart.reduce(
 (total,item)=>
 total+item.quantity,
 0
 );
-
-const total=
+const total =
 cart.reduce(
 (sum,item)=>
 sum+
@@ -1807,291 +1277,165 @@ item.price*
 item.quantity,
 0
 );
-
 document
 .getElementById("cartCount")
 .textContent=count;
-
 document
 .getElementById("cartTotal")
 .textContent=total;
-
 document
 .getElementById("modalTotal")
 .textContent=total;
-
 renderCart();
-
 }
-
-
-/* =====================================================
-   RENDER CART
-===================================================== */
-
+/* RENDER CART */
 function renderCart(){
-
-const container=
+const container =
 document.getElementById("cartItems");
-
 if(cart.length===0){
-
 container.innerHTML=
 '<div class="empty">Your cart is empty.</div>';
-
 return;
-
 }
-
-container.innerHTML=
+container.innerHTML =
 cart.map(
 (item,index)=>`
-
 <div class="cart-item">
-
 <div>
-
 <strong>
 ${item.name}
 </strong>
-
 <br>
-
 KSh ${item.price}
 ×
 ${item.quantity}
-
 <br>
-
 <strong>
 KSh ${item.price*item.quantity}
 </strong>
-
 </div>
-
 <div class="cart-controls">
-
-<button
-onclick="changeQuantity(${index},-1)"
->
+<button onclick="changeQuantity(${index},-1)">
 −
 </button>
-
 <span>
 ${item.quantity}
 </span>
-
-<button
-onclick="changeQuantity(${index},1)"
->
+<button onclick="changeQuantity(${index},1)">
 +
 </button>
-
 </div>
-
 </div>
-
 `
 ).join("");
-
 }
-
-
-/* =====================================================
-   CHANGE QUANTITY
-===================================================== */
-
-function changeQuantity(
-index,
-amount
-){
-
-cart[index].quantity+=amount;
-
-if(
-cart[index].quantity<=0
-){
-
+/* CHANGE QUANTITY */
+function changeQuantity(index,amount){
+cart[index].quantity += amount;
+if(cart[index].quantity<=0){
 cart.splice(index,1);
-
 }
-
 updateCart();
-
 }
-
-
-/* =====================================================
-   OPEN CART
-===================================================== */
-
+/* OPEN CART */
 function openCart(){
-
 document
 .getElementById("cartModal")
 .style.display="block";
-
 updateCart();
-
 }
-
-
-/* =====================================================
-   CLOSE CART
-===================================================== */
-
+/* CLOSE CART */
 function closeCart(){
-
 document
 .getElementById("cartModal")
 .style.display="none";
-
 }
-
-
-/* =====================================================
-   ORDER TYPE
-===================================================== */
-
+/* ORDER TYPE */
 function handleOrderType(){
-
-const type=
-document
-.getElementById("orderType")
-.value;
-
-const location=
-document
-.getElementById("customerLocation");
-
+const type =
+document.getElementById("orderType").value;
+const location =
+document.getElementById("customerLocation");
 if(type==="Pickup"){
-
 location.placeholder=
 "Pickup location / branch";
-
 }else{
-
 location.placeholder=
 "e.g. Utawala, Nairobi";
-
 }
-
 }
-
-
-/* =====================================================
-   PAYMENT DETAILS
-===================================================== */
-
+/* PAYMENT DETAILS */
 function showPaymentDetails(){
-
-const method=
-document
-.getElementById("paymentMethod")
-.value;
-
+const method =
+document.getElementById("paymentMethod").value;
 document
 .getElementById("mpesaPayment")
-.style.display=
+.style.display =
 method==="mpesa"
 ?"block"
 :"none";
-
 document
 .getElementById("cashPayment")
-.style.display=
+.style.display =
 method==="cash"
 ?"block"
 :"none";
-
 }
-
-
-/* =====================================================
-   PLACE ORDER
-===================================================== */
-
+/* PLACE ORDER */
 function placeOrder(){
-
 if(cart.length===0){
-
 alert(
 "Please add something to your cart first."
 );
-
 return;
-
 }
-
-const name=
+const name =
 document
 .getElementById("customerName")
 .value
 .trim();
-
-const phone=
+const phone =
 document
 .getElementById("customerPhone")
 .value
 .trim();
-
-const location=
+const location =
 document
 .getElementById("customerLocation")
 .value
 .trim();
-
-const notes=
+const notes =
 document
 .getElementById("customerNotes")
 .value
 .trim();
-
-const orderType=
+const orderType =
 document
 .getElementById("orderType")
 .value;
-
-const paymentMethod=
+const paymentMethod =
 document
 .getElementById("paymentMethod")
 .value;
-
-
 if(!name || !phone){
-
 alert(
 "Please enter your name and phone number."
 );
-
 return;
-
 }
-
-
 if(!location){
-
 alert(
 "Please enter your delivery or pickup location."
 );
-
 return;
-
 }
-
-
 if(!paymentMethod){
-
 alert(
 "Please select a payment method."
 );
-
 return;
-
 }
-
-
-const total=
+const total =
 cart.reduce(
 (sum,item)=>
 sum+
@@ -2099,25 +1443,17 @@ item.price*
 item.quantity,
 0
 );
-
-
-let message=
+let message =
 "KUKU HAVEN ORDER\n\n";
-
-
-message+=
+message +=
 "Customer: "+
 name+
 "\n";
-
-
-message+=
+message +=
 "Phone: "+
 phone+
 "\n";
-
-
-message+=
+message +=
 (
 orderType==="Delivery"
 ?
@@ -2127,15 +1463,11 @@ orderType==="Delivery"
 )+
 location+
 "\n";
-
-
-message+=
+message +=
 "Order Type: "+
 orderType+
 "\n";
-
-
-message+=
+message +=
 "Payment: "+
 (
 paymentMethod==="mpesa"
@@ -2145,15 +1477,10 @@ paymentMethod==="mpesa"
 "Cash on Delivery"
 )+
 "\n\n";
-
-
-message+=
+message +=
 "ORDER ITEMS:\n";
-
-
 cart.forEach(item=>{
-
-message+=
+message +=
 item.name+
 " x "+
 item.quantity+
@@ -2163,235 +1490,131 @@ item.price*
 item.quantity
 )+
 "\n";
-
 });
-
-
-message+=
+message +=
 "\nFOOD TOTAL: KSh "+
 total+
 "\n";
-
-
 if(orderType==="Delivery"){
-
-message+=
+message +=
 "\nDELIVERY FEE: CHARGED SEPARATELY\n";
-
-message+=
+message +=
 "Delivery fee depends on the delivery location.\n";
-
 }
-
-
 if(paymentMethod==="mpesa"){
-
-message+=
+message +=
 "\nM-Pesa Till Number: 6485965\n";
-
-message+=
+message +=
 "Till Name: JOAN WANGECI\n";
-
-message+=
+message +=
 "Customer will send M-Pesa confirmation message.\n";
-
 }
-
-
 if(paymentMethod==="cash"){
-
-message+=
+message +=
 "\nPayment will be made in cash on delivery.\n";
-
 }
-
-
 if(notes){
-
-message+=
+message +=
 "\nDelivery Instructions: "+
 notes+
 "\n";
-
 }
-
-
-message+=
+message +=
 "\nThank you for choosing Kuku Haven!";
-
-
-const url=
+const url =
 "https://wa.me/"+
 whatsappNumber+
 "?text="+
 encodeURIComponent(message);
-
-
 window.open(
 url,
 "_blank"
 );
-
-
 document
 .getElementById("thankYou")
 .style.display="block";
-
-
 closeCart();
-
-
 setTimeout(()=>{
-
 document
 .getElementById("thankYou")
 .scrollIntoView({
 behavior:"smooth"
 });
-
 },500);
-
 }
-
-
-/* =====================================================
-   RATING
-===================================================== */
-
+/* RATING */
 function selectRating(rating){
-
-selectedRating=
-rating;
-
+selectedRating=rating;
 document
 .querySelectorAll(".star")
 .forEach(
 (star,index)=>{
-
 if(index<rating){
-
 star.classList.add("selected");
-
 }else{
-
 star.classList.remove("selected");
-
 }
-
 });
-
 }
-
-
-/* =====================================================
-   FEEDBACK
-===================================================== */
-
+/* FEEDBACK */
 function sendFeedback(){
-
-const feedback=
+const feedback =
 document
 .getElementById("feedbackText")
 .value
 .trim();
-
-
 if(selectedRating===0){
-
 alert(
 "Please select a star rating first."
 );
-
 return;
-
 }
-
-
 if(!feedback){
-
 alert(
 "Please tell us about your experience."
 );
-
 return;
-
 }
-
-
-const stars=
-"⭐".repeat(
-selectedRating
-);
-
-
-let message=
+const stars =
+"⭐".repeat(selectedRating);
+let message =
 "KUKU HAVEN CUSTOMER FEEDBACK\n\n";
-
-
-message+=
+message +=
 "Rating: "+
 stars+
 "\n\n";
-
-
-message+=
+message +=
 "Experience:\n"+
 feedback+
 "\n\n";
-
-
-message+=
+message +=
 "Thank you for choosing Kuku Haven!";
-
-
-const url=
+const url =
 "https://wa.me/"+
 whatsappNumber+
 "?text="+
 encodeURIComponent(message);
-
-
 window.open(
 url,
 "_blank"
 );
-
 }
-
-
-/* =====================================================
-   CLOSE MODAL OUTSIDE
-===================================================== */
-
+/* CLOSE MODAL OUTSIDE */
 window.addEventListener(
 "click",
 function(event){
-
-const modal=
-document.getElementById(
-"cartModal"
-);
-
+const modal =
+document.getElementById("cartModal");
 if(event.target===modal){
-
 closeCart();
-
 }
-
 });
-
-
-/* =====================================================
-   START MENU
-===================================================== */
-
+/* START MENU */
 showCategory(
 "all",
 document.querySelector(
 ".categories button"
 ));
-
 </script>
-
 </body>
 </html>
