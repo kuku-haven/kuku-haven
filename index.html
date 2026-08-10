@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,7 +9,9 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Montserrat:wght@700;800;900&display=swap');
+/* =====================================================
+   BASIC
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -21,11 +24,12 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#fff8f0;
   color:#222;
   padding-bottom:90px;
 }
+
 
 /* =====================================================
    HEADER
@@ -34,7 +38,7 @@ body{
 header{
   background:#b91c1c;
   color:white;
-  padding:18px 16px 24px;
+  padding:16px 15px 22px;
   text-align:center;
   position:sticky;
   top:0;
@@ -42,8 +46,8 @@ header{
 }
 
 .logo{
-  width:105px;
-  height:105px;
+  width:100px;
+  height:100px;
   object-fit:contain;
   display:block;
   margin:0 auto 8px;
@@ -53,10 +57,10 @@ header{
 }
 
 .brand-name{
-  font-family:"Baloo 2",Arial,sans-serif;
-  font-size:42px;
-  line-height:.95;
-  font-weight:800;
+  font-family:Arial,sans-serif;
+  font-size:40px;
+  line-height:1;
+  font-weight:900;
   letter-spacing:1px;
 }
 
@@ -69,11 +73,10 @@ header{
 }
 
 .tagline{
-  margin-top:10px;
-  font-family:"Montserrat",Arial,sans-serif;
-  font-size:14px;
+  margin-top:9px;
+  font-size:13px;
   font-weight:900;
-  letter-spacing:1.4px;
+  letter-spacing:1.2px;
 }
 
 .header-description{
@@ -82,22 +85,22 @@ header{
   color:#fff3df;
 }
 
+
 /* =====================================================
    OPENING HOURS
 ===================================================== */
 
 .hours-box{
   background:white;
-  padding:18px 15px;
+  padding:17px 15px;
   text-align:center;
   border-bottom:1px solid #eee;
 }
 
 .hours-title{
-  font-family:"Montserrat",Arial,sans-serif;
   font-size:18px;
   font-weight:900;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .hours-text{
@@ -125,19 +128,19 @@ header{
   color:#b91c1c;
 }
 
+
 /* =====================================================
    HERO
 ===================================================== */
 
 .hero{
-  padding:28px 18px;
+  padding:27px 18px;
   text-align:center;
   background:#fff;
 }
 
 .hero h2{
-  font-family:"Montserrat",Arial,sans-serif;
-  font-size:25px;
+  font-size:24px;
   margin-bottom:8px;
 }
 
@@ -145,6 +148,7 @@ header{
   color:#666;
   line-height:1.5;
 }
+
 
 /* =====================================================
    CATEGORIES
@@ -154,10 +158,10 @@ header{
   display:flex;
   gap:8px;
   overflow-x:auto;
-  padding:15px;
+  padding:14px 15px;
   background:white;
   position:sticky;
-  top:191px;
+  top:184px;
   z-index:10;
   scrollbar-width:none;
 }
@@ -168,7 +172,7 @@ header{
 
 .categories button{
   border:none;
-  background:#f3f3f3;
+  background:#f1f1f1;
   padding:10px 15px;
   border-radius:25px;
   white-space:nowrap;
@@ -180,6 +184,7 @@ header{
   background:#b91c1c;
   color:white;
 }
+
 
 /* =====================================================
    PRODUCTS
@@ -198,8 +203,7 @@ header{
 
 .section h2{
   margin-bottom:15px;
-  font-family:"Montserrat",Arial,sans-serif;
-  font-size:23px;
+  font-size:22px;
 }
 
 .products{
@@ -210,7 +214,7 @@ header{
 
 .product{
   background:white;
-  border-radius:16px;
+  border-radius:15px;
   overflow:hidden;
   box-shadow:0 3px 10px rgba(0,0,0,.09);
 }
@@ -223,20 +227,31 @@ header{
   background:#eee;
 }
 
+/* Makes small and large hotdogs visually different */
+.product.small-hotdog .product-image{
+  object-fit:contain;
+  padding:28px 45px;
+}
+
+.product.large-hotdog .product-image{
+  object-fit:contain;
+  padding:5px 8px;
+}
+
 .product-info{
-  padding:14px;
+  padding:13px;
 }
 
 .product h3{
-  font-size:16px;
-  line-height:1.25;
+  font-size:15px;
+  line-height:1.3;
   margin-bottom:8px;
 }
 
 .product p{
   color:#b91c1c;
   font-weight:bold;
-  margin-bottom:12px;
+  margin-bottom:11px;
 }
 
 .product button{
@@ -253,6 +268,7 @@ header{
 .product button:active{
   transform:scale(.98);
 }
+
 
 /* =====================================================
    DELIVERY NOTICE
@@ -272,6 +288,7 @@ header{
 .delivery-notice strong{
   color:#9a6700;
 }
+
 
 /* =====================================================
    THANK YOU
@@ -304,6 +321,7 @@ header{
   font-weight:bold;
 }
 
+
 /* =====================================================
    FEEDBACK
 ===================================================== */
@@ -321,8 +339,7 @@ header{
 }
 
 .feedback-section h2{
-  font-family:"Montserrat",Arial,sans-serif;
-  font-size:23px;
+  font-size:22px;
   margin-bottom:8px;
 }
 
@@ -374,6 +391,7 @@ header{
   font-weight:bold;
 }
 
+
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -387,6 +405,7 @@ footer{
   line-height:1.7;
 }
 
+
 /* =====================================================
    CART BAR
 ===================================================== */
@@ -398,7 +417,7 @@ footer{
   right:0;
   background:#111;
   color:white;
-  padding:14px 16px;
+  padding:13px 16px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -414,6 +433,7 @@ footer{
   font-weight:bold;
   cursor:pointer;
 }
+
 
 /* =====================================================
    MODAL
@@ -549,6 +569,7 @@ label{
   padding:20px;
 }
 
+
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -556,16 +577,16 @@ label{
 @media(max-width:600px){
 
   .logo{
-    width:95px;
-    height:95px;
+    width:92px;
+    height:92px;
   }
 
   .brand-name{
-    font-size:38px;
+    font-size:37px;
   }
 
   .categories{
-    top:181px;
+    top:178px;
   }
 
   .products{
@@ -578,11 +599,11 @@ label{
   }
 
   .product-info{
-    padding:11px;
+    padding:10px;
   }
 
   .product h3{
-    font-size:15px;
+    font-size:14px;
   }
 
   .star{
@@ -591,10 +612,34 @@ label{
 
 }
 
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .product-image{
+    height:135px;
+  }
+
+  .brand-name{
+    font-size:34px;
+  }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -631,7 +676,7 @@ Fresh Chicken • Cooked Food • Snacks • Drinks
 <section class="hours-box">
 
 <div class="hours-title">
-🕐 Opening Hours
+Opening Hours
 </div>
 
 <div class="hours-text">
@@ -653,7 +698,7 @@ Checking...
 <section class="hero">
 
 <h2>
-Welcome to Kuku Haven ❤️
+Welcome to Kuku Haven
 </h2>
 
 <p>
@@ -669,27 +714,40 @@ Choose your favourite food, add it to your cart and place your order.
 
 <div class="categories">
 
-<button class="active" onclick="showCategory('all',this)">
+<button
+class="active"
+onclick="showCategory('all',this)"
+>
 All
 </button>
 
-<button onclick="showCategory('cooked',this)">
+<button
+onclick="showCategory('cooked',this)"
+>
 Cooked Food
 </button>
 
-<button onclick="showCategory('fresh',this)">
+<button
+onclick="showCategory('fresh',this)"
+>
 Fresh Chicken
 </button>
 
-<button onclick="showCategory('snacks',this)">
+<button
+onclick="showCategory('snacks',this)"
+>
 Snacks
 </button>
 
-<button onclick="showCategory('drinks',this)">
+<button
+onclick="showCategory('drinks',this)"
+>
 Drinks
 </button>
 
-<button onclick="showCategory('eggs',this)">
+<button
+onclick="showCategory('eggs',this)"
+>
 Eggs
 </button>
 
@@ -709,7 +767,8 @@ Eggs
 
 <section class="delivery-notice">
 
-🚚 <strong>Delivery Notice</strong><br>
+<strong>Delivery Notice</strong>
+<br>
 
 Delivery charges are
 <strong>separate from your food order total</strong>
@@ -722,19 +781,22 @@ and depend on your delivery location.
      THANK YOU
 ===================================================== -->
 
-<section class="thank-you" id="thankYou">
+<section
+class="thank-you"
+id="thankYou"
+>
 
 <h2>
-🐔 Thank you for choosing Kuku Haven! ❤️
+Thank you for choosing Kuku Haven!
 </h2>
 
 <p>
 Your support means the world to us.<br>
-We can't wait to serve you again 😋
+We can't wait to serve you again.
 </p>
 
 <div class="rate-reminder">
-⭐ Don't forget to rate us or send us your feedback!
+Don't forget to rate us or send us your feedback.
 </div>
 
 </section>
@@ -744,25 +806,57 @@ We can't wait to serve you again 😋
      FEEDBACK
 ===================================================== -->
 
-<section class="feedback-section" id="feedback">
+<section
+class="feedback-section"
+id="feedback"
+>
 
 <div class="feedback-container">
 
 <h2>
-⭐ Share Your Kuku Haven Experience
+Share Your Kuku Haven Experience
 </h2>
 
 <p class="subtitle">
-You can rate us and tell us about your experience even if you haven't ordered.
+Rate us and tell us about your experience.
 </p>
 
 <div class="stars">
 
-<button class="star" onclick="selectRating(1)">★</button>
-<button class="star" onclick="selectRating(2)">★</button>
-<button class="star" onclick="selectRating(3)">★</button>
-<button class="star" onclick="selectRating(4)">★</button>
-<button class="star" onclick="selectRating(5)">★</button>
+<button
+class="star"
+onclick="selectRating(1)"
+>
+★
+</button>
+
+<button
+class="star"
+onclick="selectRating(2)"
+>
+★
+</button>
+
+<button
+class="star"
+onclick="selectRating(3)"
+>
+★
+</button>
+
+<button
+class="star"
+onclick="selectRating(4)"
+>
+★
+</button>
+
+<button
+class="star"
+onclick="selectRating(5)"
+>
+★
+</button>
 
 </div>
 
@@ -808,7 +902,7 @@ Fresh food. Great taste. Easy ordering.
 
 <div>
 
-🛒 Cart:
+Cart:
 <strong id="cartCount">0</strong> items
 
 <br>
@@ -830,16 +924,22 @@ View Cart
      CART MODAL
 ===================================================== -->
 
-<div class="modal" id="cartModal">
+<div
+class="modal"
+id="cartModal"
+>
 
 <div class="modal-content">
 
-<button class="close" onclick="closeCart()">
+<button
+class="close"
+onclick="closeCart()"
+>
 Close
 </button>
 
 <h2>
-Your Cart 🛒
+Your Cart
 </h2>
 
 <div id="cartItems"></div>
@@ -924,7 +1024,8 @@ Pickup
 
 <div class="delivery-warning">
 
-🚚 <strong>Important:</strong><br>
+<strong>Important:</strong>
+<br>
 
 Delivery fee is charged separately from the food order total
 and depends on your delivery location.
@@ -939,7 +1040,7 @@ and depends on your delivery location.
 <div class="payment-section">
 
 <h3>
-💳 Mode of Payment
+Mode of Payment
 </h3>
 
 <select
@@ -952,11 +1053,11 @@ Select payment method
 </option>
 
 <option value="mpesa">
-🟢 M-Pesa
+M-Pesa
 </option>
 
 <option value="cash">
-💵 Cash on Delivery
+Cash on Delivery
 </option>
 
 </select>
@@ -970,7 +1071,7 @@ class="payment-details"
 >
 
 <h4>
-🟢 M-Pesa Payment
+M-Pesa Payment
 </h4>
 
 <p>
@@ -1015,7 +1116,7 @@ class="payment-details"
 >
 
 <h4>
-💵 Cash on Delivery
+Cash on Delivery
 </h4>
 
 <p>
@@ -1045,308 +1146,378 @@ Place Order on WhatsApp
 
 <script>
 
+
 /* =====================================================
-   WHATSAPP NUMBER
+   WHATSAPP
 ===================================================== */
 
 const whatsappNumber = "254728065517";
 
 
 /* =====================================================
-   MENU
-   SIMPLE MATCHED IMAGES
+   PRODUCT IMAGES
+===================================================== */
+
+const images = {
+
+chips:
+"https://supermarket.co.ug/2166-large_default/plain-chips-delivery.jpg",
+
+chipsQuarter:
+"https://tb-static.uber.com/prod/image-proc/processed_images/db04beeb0a4c33a810963fb8cda6aa5d/a19bb09692310dfd41e49a96c424b3a6.jpeg",
+
+chipsHalf:
+"https://tb-static.uber.com/prod/image-proc/processed_images/52083bc5511f82fa8a457ff3c7b7ecb2/7f4ae9ca0446cbc23e71d8d395a98428.jpeg",
+
+chipsChicken:
+"https://mindtrip.ai/restaurants/7b03/1042/6ddf/3bc8/5f64/0fb9/43a1/3e2a",
+
+chickenStrips:
+"https://imageproxy.wolt.com/assets/684975175c258b47da380a64",
+
+wings:
+"https://sd-images.simplydelivery.io/cdn-cgi/image/format%3Dauto%2Cquality%3D85%2Cwidth%3D500%2Cfit%3Dcover/https%3A/sd-images.simplydelivery.io/ZP269F9878k2672/images/articles/f3caf80306a4f91ba467c697a5569c2103c88cc0.png",
+
+nuggets:
+"https://www.europepackaging.com/tr/frontend/storage/zproducts/chicken-box-756eb11.jpeg",
+
+smokie:
+"https://cdn.7daysmeal.com/2024/01/smokie-recipe.jpg",
+
+sausage:
+"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85",
+
+samosa:
+"https://slice-menu-assets-prod.imgix.net/109577/1711491880_87571f1e12",
+
+hotdog:
+"https://images.unsplash.com/photo-1613482084286-41f25b486fa2?auto=format&fit=crop&w=700&q=85",
+
+freshChicken:
+"https://www.joesfreshpoultry.com.au/cdn/shop/products/whole-chicken.jpg",
+
+breast:
+"https://static.wixstatic.com/media/5eb9e1_19b6ac6d0aca46eca5dd7e66809ea13a~mv2.jpg/v1/fill/w_480%2Ch_534%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/5eb9e1_19b6ac6d0aca46eca5dd7e66809ea13a~mv2.jpg",
+
+thigh:
+"https://chopbox.com/cdn/shop/products/chickenthighs_02_1.jpg?v=1762457458&width=460",
+
+drumstick:
+"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=700&q=85",
+
+feet:
+"https://www.daralzainfoods.com/cdn/shop/files/chicken-feet.png?v=1764264091",
+
+gizzard:
+"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=85",
+
+liver:
+"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85",
+
+kienyeji:
+"https://karenfork.com/wp-content/uploads/elementor/thumbs/Kenbro-Free-Range-Kienyeji-KarenFork-qy0bf1gdrn9y5m7u77japvvi9nrfh195wisw1mj628.jpg",
+
+eggs:
+"https://static-01.daraz.com.np/p/92ad6eeccf731ad9251fb1ed1cfaf73c.png",
+
+soda:
+"https://images.cdn-files-a.com/uploads/3529708/800_crop_5f0044d49e41f_5f0042c77d204.jpg",
+
+juice:
+"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=85",
+
+yogurt:
+"https://www.collinsdictionary.com/images/full/yoghurt_383001505_1000.jpg"
+
+};
+
+
+/* =====================================================
+   PRODUCTS
 ===================================================== */
 
 const products = [
 
-/* =====================================================
-   COOKED FOOD
-===================================================== */
+/* COOKED FOOD */
 
 {
 name:"Chips",
 price:100,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=90"
+image:images.chips
 },
 
 {
 name:"Chips + ¼ Kuku",
 price:280,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&w=700&q=90"
+image:images.chipsQuarter
 },
 
 {
 name:"Chips + ½ Kuku",
 price:460,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=700&q=90"
+image:images.chipsHalf
 },
 
 {
 name:"Chips + 1 Piece Chicken",
 price:220,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=700&q=90"
+image:images.chipsChicken
 },
 
 {
 name:"Chicken Strips + Chips",
 price:200,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=90"
+image:images.chickenStrips
 },
 
 {
 name:"Burger",
 price:150,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=90"
+image:"https://joinhalal.com/wp-content/uploads/2025/06/abus-burger-7.webp"
 },
 
 {
 name:"Chicken Wings",
 price:250,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=90"
+image:images.wings
 },
 
 {
 name:"Chicken Nuggets",
 price:200,
 category:"cooked",
-image:"https://images.unsplash.com/photo-1606502973842-f64bc2785fe5?auto=format&fit=crop&w=700&q=90"
+image:images.nuggets
 },
 
 
-/* =====================================================
-   SNACKS
-===================================================== */
+/* SNACKS */
 
 {
 name:"Smokie",
 price:40,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=90"
+image:images.smokie
 },
 
 {
 name:"Sausage",
 price:60,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85"
 },
 
 {
 name:"Samosa",
 price:40,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=90"
+image:images.samosa
 },
 
 {
 name:"Small Hotdog",
 price:80,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1613482084286-41f25b486fa2?auto=format&fit=crop&w=700&q=90"
+className:"small-hotdog",
+image:images.hotdog
 },
 
 {
 name:"Large Hotdog",
 price:100,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1599599810694-57a5e0c2b7d4?auto=format&fit=crop&w=700&q=90"
+className:"large-hotdog",
+image:images.hotdog
 },
 
 {
 name:"Nuggets - 1kg",
 price:750,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1562967915-92ae0c320a01?auto=format&fit=crop&w=700&q=90"
+image:images.nuggets
 },
 
 {
 name:"Nuggets - 500g",
 price:360,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=700&q=90"
+image:images.nuggets
 },
 
 {
 name:"Nuggets - 250g",
 price:190,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1593504049359-74330189a345?auto=format&fit=crop&w=700&q=90"
+image:images.nuggets
 },
 
 {
 name:"Beef Smokies - Pack",
 price:440,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=90"
+image:"https://goldbelly.imgix.net/uploads/showcase_media_asset/image/82047/sausage-collection.4c31cd5c481c313b6f340a5a213b03f8.jpg?ar=1%3A1&auto=format&fit=crop&ixlib=react-9.10.0&w=1000"
 },
 
 {
 name:"Chicken Smokies - Pack",
 price:440,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=90"
+image:"https://cdn.7daysmeal.com/2024/01/smokie-recipe.jpg"
 },
 
 {
 name:"Beef Sausages - Pack",
 price:600,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?auto=format&fit=crop&w=700&q=90"
+image:"https://goldbelly.imgix.net/uploads/showcase_media_asset/image/82047/sausage-collection.4c31cd5c481c313b6f340a5a213b03f8.jpg?ar=1%3A1&auto=format&fit=crop&ixlib=react-9.10.0&w=1000"
 },
 
 {
 name:"Chicken Sausages - Pack",
 price:580,
 category:"snacks",
-image:"https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1585325701165-351a5f6d4a1d?auto=format&fit=crop&w=700&q=85"
 },
 
 
-/* =====================================================
-   FRESH CHICKEN
-===================================================== */
+/* FRESH CHICKEN */
 
 {
 name:"Capon (Broiler Kuku) - 1kg",
 price:500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=700&q=90"
+image:images.freshChicken
 },
 
 {
 name:"Boneless Breast - 1kg",
 price:640,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=90"
+image:images.breast
 },
 
 {
 name:"Chicken Thighs - 1kg",
 price:490,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1603073163308-9654c3fb70b5?auto=format&fit=crop&w=700&q=90"
+image:images.thigh
 },
 
 {
 name:"Chicken Legs - 1kg",
 price:510,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1606728035253-49e8a231a7c1?auto=format&fit=crop&w=700&q=90"
+image:images.drumstick
 },
 
 {
 name:"Chicken Wings - 1kg",
 price:540,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1608039755401-742486ec03f6?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1608039755401-742486ec03f6?auto=format&fit=crop&w=700&q=85"
 },
 
 {
 name:"Chicken Drumsticks - 1kg",
 price:640,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=700&q=85"
 },
 
 {
 name:"Chicken Feet - 1kg",
 price:350,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=90"
+image:images.feet
 },
 
 {
 name:"Gizzards - 1kg",
 price:500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=85"
 },
 
 {
 name:"Chicken Liver - 1kg",
 price:300,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=90"
+image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85"
 },
 
 {
 name:"Kienyeji Kuku - Ex Layers",
 price:700,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=700&q=90"
+image:images.kienyeji
 },
 
 {
 name:"Kienyeji Kuku - Improved (Mwera)",
 price:1000,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=700&q=90"
+image:images.kienyeji
 },
 
 {
 name:"Kienyeji Kuku - Jogoo",
 price:1500,
 category:"fresh",
-image:"https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=90"
+image:images.kienyeji
 },
 
 
-/* =====================================================
-   EGGS
-===================================================== */
+/* EGGS */
 
 {
 name:"Kienyeji Eggs - Tray",
 price:600,
 category:"eggs",
-image:"https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=700&q=90"
+image:images.eggs
 },
 
 {
 name:"Grade Eggs - Tray",
 price:480,
 category:"eggs",
-image:"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=700&q=90"
+image:images.eggs
 },
 
 
-/* =====================================================
-   DRINKS
-===================================================== */
+/* DRINKS */
 
 {
 name:"Fresh Fruit Juice",
 price:100,
 category:"drinks",
-image:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=90"
+image:images.juice
 },
 
 {
 name:"Small Soda",
 price:50,
 category:"drinks",
-image:"https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=700&q=90"
+image:images.soda
 },
 
 {
 name:"Large Soda",
 price:80,
 category:"drinks",
-image:"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=90"
+image:images.soda
 },
 
 {
 name:"Yogurt",
 price:100,
 category:"drinks",
-image:"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=90"
+image:images.yogurt
 }
 
 ];
@@ -1362,22 +1533,56 @@ let selectedRating=0;
 
 /* =====================================================
    OPENING HOURS
+   KENYA TIME
 ===================================================== */
 
 function updateOpeningStatus(){
 
-const now=new Date();
+const now = new Date();
 
-const day=now.getDay();
+const kenyaTime = new Intl.DateTimeFormat(
+  "en-KE",
+  {
+    timeZone:"Africa/Nairobi",
+    weekday:"short",
+    hour:"2-digit",
+    minute:"2-digit",
+    hour12:false
+  }
+).formatToParts(now);
 
-const minutes=
-now.getHours()*60+
-now.getMinutes();
+let weekday="";
+let hour=0;
+let minute=0;
+
+kenyaTime.forEach(part=>{
+
+if(part.type==="weekday"){
+weekday=part.value;
+}
+
+if(part.type==="hour"){
+hour=parseInt(part.value);
+}
+
+if(part.type==="minute"){
+minute=parseInt(part.value);
+}
+
+});
+
+if(hour===24){
+hour=0;
+}
+
+const currentMinutes=
+hour*60+
+minute;
 
 let opening;
 let closing;
 
-if(day===0){
+if(weekday==="Sun"){
 
 opening=10*60;
 closing=21*60;
@@ -1393,16 +1598,16 @@ const status=
 document.getElementById("openStatus");
 
 if(
-minutes>=opening &&
-minutes<closing
+currentMinutes>=opening &&
+currentMinutes<closing
 ){
 
-status.textContent="🟢 OPEN NOW";
+status.textContent="OPEN NOW";
 status.className="status open";
 
 }else{
 
-status.textContent="🔴 CLOSED";
+status.textContent="CLOSED";
 status.className="status closed";
 
 }
@@ -1437,7 +1642,7 @@ eggs:"Eggs"
 
 };
 
-return titles[category]||"Menu";
+return titles[category] || "Menu";
 
 }
 
@@ -1490,15 +1695,25 @@ ${filtered.map(product=>{
 const index=
 products.indexOf(product);
 
+const specialClass=
+product.className
+?
+product.className
+:
+"";
+
 return`
 
-<div class="product">
+<div
+class="product ${specialClass}"
+>
 
 <img
 class="product-image"
 src="${product.image}"
 alt="${product.name}"
 loading="lazy"
+onerror="this.style.background='#eee';this.removeAttribute('src');"
 >
 
 <div class="product-info">
@@ -1887,7 +2102,7 @@ item.quantity,
 
 
 let message=
-"🐔 KUKU HAVEN ORDER\n\n";
+"KUKU HAVEN ORDER\n\n";
 
 
 message+=
@@ -1940,7 +2155,7 @@ cart.forEach(item=>{
 
 message+=
 item.name+
-" × "+
+" x "+
 item.quantity+
 " = KSh "+
 (
@@ -1961,7 +2176,7 @@ total+
 if(orderType==="Delivery"){
 
 message+=
-"\n🚚 DELIVERY FEE: CHARGED SEPARATELY\n";
+"\nDELIVERY FEE: CHARGED SEPARATELY\n";
 
 message+=
 "Delivery fee depends on the delivery location.\n";
@@ -2002,7 +2217,7 @@ notes+
 
 
 message+=
-"\n🐔 Thank you for choosing Kuku Haven! ❤️";
+"\nThank you for choosing Kuku Haven!";
 
 
 const url=
@@ -2040,7 +2255,7 @@ behavior:"smooth"
 
 
 /* =====================================================
-   CUSTOMER RATING
+   RATING
 ===================================================== */
 
 function selectRating(rating){
@@ -2069,7 +2284,7 @@ star.classList.remove("selected");
 
 
 /* =====================================================
-   SEND FEEDBACK
+   FEEDBACK
 ===================================================== */
 
 function sendFeedback(){
@@ -2110,7 +2325,7 @@ selectedRating
 
 
 let message=
-"⭐ KUKU HAVEN CUSTOMER FEEDBACK\n\n";
+"KUKU HAVEN CUSTOMER FEEDBACK\n\n";
 
 
 message+=
@@ -2126,7 +2341,7 @@ feedback+
 
 
 message+=
-"Thank you for choosing Kuku Haven! ❤️";
+"Thank you for choosing Kuku Haven!";
 
 
 const url=
