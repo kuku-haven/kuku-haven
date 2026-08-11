@@ -500,10 +500,7 @@
   </p>
 </section>
 <div class="categories">
-  <button
-    class="active"
-    onclick="showCategory('all', this)"
-  >
+  <button class="active" onclick="showCategory('all', this)">
     All
   </button>
   <button onclick="showCategory('cooked', this)">
@@ -545,46 +542,23 @@
     How would you rate your Kuku Haven experience?
   </p>
   <div class="stars">
-    <button
-      class="star"
-      onclick="selectRating(1)"
-      aria-label="1 star"
-    >
+    <button class="star" onclick="selectRating(1)" aria-label="1 star">
       ★
     </button>
-    <button
-      class="star"
-      onclick="selectRating(2)"
-      aria-label="2 stars"
-    >
+    <button class="star" onclick="selectRating(2)" aria-label="2 stars">
       ★
     </button>
-    <button
-      class="star"
-      onclick="selectRating(3)"
-      aria-label="3 stars"
-    >
+    <button class="star" onclick="selectRating(3)" aria-label="3 stars">
       ★
     </button>
-    <button
-      class="star"
-      onclick="selectRating(4)"
-      aria-label="4 stars"
-    >
+    <button class="star" onclick="selectRating(4)" aria-label="4 stars">
       ★
     </button>
-    <button
-      class="star"
-      onclick="selectRating(5)"
-      aria-label="5 stars"
-    >
+    <button class="star" onclick="selectRating(5)" aria-label="5 stars">
       ★
     </button>
   </div>
-  <div
-    id="ratingText"
-    class="rating-text"
-  >
+  <div id="ratingText" class="rating-text">
     Select a rating from 1 to 5 stars.
   </div>
   <textarea
@@ -619,15 +593,9 @@
     View Cart
   </button>
 </div>
-<div
-  class="modal"
-  id="cartModal"
->
+<div class="modal" id="cartModal">
   <div class="modal-content">
-    <button
-      class="close"
-      onclick="closeCart()"
-    >
+    <button class="close" onclick="closeCart()">
       Close
     </button>
     <h2>
@@ -677,10 +645,7 @@
     <label>
       Order Type
     </label>
-    <select
-      id="orderType"
-      onchange="updateDeliveryNotice()"
-    >
+    <select id="orderType" onchange="updateDeliveryNotice()">
       <option value="Delivery">
         Delivery
       </option>
@@ -688,10 +653,7 @@
         Pickup
       </option>
     </select>
-    <div
-      id="deliveryNotice"
-      class="delivery-notice"
-    >
+    <div id="deliveryNotice" class="delivery-notice">
       <h3>
         🛵 Delivery Notice
       </h3>
@@ -719,10 +681,7 @@
           💵 Cash on Delivery
         </option>
       </select>
-      <div
-        id="mpesaPayment"
-        class="payment-details"
-      >
+      <div id="mpesaPayment" class="payment-details">
         <h4>
           🟢 M-Pesa Payment
         </h4>
@@ -749,10 +708,7 @@
           message together with your order on WhatsApp.
         </p>
       </div>
-      <div
-        id="cashPayment"
-        class="payment-details"
-      >
+      <div id="cashPayment" class="payment-details">
         <h4>
           💵 Cash on Delivery
         </h4>
@@ -770,794 +726,720 @@
   </div>
 </div>
 <script>
-  const products = [
-    {
-      name: "Chips",
-      price: 100,
-      category: "cooked",
-      image: "chips.jpg.JPG"
-    },
-    {
-      name: "Chips + ¼ Kuku",
-      price: 280,
-      category: "cooked",
-      image: "kuku-quarter-chips.jpg.JPG"
-    },
-    {
-      name: "Chips + ½ Kuku",
-      price: 460,
-      category: "cooked",
-      image: "kuku-half-chips.jpg.JPG"
-    },
-    {
-      name: "Chips + 1 Piece Chicken",
-      price: 220,
-      category: "cooked",
-      image: "kuku-piece-chips.jpg.JPG"
-    },
-    {
-      name: "Chips + Chicken Strips",
-      price: 200,
-      category: "cooked",
-      image: "chicken-strips-chips.jpg.PNG"
-    },
-    {
-      name: "Burger",
-      price: 150,
-      category: "cooked",
-      image: "burger.jpg.JPG"
-    },
-    {
-      name: "Smokie",
-      price: 40,
-      category: "snacks",
-      image: "smokie.jpg.JPG"
-    },
-    {
-      name: "Sausage",
-      price: 60,
-      category: "snacks",
-      image: "sausage.jpg.JPG"
-    },
-    {
-      name: "Samosa",
-      price: 40,
-      category: "snacks",
-      image: "samosa.jpg.JPG"
-    },
-    {
-      name: "Small Hotdog",
-      price: 80,
-      category: "snacks",
-      image: "hotdog-small.jpg.JPG"
-    },
-    {
-      name: "Large Hotdog",
-      price: 100,
-      category: "snacks",
-      image: "hotdog-big.jpg.JPG"
-    },
-    {
-      name: "Nuggets - 1 piece",
-      price: 25,
-      category: "snacks",
-      image: "nuggets.jpg.JPG"
-    },
-    {
-      name: "Capon (Broiler Kuku) - 1kg",
-      price: 500,
-      category: "fresh",
-      image: "capon.jpg.JPG"
-    },
-    {
-      name: "Boneless Breast - 1kg",
-      price: 640,
-      category: "fresh",
-      image: "boneless-breast.jpg.JPG"
-    },
-    {
-      name: "Thighs - 1kg",
-      price: 490,
-      category: "fresh",
-      image: "thighs.jpg.JPG"
-    },
-    {
-      name: "Legs - 1kg",
-      price: 510,
-      category: "fresh",
-      image: "legs.jpg.JPG"
-    },
-    {
-      name: "Wings - 1kg",
-      price: 540,
-      category: "fresh",
-      image: "wings.jpg.JPG"
-    },
-    {
-      name: "Drumsticks - 1kg",
-      price: 640,
-      category: "fresh",
-      image: "drumsticks.jpg.JPG"
-    },
-    {
-      name: "Gizzards - 1kg",
-      price: 500,
-      category: "fresh",
-      image: "gizzards.jpg.JPG"
-    },
-    {
-      name: "Chicken Liver - 1kg",
-      price: 300,
-      category: "fresh",
-      image: "chicken-liver.jpg.JPG"
-    },
-    {
-      name: "Nuggets - 1kg",
-      price: 750,
-      category: "snacks",
-      image: "nuggets-1kg.jpg.JPG"
-    },
-    {
-      name: "Nuggets - 500g",
-      price: 360,
-      category: "snacks",
-      image: "nuggets-500g.jpg.JPG"
-    },
-    {
-      name: "Nuggets - 250g",
-      price: 190,
-      category: "snacks",
-      image: "nuggets-250g.jpg.JPG"
-    },
-    /* ==============================
-       KIENYEJI CHICKEN
-       ============================== */
-    {
-      name: "Kienyeji Kuku - Ex Layers",
-      price: 700,
-      category: "fresh",
-      image: "kienyeji-ex-layers.jpg.JPG"
-    },
-    {
-      name: "Kienyeji Kuku - Improved (Mwera)",
-      price: 1000,
-      category: "fresh",
-      image: "kienyeji-improved.jpg.JPG"
-    },
-    {
-      name: "Kienyeji Kuku - Jogoo",
-      price: 1500,
-      category: "fresh",
-      image: "kienyeji-jogoo.jpg.JPG"
-    },
-    /* ==============================
-       EGGS
-       ============================== */
-    {
-      name: "Kienyeji Eggs - Tray",
-      price: 600,
-      category: "eggs",
-      image: "kienyeji-eggs.jpg.JPG.JPG"
-    },
-    {
-      name: "Grade Eggs - Tray",
-      price: 480,
-      category: "eggs",
-      image: "grade-eggs.jpg.JPG"
-    },
-    /* ==============================
-       PACKED SNACKS
-       ============================== */
-    {
-      name: "Beef Smokies - Pack",
-      price: 440,
-      category: "snacks",
-      image: "beef-smokies.jpg.PNG"
-    },
-    {
-      name: "Chicken Smokies - Pack",
-      price: 440,
-      category: "snacks",
-      image: "chicken-smokies.jpg.PNG"
-    },
-    {
-      name: "Beef Sausages - Pack",
-      price: 600,
-      category: "snacks",
-      image: "beef-sausages.jpg.PNG"
-    },
-    {
-      name: "Chicken Sausages - Pack",
-      price: 580,
-      category: "snacks",
-      image: "chicken-sausages.jpg.PNG"
-    },
-    /* ==============================
-       DRINKS
-       ============================== */
-    {
-      name: "Fruit Juice",
-      price: 100,
-      category: "drinks",
-      image: "fruit-juice.jpg.JPG"
-    },
-    {
-      name: "Small Soda",
-      price: 50,
-      category: "drinks",
-      image: "soda-small.jpg.PNG"
-    },
-    {
-      name: "Large Soda",
-      price: 80,
-      category: "drinks",
-      image: "soda-large.jpg.JPG"
-    },
-    {
-      name: "Yogurt",
-      price: 100,
-      category: "drinks",
-      image: "yogurt.jpg.JPG"
-    }
-  ];
-  let cart = [];
-  let selectedRating = 0;
-  /* ==============================
-     OPENING HOURS
-     ============================== */
-  function updateOpeningStatus() {
-    const status =
-      document.getElementById("openStatus");
-    const now = new Date();
-    const day = now.getDay();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const currentMinutes =
-      hours * 60 + minutes;
-    let openingMinutes;
-    let closingMinutes;
-    if (day === 0) {
-      openingMinutes = 10 * 60;
-      closingMinutes = 21 * 60;
-    } else {
-      openingMinutes = 9 * 60;
-      closingMinutes = 22 * 60;
-    }
-    if (
-      currentMinutes >= openingMinutes &&
-      currentMinutes < closingMinutes
-    ) {
-      status.textContent =
-        "🟢 OPEN NOW";
-      status.className =
-        "status open";
-    } else {
-      status.textContent =
-        "🔴 CLOSED";
-      status.className =
-        "status closed";
-    }
+const products = [
+  {
+    name:"Chips",
+    price:100,
+    category:"cooked",
+    image:"chips.jpg.JPG"
+  },
+  {
+    name:"Chips + ¼ Kuku",
+    price:280,
+    category:"cooked",
+    image:"kuku-quarter-chips.jpg.JPG"
+  },
+  {
+    name:"Chips + ½ Kuku",
+    price:460,
+    category:"cooked",
+    image:"kuku-half-chips.jpg.JPG"
+  },
+  {
+    name:"Chips + 1 Piece Chicken",
+    price:220,
+    category:"cooked",
+    image:"kuku-piece-chips.jpg.JPG"
+  },
+  {
+    name:"Chips + Chicken Strips",
+    price:200,
+    category:"cooked",
+    image:"chicken-strips-chips.jpg.PNG"
+  },
+  {
+    name:"Burger",
+    price:150,
+    category:"cooked",
+    image:"burger.jpg.JPG"
+  },
+  {
+    name:"Smokie",
+    price:40,
+    category:"snacks",
+    image:"smokie.jpg.JPG"
+  },
+  {
+    name:"Sausage",
+    price:60,
+    category:"snacks",
+    image:"sausage.jpg.JPG"
+  },
+  {
+    name:"Samosa",
+    price:40,
+    category:"snacks",
+    image:"samosa.jpg.JPG"
+  },
+  {
+    name:"Small Hotdog",
+    price:80,
+    category:"snacks",
+    image:"hotdog-small.jpg.JPG"
+  },
+  {
+    name:"Large Hotdog",
+    price:100,
+    category:"snacks",
+    image:"hotdog-big.jpg.JPG"
+  },
+  {
+    name:"Nuggets - 1 piece",
+    price:25,
+    category:"snacks",
+    image:"nuggets.jpg.JPG"
+  },
+  {
+    name:"Capon (Broiler Kuku) - 1kg",
+    price:500,
+    category:"fresh",
+    image:"capon.jpg.JPG"
+  },
+  {
+    name:"Boneless Breast - 1kg",
+    price:640,
+    category:"fresh",
+    image:"boneless-breast.jpg.JPG"
+  },
+  {
+    name:"Thighs - 1kg",
+    price:490,
+    category:"fresh",
+    image:"thighs.jpg.JPG"
+  },
+  {
+    name:"Legs - 1kg",
+    price:510,
+    category:"fresh",
+    image:"legs.jpg.JPG"
+  },
+  {
+    name:"Wings - 1kg",
+    price:540,
+    category:"fresh",
+    image:"wings.jpg.JPG"
+  },
+  {
+    name:"Drumsticks - 1kg",
+    price:640,
+    category:"fresh",
+    image:"drumsticks.jpg.JPG"
+  },
+  {
+    name:"Gizzards - 1kg",
+    price:500,
+    category:"fresh",
+    image:"gizzards.jpg.JPG"
+  },
+  {
+    name:"Chicken Liver - 1kg",
+    price:300,
+    category:"fresh",
+    image:"chicken-liver.jpg.JPG"
+  },
+  {
+    name:"Nuggets - 1kg",
+    price:750,
+    category:"snacks",
+    image:"nuggets-1kg.jpg.JPG"
+  },
+  {
+    name:"Nuggets - 500g",
+    price:360,
+    category:"snacks",
+    image:"nuggets-500g.jpg.JPG"
+  },
+  {
+    name:"Nuggets - 250g",
+    price:190,
+    category:"snacks",
+    image:"nuggets-250g.jpg.JPG"
+  },
+  /*
+    KENYAJI KUKU EX-LAYERS
+    EXACT FILE NAME CONFIRMED BY YOU
+  */
+  {
+    name:"Kienyeji Kuku - Ex Layers",
+    price:700,
+    category:"fresh",
+    image:"kienyeji-ex-layers.jpg.JPG"
+  },
+  {
+    name:"Kienyeji Kuku - Improved (Mwera)",
+    price:1000,
+    category:"fresh",
+    image:"kienyeji-improved.jpg.JPG"
+  },
+  {
+    name:"Kienyeji Kuku - Jogoo",
+    price:1500,
+    category:"fresh",
+    image:"kienyeji-jogoo.jpg.JPG"
+  },
+  /*
+    KENYAJI EGGS
+    EXACT FILE NAME CONFIRMED BY YOU
+  */
+  {
+    name:"Kienyeji Eggs - Tray",
+    price:600,
+    category:"eggs",
+    image:"kienyeji-eggs.jpg.JPG.JPG"
+  },
+  {
+    name:"Grade Eggs - Tray",
+    price:480,
+    category:"eggs",
+    image:"grade-eggs.jpg.JPG"
+  },
+  {
+    name:"Beef Smokies - Pack",
+    price:440,
+    category:"snacks",
+    image:"beef-smokies.jpg.PNG"
+  },
+  {
+    name:"Chicken Smokies - Pack",
+    price:440,
+    category:"snacks",
+    image:"chicken-smokies.jpg.PNG"
+  },
+  {
+    name:"Beef Sausages - Pack",
+    price:600,
+    category:"snacks",
+    image:"beef-sausages.jpg.PNG"
+  },
+  {
+    name:"Chicken Sausages - Pack",
+    price:580,
+    category:"snacks",
+    image:"chicken-sausages.jpg.PNG"
+  },
+  {
+    name:"Fruit Juice",
+    price:100,
+    category:"drinks",
+    image:"fruit-juice.jpg.JPG"
+  },
+  {
+    name:"Small Soda",
+    price:50,
+    category:"drinks",
+    image:"soda-small.jpg.PNG"
+  },
+  {
+    name:"Large Soda",
+    price:80,
+    category:"drinks",
+    image:"soda-large.jpg.JPG"
+  },
+  {
+    name:"Yogurt",
+    price:100,
+    category:"drinks",
+    image:"yogurt.jpg.JPG"
   }
-  updateOpeningStatus();
-  setInterval(
-    updateOpeningStatus,
-    60000
-  );
-  /* ==============================
-     CATEGORY DISPLAY
-     ============================== */
-  function showCategory(
-    category,
-    button
+];
+let cart = [];
+let selectedRating = 0;
+/* OPENING HOURS */
+function updateOpeningStatus() {
+  const status =
+    document.getElementById("openStatus");
+  const now = new Date();
+  const day = now.getDay();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const currentMinutes =
+    hours * 60 + minutes;
+  let openingMinutes;
+  let closingMinutes;
+  if (day === 0) {
+    openingMinutes = 10 * 60;
+    closingMinutes = 21 * 60;
+  } else {
+    openingMinutes = 9 * 60;
+    closingMinutes = 22 * 60;
+  }
+  if (
+    currentMinutes >= openingMinutes &&
+    currentMinutes < closingMinutes
   ) {
-    document
-      .querySelectorAll(
-        ".categories button"
-      )
-      .forEach(btn => {
-        btn.classList.remove(
-          "active"
+    status.textContent =
+      "🟢 OPEN NOW";
+    status.className =
+      "status open";
+  } else {
+    status.textContent =
+      "🔴 CLOSED";
+    status.className =
+      "status closed";
+  }
+}
+updateOpeningStatus();
+setInterval(updateOpeningStatus, 60000);
+/* SHOW PRODUCTS */
+function showCategory(category, button) {
+  document
+    .querySelectorAll(".categories button")
+    .forEach(btn => {
+      btn.classList.remove("active");
+    });
+  button.classList.add("active");
+  const container =
+    document.getElementById("products");
+  const filtered =
+    category === "all"
+      ? products
+      : products.filter(
+          p => p.category === category
         );
-      });
-    button.classList.add(
-      "active"
-    );
-    const container =
-      document.getElementById(
-        "products"
-      );
-    const filtered =
-      category === "all"
-        ? products
-        : products.filter(
-            p =>
-              p.category === category
-          );
-    container.innerHTML = `
-      <section class="section">
-        <h2>
-          ${
-            category === "all"
-              ? "Our Menu"
-              : categoryTitle(category)
-          }
-        </h2>
-        <div class="products">
-          ${filtered.map(product => {
-            const originalIndex =
-              products.indexOf(
-                product
-              );
-            return `
-              <div class="product">
-                <img
-                  src="${product.image}"
-                  alt="${product.name}"
-                  class="product-image"
-                  loading="lazy"
-                >
-                <h3>
-                  ${product.name}
-                </h3>
-                <p>
-                  KSh ${product.price}
-                </p>
-                <button
-                  onclick="addToCart(${originalIndex})"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            `;
-          }).join("")}
-        </div>
-      </section>
-    `;
-  }
-  function categoryTitle(
-    category
-  ) {
-    const titles = {
-      cooked: "Cooked Food",
-      fresh: "Fresh Chicken",
-      snacks: "Snacks",
-      drinks: "Drinks",
-      eggs: "Eggs"
-    };
-    return (
-      titles[category] ||
-      "Menu"
-    );
-  }
-  /* ==============================
-     CART
-     ============================== */
-  function addToCart(index) {
-    const product =
-      products[index];
-    const existing =
-      cart.find(
-        item =>
-          item.name ===
-            product.name &&
-          item.price ===
-            product.price
-      );
-    if (existing) {
-      existing.quantity++;
-    } else {
-      cart.push({
-        name:
-          product.name,
-        price:
-          product.price,
-        quantity:
-          1
-      });
-    }
-    updateCart();
-  }
-  function updateCart() {
-    const count =
-      cart.reduce(
-        (total, item) =>
-          total +
-          item.quantity,
-        0
-      );
-    const total =
-      cart.reduce(
-        (sum, item) =>
-          sum +
-          item.price *
-            item.quantity,
-        0
-      );
-    document.getElementById(
-      "cartCount"
-    ).textContent =
-      count;
-    document.getElementById(
-      "cartTotal"
-    ).textContent =
-      total;
-    document.getElementById(
-      "modalTotal"
-    ).textContent =
-      total;
-    renderCart();
-  }
-  function renderCart() {
-    const container =
-      document.getElementById(
-        "cartItems"
-      );
-    if (
-      cart.length === 0
-    ) {
-      container.innerHTML =
-        '<div class="empty">Your cart is empty.</div>';
-      return;
-    }
-    container.innerHTML =
-      cart.map(
-        (item, index) => `
-          <div class="cart-item">
-            <div>
-              <strong>
-                ${item.name}
-              </strong>
-              <br>
-              KSh ${item.price}
-              × ${item.quantity}
-              <br>
-              <strong>
-                KSh ${
-                  item.price *
-                  item.quantity
-                }
-              </strong>
-            </div>
-            <div class="cart-controls">
-              <button
-                onclick="changeQuantity(${index}, -1)"
+  container.innerHTML = `
+    <section class="section">
+      <h2>
+        ${
+          category === "all"
+            ? "Our Menu"
+            : categoryTitle(category)
+        }
+      </h2>
+      <div class="products">
+        ${filtered.map(product => {
+          const originalIndex =
+            products.indexOf(product);
+          return `
+            <div class="product">
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="product-image"
+                loading="lazy"
+                onerror="this.style.display='none';"
               >
-                −
-              </button>
-              <span>
-                ${item.quantity}
-              </span>
+              <h3>
+                ${product.name}
+              </h3>
+              <p>
+                KSh ${product.price}
+              </p>
               <button
-                onclick="changeQuantity(${index}, 1)"
+                onclick="addToCart(${originalIndex})"
               >
-                +
+                Add to Cart
               </button>
             </div>
-          </div>
-        `
-      ).join("");
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+/* CATEGORY TITLES */
+function categoryTitle(category) {
+  const titles = {
+    cooked: "Cooked Food",
+    fresh: "Fresh Chicken",
+    snacks: "Snacks",
+    drinks: "Drinks",
+    eggs: "Eggs"
+  };
+  return titles[category] || "Menu";
+}
+/* CART */
+function addToCart(index) {
+  const product =
+    products[index];
+  const existing =
+    cart.find(
+      item =>
+        item.name === product.name &&
+        item.price === product.price
+    );
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      name: product.name,
+      price: product.price,
+      quantity: 1
+    });
   }
-  function changeQuantity(
-    index,
-    amount
-  ) {
-    cart[index].quantity +=
-      amount;
-    if (
-      cart[index].quantity <=
+  updateCart();
+}
+function updateCart() {
+  const count =
+    cart.reduce(
+      (total, item) =>
+        total + item.quantity,
       0
-    ) {
-      cart.splice(
-        index,
-        1
-      );
-    }
-    updateCart();
-  }
-  function openCart() {
+    );
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum +
+        item.price *
+        item.quantity,
+      0
+    );
+  document.getElementById(
+    "cartCount"
+  ).textContent = count;
+  document.getElementById(
+    "cartTotal"
+  ).textContent = total;
+  document.getElementById(
+    "modalTotal"
+  ).textContent = total;
+  renderCart();
+}
+function renderCart() {
+  const container =
     document.getElementById(
-      "cartModal"
-    ).style.display =
+      "cartItems"
+    );
+  if (cart.length === 0) {
+    container.innerHTML =
+      '<div class="empty">Your cart is empty.</div>';
+    return;
+  }
+  container.innerHTML =
+    cart.map(
+      (item, index) => `
+        <div class="cart-item">
+          <div>
+            <strong>
+              ${item.name}
+            </strong>
+            <br>
+            KSh ${item.price}
+            × ${item.quantity}
+            <br>
+            <strong>
+              KSh ${
+                item.price *
+                item.quantity
+              }
+            </strong>
+          </div>
+          <div class="cart-controls">
+            <button
+              onclick="changeQuantity(${index}, -1)"
+            >
+              −
+            </button>
+            <span>
+              ${item.quantity}
+            </span>
+            <button
+              onclick="changeQuantity(${index}, 1)"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      `
+    ).join("");
+}
+function changeQuantity(index, amount) {
+  cart[index].quantity += amount;
+  if (
+    cart[index].quantity <= 0
+  ) {
+    cart.splice(index, 1);
+  }
+  updateCart();
+}
+function openCart() {
+  document.getElementById(
+    "cartModal"
+  ).style.display = "block";
+  updateCart();
+}
+function closeCart() {
+  document.getElementById(
+    "cartModal"
+  ).style.display = "none";
+}
+/* DELIVERY */
+function updateDeliveryNotice() {
+  const orderType =
+    document.getElementById(
+      "orderType"
+    ).value;
+  const notice =
+    document.getElementById(
+      "deliveryNotice"
+    );
+  if (
+    orderType === "Delivery"
+  ) {
+    notice.style.display =
       "block";
-    updateCart();
-  }
-  function closeCart() {
-    document.getElementById(
-      "cartModal"
-    ).style.display =
+  } else {
+    notice.style.display =
       "none";
   }
-  /* ==============================
-     DELIVERY
-     ============================== */
-  function updateDeliveryNotice() {
-    const orderType =
-      document.getElementById(
-        "orderType"
-      ).value;
-    const notice =
-      document.getElementById(
-        "deliveryNotice"
-      );
-    if (
-      orderType ===
-      "Delivery"
-    ) {
-      notice.style.display =
-        "block";
-    } else {
-      notice.style.display =
-        "none";
-    }
-  }
-  /* ==============================
-     PAYMENT
-     ============================== */
-  function showPaymentDetails() {
-    const method =
-      document.getElementById(
-        "paymentMethod"
-      ).value;
-    const mpesa =
-      document.getElementById(
-        "mpesaPayment"
-      );
-    const cash =
-      document.getElementById(
-        "cashPayment"
-      );
-    mpesa.style.display =
-      method === "mpesa"
-        ? "block"
-        : "none";
-    cash.style.display =
-      method === "cash"
-        ? "block"
-        : "none";
-  }
-  /* ==============================
-     WHATSAPP ORDER
-     ============================== */
-  function placeOrder() {
-    if (
-      cart.length === 0
-    ) {
-      alert(
-        "Please add something to your cart first."
-      );
-      return;
-    }
-    const name =
-      document.getElementById(
-        "customerName"
-      ).value.trim();
-    const phone =
-      document.getElementById(
-        "customerPhone"
-      ).value.trim();
-    const location =
-      document.getElementById(
-        "customerLocation"
-      ).value.trim();
-    const notes =
-      document.getElementById(
-        "customerNotes"
-      ).value.trim();
-    const orderType =
-      document.getElementById(
-        "orderType"
-      ).value;
-    const paymentMethod =
-      document.getElementById(
-        "paymentMethod"
-      ).value;
-    if (
-      !name ||
-      !phone ||
-      !location
-    ) {
-      alert(
-        "Please enter your name, phone number and location."
-      );
-      return;
-    }
-    if (!paymentMethod) {
-      alert(
-        "Please select a payment method."
-      );
-      return;
-    }
-    const total =
-      cart.reduce(
-        (sum, item) =>
-          sum +
-          item.price *
-            item.quantity,
-        0
-      );
-    let message =
-      "🐔 KUKU HAVEN ORDER\n\n";
-    message +=
-      "Customer: " +
-      name +
-      "\n";
-    message +=
-      "Phone: " +
-      phone +
-      "\n";
-    message +=
-      "Location: " +
-      location +
-      "\n";
-    message +=
-      "Order Type: " +
-      orderType +
-      "\n";
-    message +=
-      "Payment: " +
-      (
-        paymentMethod ===
-        "mpesa"
-          ? "M-Pesa"
-          : "Cash on Delivery"
-      ) +
-      "\n\n";
-    message +=
-      "ORDER ITEMS:\n";
-    cart.forEach(item => {
-      message +=
-        item.name +
-        " × " +
-        item.quantity +
-        " = KSh " +
-        (
-          item.price *
-          item.quantity
-        ) +
-        "\n";
-    });
-    message +=
-      "\nFOOD ORDER TOTAL: KSh " +
-      total +
-      "\n";
-    if (
-      orderType ===
-      "Delivery"
-    ) {
-      message +=
-        "DELIVERY FEE: Charged separately according to location.\n";
-      message +=
-        "The delivery fee will be communicated before delivery.\n";
-    } else {
-      message +=
-        "PICKUP: No delivery fee.\n";
-    }
-    if (
-      paymentMethod ===
-      "mpesa"
-    ) {
-      message +=
-        "\nM-Pesa Till Number: 6485965\n";
-      message +=
-        "Till Name: JOAN WANGECI\n";
-      message +=
-        "Customer will send M-Pesa confirmation message.\n";
-    }
-    if (
-      paymentMethod ===
-      "cash"
-    ) {
-      message +=
-        "\nPayment will be made in cash on delivery.\n";
-    }
-    if (notes) {
-      message +=
-        "\nDelivery Instructions: " +
-        notes;
-    }
-    const whatsappNumber =
-      "254728065517";
-    const url =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(
-        message
-      );
-    window.open(
-      url,
-      "_blank"
-    );
-    alert(
-      "Thank you for choosing Kuku Haven. Your support means the world to us, and we can't wait to serve you again. Munch it. Crunch it. Love it."
-    );
-  }
-  /* ==============================
-     FEEDBACK
-     ============================== */
-  function selectRating(
-    rating
-  ) {
-    selectedRating =
-      rating;
-    const stars =
-      document.querySelectorAll(
-        ".star"
-      );
-    stars.forEach(
-      (star, index) => {
-        if (
-          index < rating
-        ) {
-          star.classList.add(
-            "selected"
-          );
-        } else {
-          star.classList.remove(
-            "selected"
-          );
-        }
-      }
-    );
+}
+/* PAYMENT */
+function showPaymentDetails() {
+  const method =
     document.getElementById(
-      "ratingText"
-    ).textContent =
-      rating +
-      " out of 5 stars selected.";
-  }
-  function sendFeedback() {
-    const feedback =
-      document.getElementById(
-        "feedbackText"
-      ).value.trim();
-    if (
-      selectedRating ===
-      0
-    ) {
-      alert(
-        "Please select a star rating from 1 to 5."
-      );
-      return;
-    }
-    if (!feedback) {
-      alert(
-        "Please write your feedback before sending."
-      );
-      return;
-    }
-    const whatsappNumber =
-      "254728065517";
-    let message =
-      "⭐ KUKU HAVEN FEEDBACK\n\n";
-    message +=
-      "Rating: " +
-      selectedRating +
-      "/5 stars\n\n";
-    message +=
-      "Feedback:\n" +
-      feedback;
-    const url =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(
-        message
-      );
-    window.open(
-      url,
-      "_blank"
+      "paymentMethod"
+    ).value;
+  const mpesa =
+    document.getElementById(
+      "mpesaPayment"
     );
+  const cash =
+    document.getElementById(
+      "cashPayment"
+    );
+  mpesa.style.display =
+    method === "mpesa"
+      ? "block"
+      : "none";
+  cash.style.display =
+    method === "cash"
+      ? "block"
+      : "none";
+}
+/* PLACE ORDER */
+function placeOrder() {
+  if (cart.length === 0) {
+    alert(
+      "Please add something to your cart first."
+    );
+    return;
   }
-  /* ==============================
-     START WEBSITE
-     ============================== */
-  showCategory(
-    "all",
-    document.querySelector(
-      ".categories button"
-    )
+  const name =
+    document.getElementById(
+      "customerName"
+    ).value.trim();
+  const phone =
+    document.getElementById(
+      "customerPhone"
+    ).value.trim();
+  const location =
+    document.getElementById(
+      "customerLocation"
+    ).value.trim();
+  const notes =
+    document.getElementById(
+      "customerNotes"
+    ).value.trim();
+  const orderType =
+    document.getElementById(
+      "orderType"
+    ).value;
+  const paymentMethod =
+    document.getElementById(
+      "paymentMethod"
+    ).value;
+  if (
+    !name ||
+    !phone ||
+    !location
+  ) {
+    alert(
+      "Please enter your name, phone number and location."
+    );
+    return;
+  }
+  if (!paymentMethod) {
+    alert(
+      "Please select a payment method."
+    );
+    return;
+  }
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum +
+        item.price *
+        item.quantity,
+      0
+    );
+  let message =
+    "🐔 KUKU HAVEN ORDER\n\n";
+  message +=
+    "Customer: " +
+    name +
+    "\n";
+  message +=
+    "Phone: " +
+    phone +
+    "\n";
+  message +=
+    "Location: " +
+    location +
+    "\n";
+  message +=
+    "Order Type: " +
+    orderType +
+    "\n";
+  message +=
+    "Payment: " +
+    (
+      paymentMethod === "mpesa"
+        ? "M-Pesa"
+        : "Cash on Delivery"
+    ) +
+    "\n\n";
+  message +=
+    "ORDER ITEMS:\n";
+  cart.forEach(item => {
+    message +=
+      item.name +
+      " × " +
+      item.quantity +
+      " = KSh " +
+      (
+        item.price *
+        item.quantity
+      ) +
+      "\n";
+  });
+  message +=
+    "\nFOOD ORDER TOTAL: KSh " +
+    total +
+    "\n";
+  if (
+    orderType === "Delivery"
+  ) {
+    message +=
+      "DELIVERY FEE: Charged separately according to location.\n";
+    message +=
+      "The delivery fee will be communicated before delivery.\n";
+  } else {
+    message +=
+      "PICKUP: No delivery fee.\n";
+  }
+  if (
+    paymentMethod === "mpesa"
+  ) {
+    message +=
+      "\nM-Pesa Till Number: 6485965\n";
+    message +=
+      "Till Name: JOAN WANGECI\n";
+    message +=
+      "Customer will send M-Pesa confirmation message.\n";
+  }
+  if (
+    paymentMethod === "cash"
+  ) {
+    message +=
+      "\nPayment will be made in cash on delivery.\n";
+  }
+  if (notes) {
+    message +=
+      "\nDelivery Instructions: " +
+      notes;
+  }
+  const whatsappNumber =
+    "254728065517";
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+  window.open(
+    url,
+    "_blank"
   );
-  updateDeliveryNotice();
+  alert(
+    "Thank you for choosing Kuku Haven. Your support means the world to us, and we can't wait to serve you again. Munch it. Crunch it. Love it."
+  );
+}
+/* RATING */
+function selectRating(rating) {
+  selectedRating =
+    rating;
+  const stars =
+    document.querySelectorAll(
+      ".star"
+    );
+  stars.forEach(
+    (star, index) => {
+      if (
+        index < rating
+      ) {
+        star.classList.add(
+          "selected"
+        );
+      } else {
+        star.classList.remove(
+          "selected"
+        );
+      }
+    }
+  );
+  document.getElementById(
+    "ratingText"
+  ).textContent =
+    rating +
+    " out of 5 stars selected.";
+}
+/* FEEDBACK */
+function sendFeedback() {
+  const feedback =
+    document.getElementById(
+      "feedbackText"
+    ).value.trim();
+  if (
+    selectedRating === 0
+  ) {
+    alert(
+      "Please select a star rating from 1 to 5."
+    );
+    return;
+  }
+  if (!feedback) {
+    alert(
+      "Please write your feedback before sending."
+    );
+    return;
+  }
+  const whatsappNumber =
+    "254728065517";
+  let message =
+    "⭐ KUKU HAVEN FEEDBACK\n\n";
+  message +=
+    "Rating: " +
+    selectedRating +
+    "/5 stars\n\n";
+  message +=
+    "Feedback:\n" +
+    feedback;
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+  window.open(
+    url,
+    "_blank"
+  );
+}
+/* START WEBSITE */
+showCategory(
+  "all",
+  document.querySelector(
+    ".categories button"
+  )
+);
+updateDeliveryNotice();
 </script>
 </body>
 </html>
