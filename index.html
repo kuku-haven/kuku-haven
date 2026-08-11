@@ -536,21 +536,21 @@
     How would you rate your Kuku Haven experience?
   </p>
   <div class="stars">
-    <button class="star" onclick="selectRating(1)" aria-label="1 star">
-      ★
-    </button>
-    <button class="star" onclick="selectRating(2)" aria-label="2 stars">
-      ★
-    </button>
-    <button class="star" onclick="selectRating(3)" aria-label="3 stars">
-      ★
-    </button>
-    <button class="star" onclick="selectRating(4)" aria-label="4 stars">
-      ★
-    </button>
-    <button class="star" onclick="selectRating(5)" aria-label="5 stars">
-      ★
-    </button>
+<button class="star" onclick="selectRating(1)" aria-label="1 star">
+  ★
+</button>
+<button class="star" onclick="selectRating(2)" aria-label="2 stars">
+  ★
+</button>
+<button class="star" onclick="selectRating(3)" aria-label="3 stars">
+  ★
+</button>
+<button class="star" onclick="selectRating(4)" aria-label="4 stars">
+  ★
+</button>
+<button class="star" onclick="selectRating(5)" aria-label="5 stars">
+  ★
+</button>
   </div>
   <div id="ratingText" class="rating-text">
     Select a rating from 1 to 5 stars.
@@ -559,11 +559,12 @@
     id="feedbackText"
     placeholder="Write your feedback here..."
   ></textarea>
-  <button
-    class="feedback-button"
-    onclick="sendFeedback()"
-  >
-    Send Feedback on WhatsApp
+
+<button
+class=“feedback-button”
+onclick=“sendFeedback()”
+
+Send Feedback on WhatsApp
   </button>
 </section>
 <footer>
@@ -576,10 +577,10 @@
   <div>
     🛒 Cart:
     <strong id="cartCount">0</strong> items
-    <br>
-    <strong>
-      KSh <span id="cartTotal">0</span>
-    </strong>
+<br>
+<strong>
+  KSh <span id="cartTotal">0</span>
+</strong>
   </div>
   <button onclick="openCart()">
     View Cart
@@ -587,134 +588,134 @@
 </div>
 <div class="modal" id="cartModal">
   <div class="modal-content">
-    <button class="close" onclick="closeCart()">
-      Close
-    </button>
-    <h2>
-      Your Cart 🛒
-    </h2>
-    <div id="cartItems"></div>
-    <div class="total">
-      Food Order Total:
-      KSh
-      <span id="modalTotal">0</span>
+<button class="close" onclick="closeCart()">
+  Close
+</button>
+<h2>
+  Your Cart 🛒
+</h2>
+<div id="cartItems"></div>
+<div class="total">
+  Food Order Total:
+  KSh
+  <span id="modalTotal">0</span>
+</div>
+<h2>
+  Delivery Details
+</h2>
+<label>
+  Your Name
+</label>
+<input
+  id="customerName"
+  type="text"
+  placeholder="Enter your name"
+>
+<label>
+  Phone Number
+</label>
+<input
+  id="customerPhone"
+  type="tel"
+  placeholder="07XXXXXXXX"
+>
+<label>
+  Delivery Location
+</label>
+<input
+  id="customerLocation"
+  type="text"
+  placeholder="e.g. Utawala, Nairobi"
+>
+<label>
+  Delivery Instructions
+</label>
+<textarea
+  id="customerNotes"
+  rows="3"
+  placeholder="Any instructions for your order?"
+></textarea>
+<label>
+  Order Type
+</label>
+<select id="orderType" onchange="updateDeliveryNotice()">
+  <option value="Delivery">
+    Delivery
+  </option>
+  <option value="Pickup">
+    Pickup
+  </option>
+</select>
+<div id="deliveryNotice" class="delivery-notice">
+  <h3>
+    🛵 Delivery Notice
+  </h3>
+  <p>
+    Please note that delivery charges are separate from your food order total.
+    The delivery fee varies depending on your location and will be communicated
+    to you before your order is delivered.
+  </p>
+</div>
+<div class="payment-section">
+  <h3>
+    💳 Mode of Payment
+  </h3>
+  <select
+    id="paymentMethod"
+    onchange="showPaymentDetails()"
+  >
+    <option value="">
+      Select payment method
+    </option>
+    <option value="mpesa">
+      🟢 M-Pesa
+    </option>
+    <option value="cash">
+      💵 Cash on Delivery
+    </option>
+  </select>
+  <div id="mpesaPayment" class="payment-details">
+    <h4>
+      🟢 M-Pesa Payment
+    </h4>
+    <p>
+      Pay using M-Pesa Buy Goods & Services.
+    </p>
+    <div class="till-number">
+      6485965
     </div>
-    <h2>
-      Delivery Details
-    </h2>
-    <label>
-      Your Name
-    </label>
-    <input
-      id="customerName"
-      type="text"
-      placeholder="Enter your name"
-    >
-    <label>
-      Phone Number
-    </label>
-    <input
-      id="customerPhone"
-      type="tel"
-      placeholder="07XXXXXXXX"
-    >
-    <label>
-      Delivery Location
-    </label>
-    <input
-      id="customerLocation"
-      type="text"
-      placeholder="e.g. Utawala, Nairobi"
-    >
-    <label>
-      Delivery Instructions
-    </label>
-    <textarea
-      id="customerNotes"
-      rows="3"
-      placeholder="Any instructions for your order?"
-    ></textarea>
-    <label>
-      Order Type
-    </label>
-    <select id="orderType" onchange="updateDeliveryNotice()">
-      <option value="Delivery">
-        Delivery
-      </option>
-      <option value="Pickup">
-        Pickup
-      </option>
-    </select>
-    <div id="deliveryNotice" class="delivery-notice">
-      <h3>
-        🛵 Delivery Notice
-      </h3>
-      <p>
-        Please note that delivery charges are separate from your food order total.
-        The delivery fee varies depending on your location and will be communicated
-        to you before your order is delivered.
-      </p>
-    </div>
-    <div class="payment-section">
-      <h3>
-        💳 Mode of Payment
-      </h3>
-      <select
-        id="paymentMethod"
-        onchange="showPaymentDetails()"
-      >
-        <option value="">
-          Select payment method
-        </option>
-        <option value="mpesa">
-          🟢 M-Pesa
-        </option>
-        <option value="cash">
-          💵 Cash on Delivery
-        </option>
-      </select>
-      <div id="mpesaPayment" class="payment-details">
-        <h4>
-          🟢 M-Pesa Payment
-        </h4>
-        <p>
-          Pay using M-Pesa Buy Goods & Services.
-        </p>
-        <div class="till-number">
-          6485965
-        </div>
-        <p style="text-align:center;">
-          <strong>
-            JOAN WANGECI
-          </strong>
-        </p>
-        <p style="margin-top:10px; line-height:1.5;">
-          Go to M-Pesa →
-          Lipa na M-Pesa →
-          Buy Goods and Services →
-          enter Till Number
-          <strong>6485965</strong>.
-        </p>
-        <p style="margin-top:10px; line-height:1.5;">
-          After payment, send your M-Pesa confirmation
-          message together with your order on WhatsApp.
-        </p>
-      </div>
-      <div id="cashPayment" class="payment-details">
-        <h4>
-          💵 Cash on Delivery
-        </h4>
-        <p>
-          Pay in cash when your order is delivered.
-        </p>
-      </div>
-    </div>
-    <button
-      class="primary"
-      onclick="placeOrder()"
-    >
-      Place Order on WhatsApp
-    </button>
+    <p style="text-align:center;">
+      <strong>
+        JOAN WANGECI
+      </strong>
+    </p>
+    <p style="margin-top:10px; line-height:1.5;">
+      Go to M-Pesa →
+      Lipa na M-Pesa →
+      Buy Goods and Services →
+      enter Till Number
+      <strong>6485965</strong>.
+    </p>
+    <p style="margin-top:10px; line-height:1.5;">
+      After payment, send your M-Pesa confirmation
+      message together with your order on WhatsApp.
+    </p>
+  </div>
+  <div id="cashPayment" class="payment-details">
+    <h4>
+      💵 Cash on Delivery
+    </h4>
+    <p>
+      Pay in cash when your order is delivered.
+    </p>
+  </div>
+</div>
+<button
+  class="primary"
+  onclick="placeOrder()"
+>
+  Place Order on WhatsApp
+</button>
   </div>
 </div>
 <script>
@@ -857,16 +858,12 @@ const products = [
     category: "snacks",
     image: "nuggets-250g.jpg.JPG"
   },
-  /*
-    Kienyeji Ex-Layers
-    IMPORTANT:
-    The filename below must match the GitHub filename exactly.
-  */
+  /* Kienyeji Ex-Layers */
   {
     name: "Kienyeji Kuku - Ex Layers",
     price: 700,
     category: "fresh",
-    image: "kienyeji-ex-layers.jpg"
+    image: "kienyeji-ex-layers.jpg.JPG"
   },
   {
     name: "Kienyeji Kuku - Improved (Mwera)",
@@ -880,10 +877,7 @@ const products = [
     category: "fresh",
     image: "kienyeji-jogoo.jpg.JPG"
   },
-  /*
-    Kienyeji Eggs
-    This is the filename you confirmed is working.
-  */
+  /* Eggs */
   {
     name: "Kienyeji Eggs - Tray",
     price: 600,
@@ -985,8 +979,7 @@ function showCategory(category, button) {
       btn.classList.remove("active");
     });
   button.classList.add("active");
-  const container =
-    document.getElementById("products");
+  const container = document.getElementById("products");
   const filtered =
     category === "all"
       ? products
